@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dinson.win/"/>
-  <updated>2017-05-23T12:00:50.280Z</updated>
+  <updated>2017-05-23T15:02:27.281Z</updated>
   <id>http://dinson.win/</id>
   
   <author>
@@ -20,15 +20,16 @@
     <link href="http://dinson.win/2017/05/25/17-05-25/"/>
     <id>http://dinson.win/2017/05/25/17-05-25/</id>
     <published>2017-05-25T07:30:08.000Z</published>
-    <updated>2017-05-23T12:00:50.280Z</updated>
+    <updated>2017-05-23T15:02:27.281Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>&gt;</p>
+    <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <ol>
 <li>迭代器&amp;生成器</li>
 <li>装饰器</li>
 <li>Json &amp; pickle 数据序列化</li>
 <li>软件目录结构规范</li>
 </ol>
+</blockquote>
 <a id="more"></a>
 <!-- 这是　　缩进-->
 <h2 id="迭代器-amp-生成器"><a href="#迭代器-amp-生成器" class="headerlink" title="迭代器&amp;生成器"></a>迭代器&amp;生成器</h2><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p><strong>定义</strong>：本质是函数，（装饰其他函数）几十为了其他函数添加附加功能<br><strong>原则</strong>：</p>
@@ -40,13 +41,14 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;&amp;gt;&lt;/p&gt;
+      &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;迭代器&amp;amp;生成器&lt;/li&gt;
 &lt;li&gt;装饰器&lt;/li&gt;
 &lt;li&gt;Json &amp;amp; pickle 数据序列化&lt;/li&gt;
 &lt;li&gt;软件目录结构规范&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
