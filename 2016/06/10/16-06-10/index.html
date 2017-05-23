@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android Studio插件整理</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2016/06/10/16-06-10/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android Studio插件整理</h1>
+    <p class="post-meta">
+      <span class="post-time">2016-06-10</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/插件/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>插件</a>
+      
+      <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>在现如今这个极度推崇敏捷开发的年代，开发时间的节省将会直接压缩开发成本，在这其中，一些开发工具的合理利用讲会极大简化开发工作并增强开发效率。本文将介绍笔者自己在平时开发中经常用到的一些插件，我只能说它们都很实用，当然都是适用于Android Studio的啦。<br><a id="more"></a></p>
+<h2 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h2><p>快速将json字符串转换成一个Java Bean，免去我们根据json字符串手写对应Java Bean的过程。<br>使用方法：快捷键Alt+S也可以使用Alt+Insert选择GsonFormat </p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-1.gif" alt=""></p>
+<h2 id="Android-ButterKnife-Zelezny"><a href="#Android-ButterKnife-Zelezny" class="headerlink" title="Android ButterKnife Zelezny"></a>Android ButterKnife Zelezny</h2><blockquote>
+<p>配合ButterKnife实现注解，从此不用写findViewById，想着就爽啊。在Activity，Fragment，Adapter中选中布局xml的资源id自动生成butterknife注解。<br>使用方法：Ctrl+Shift+B选择图上所示选项</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-2.gif" alt=""></p>
+<h2 id="Android-Code-Generator"><a href="#Android-Code-Generator" class="headerlink" title="Android Code Generator"></a>Android Code Generator</h2><blockquote>
+<p>根据布局文件快速生成对应的Activity，Fragment，Adapter，Menu。</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-3.1.gif" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-3.2.gif" alt=""></p>
+<h2 id="Android-Methods-Count"><a href="#Android-Methods-Count" class="headerlink" title="Android Methods Count"></a>Android Methods Count</h2><blockquote>
+<p>显示依赖库中得方法数</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-5.gif" alt=""></p>
+<h2 id="Lifecycle-Sorter"><a href="#Lifecycle-Sorter" class="headerlink" title="Lifecycle Sorter"></a>Lifecycle Sorter</h2><blockquote>
+<p>可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序<br>使用方法：快捷键Ctrl + alt + K</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-6.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-6.2.jpg" alt=""></p>
+<h2 id="CodeGlance"><a href="#CodeGlance" class="headerlink" title="CodeGlance"></a>CodeGlance</h2><blockquote>
+<p>在右边可以预览代码，实现快速定位</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-7.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-6.2.jpg" alt=""></p>
+<h2 id="FindBugs-IDEA"><a href="#FindBugs-IDEA" class="headerlink" title="FindBugs-IDEA"></a>FindBugs-IDEA</h2><blockquote>
+<p>查找bug的插件，Android Studio也提供了代码审查的功能（Analyze-Inspect Code…）</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-8.jpg" alt=""></p>
+<h2 id="ADB-WIFI"><a href="#ADB-WIFI" class="headerlink" title="ADB WIFI"></a>ADB WIFI</h2><blockquote>
+<p>使用wifi无线调试你的app，无需root权限</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/610-9.jpg" alt=""></p>
+<h2 id="Android-Styler"><a href="#Android-Styler" class="headerlink" title="Android Styler"></a>Android Styler</h2><blockquote>
+<p>根据xml自动生成style代码的插件<br>使用方法：快捷键Ctrl+Shift+D (or context menu)</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/12.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/12.2.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/12.3.jpg" alt=""></p>
+<h2 id="Android-Drawable-Importer"><a href="#Android-Drawable-Importer" class="headerlink" title="Android Drawable Importer"></a>Android Drawable Importer</h2><blockquote>
+<p>这是一个非常强大的图片导入插件。它导入Android图标与Material图标的Drawable ，批量导入Drawable ，多源导入Drawable（即导入某张图片各种dpi对应的图片）</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.2.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.3.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.4.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.5.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.6.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.7.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/13.8.jpg" alt=""></p>
+<h2 id="SelectorChapek-for-Android"><a href="#SelectorChapek-for-Android" class="headerlink" title="SelectorChapek for Android"></a>SelectorChapek for Android</h2><blockquote>
+<p>通过资源文件命名自动生成Selector文件。</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/14.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/14.2.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/14.3.png" alt=""></p>
+<h2 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h2><blockquote>
+<p>帮助你在开发阶段方便的检测出内存泄露的问题，使用起来更简单方便。</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/17.jpg" alt=""></p>
+<h2 id="Android-Postfix-Completion"><a href="#Android-Postfix-Completion" class="headerlink" title="Android Postfix Completion"></a>Android Postfix Completion</h2><blockquote>
+<p>可根据后缀快速完成代码，这个属于拓展吧，系统已经有这些功能，如sout、notnull等，这个插件在原有的基础上增添了一些新的功能</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/18.gif" alt=""></p>
+<h2 id="Android-Holo-Colors-Generator"><a href="#Android-Holo-Colors-Generator" class="headerlink" title="Android Holo Colors Generator"></a>Android Holo Colors Generator</h2><blockquote>
+<p>通过自定义Holo主题颜色生成对应的Drawable和布局文件</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/19.jpg" alt=""></p>
+<h2 id="GradleDependenciesHelperPlugin"><a href="#GradleDependenciesHelperPlugin" class="headerlink" title="GradleDependenciesHelperPlugin"></a>GradleDependenciesHelperPlugin</h2><blockquote>
+<p>maven gradle 依赖支持自动补全</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/21.jpg" alt=""></p>
+<h2 id="Idea-markdown"><a href="#Idea-markdown" class="headerlink" title="Idea-markdown"></a>Idea-markdown</h2><blockquote>
+<p>markdown插件</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/26.jpg" alt=""></p>
+<h2 id="Sexy-Editor"><a href="#Sexy-Editor" class="headerlink" title="Sexy Editor"></a>Sexy Editor</h2><blockquote>
+<p>设置AS代码编辑区的背景图</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/27.1.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/27.2.png" alt=""></p>
+<h2 id="Android-DPI-Calculator"><a href="#Android-DPI-Calculator" class="headerlink" title="Android-DPI-Calculator"></a>Android-DPI-Calculator</h2><blockquote>
+<p>DPI计算插件</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/29.1.png" alt=""></p>
+<p>使用：</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/29.2.png" alt=""></p>
+<p>或者：</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/29.3.png" alt=""></p>
+<h2 id="Gradle-retrolambda"><a href="#Gradle-retrolambda" class="headerlink" title="Gradle-retrolambda"></a>Gradle-retrolambda</h2><blockquote>
+<p>在java 6 7中使用 lambda表达式插件</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/30.jpg" alt=""></p>
+<h2 id="Material-Theme-UI"><a href="#Material-Theme-UI" class="headerlink" title="Material Theme UI"></a>Material Theme UI</h2><blockquote>
+<p>添加Material主题到你的AS</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/32.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/32.2.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/32.3.jpg" alt=""></p>
+<h2 id="ECTranslation"><a href="#ECTranslation" class="headerlink" title="ECTranslation"></a>ECTranslation</h2><blockquote>
+<p>Android Studio Plugin,Translate English to Chinese. Android Studio 翻译插件,可以将英文翻译为中文</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/36.jpg" alt=""></p>
+<h2 id="PermissionsDispatcher-plugin"><a href="#PermissionsDispatcher-plugin" class="headerlink" title="PermissionsDispatcher plugin"></a>PermissionsDispatcher plugin</h2><blockquote>
+<p>自动生成6.0权限的代码</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/37.gif" alt=""></p>
+<h2 id="WakaTime"><a href="#WakaTime" class="headerlink" title="WakaTime"></a>WakaTime</h2><blockquote>
+<p>记录你在IDE上的工作时间</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/38.png" alt=""></p>
+<h2 id="AndroidLocalizationer"><a href="#AndroidLocalizationer" class="headerlink" title="AndroidLocalizationer"></a>AndroidLocalizationer</h2><blockquote>
+<p>可用于将项目中的 string 资源自动翻译为其他语言的 Android Studio/IntelliJ IDEA 插件</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/160610/40.1.jpg" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/160610/40.2.jpg" alt=""></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=25638273&auto=1&height=66"></iframe>
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2016/06/10/16-06-10/" title="http://dinson.win/2016/06/10/16-06-10/" target="_blank">http://dinson.win/2016/06/10/16-06-10/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GsonFormat"><span class="toc-text">GsonFormat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-ButterKnife-Zelezny"><span class="toc-text">Android ButterKnife Zelezny</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Code-Generator"><span class="toc-text">Android Code Generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Methods-Count"><span class="toc-text">Android Methods Count</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lifecycle-Sorter"><span class="toc-text">Lifecycle Sorter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CodeGlance"><span class="toc-text">CodeGlance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FindBugs-IDEA"><span class="toc-text">FindBugs-IDEA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ADB-WIFI"><span class="toc-text">ADB WIFI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Styler"><span class="toc-text">Android Styler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Drawable-Importer"><span class="toc-text">Android Drawable Importer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SelectorChapek-for-Android"><span class="toc-text">SelectorChapek for Android</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LeakCanary"><span class="toc-text">LeakCanary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Postfix-Completion"><span class="toc-text">Android Postfix Completion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-Holo-Colors-Generator"><span class="toc-text">Android Holo Colors Generator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GradleDependenciesHelperPlugin"><span class="toc-text">GradleDependenciesHelperPlugin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea-markdown"><span class="toc-text">Idea-markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sexy-Editor"><span class="toc-text">Sexy Editor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android-DPI-Calculator"><span class="toc-text">Android-DPI-Calculator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradle-retrolambda"><span class="toc-text">Gradle-retrolambda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Material-Theme-UI"><span class="toc-text">Material Theme UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECTranslation"><span class="toc-text">ECTranslation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PermissionsDispatcher-plugin"><span class="toc-text">PermissionsDispatcher plugin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WakaTime"><span class="toc-text">WakaTime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AndroidLocalizationer"><span class="toc-text">AndroidLocalizationer</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

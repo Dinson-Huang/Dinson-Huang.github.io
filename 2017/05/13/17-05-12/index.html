@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="安卓，录屏，截图,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android录屏与截图功能(5.0以上有效)</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/13/17-05-12/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android录屏与截图功能(5.0以上有效)</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-13</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/录屏/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>录屏</a>
+      
+      <a href="/tags/截图/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>截图</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>这篇文章，会带你学习如何使用 MediaProjection，MediaCodec 以及 MediaMuxer 来实现简单的截屏和录屏功能。</p>
+<p>因为 MediaProjection 是 5.0以上 才出现的，所以今天所讲述功能实现，只在 5.0以上 的系统有效。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h2><h3 id="步骤如下"><a href="#步骤如下" class="headerlink" title="步骤如下"></a>步骤如下</h3><p>1：获取 MediaProjectionManager</p>
+<p>2：通过 MediaProjectionManager.createScreenCaptureIntent() 获取 Intent</p>
+<p>3：通过 startActivityForResult 传入 Intent 然后在 onActivityResult 中通过 MediaProjectionManager.getMediaProjection(resultCode,data) 获取 MediaProjection</p>
+<p>4：创建 ImageReader,构建 VirtualDisplay</p>
+<p>5 : 最后就是通过 ImageReader 截图，就可以从 ImageReader 里获得 Image 对象。</p>
+<p>6 : 将 Image 对象转换成 bitmap</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>步骤已经给出了，我们就按照步骤来实现代码吧。</p>
+<p>首先 MediaProjectionManager 是系统服务，我们通过<br><code>getSystemService(MEDIA_PROJECTION_SERVICE)</code>获取它</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">projectionManager = (<span class="name">MediaProjectionManager</span>)getSystemService(<span class="name">MEDIA_PROJECTION_SERVICE</span>)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>然后调用 startActivityForResult 传入 projectionManager.createScreenCaptureIntent() 创建的 Intent</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startActivityForResult(<span class="name">projectionManager</span>.createScreenCaptureIntent(), SCREEN_SHOT)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>紧接着我们就可以在 onActivityResult(int requestCode, int resultCode, Intent data) 中通过 resultCode 和 data 来获取 MediaProjection：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvvwP2iend8mydeWF0tijrsyMnbx.png" alt=""><br>然后就是创建 ImageReader 和 VirtualDisplay：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtclwbgSmfNuAKRzLV7ItmxQ2TUB.png" alt=""><br><strong>这里我们依次讲解一下：</strong><br>首先是 ImageReader.newInstance 方法：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> ImageReader newInstance(<span class="keyword">int</span> <span class="built_in">width</span>, <span class="keyword">int</span> <span class="built_in">height</span>, <span class="keyword">int</span> format, <span class="keyword">int</span> maxImages)</div></pre></td></tr></table></figure></p>
+<p>方法里接收四个参数。前两个 width,height 是用来指定生成图像的宽和高。<br><strong>第三个参数</strong> format 是图像的格式，这个格式必须是 ImageFormat或 PixelFormat 中的一个，这两个 Format 里有很多格式，大家可以点进去看看，我们例子中使用的是 PixelFormat.RGBA_8888 格式(需要注意的是并不是所有的格式都被 ImageReader 支持，比如说 ImageFormat.NV21)。</p>
+<p><strong>第四个参数</strong> maxImages，这个参数指的是你想同时在 ImageReader 里获取到的 Image对象 的个数，这个参数我不是很懂，我不理解同时的意思。我的理解是 ImageReader 是一个类似数组的东西，然后我们可以通过 acquireLatestImage() 或 acquireNextImage() 方法来得到里面的 Image对象(可能有误，仅供参考)。这个值应该设置的越小越好，但是得大于0，所以我们上面设置的是1。</p>
+<p>然后我们看看 mediaProjection.createVirtualDisplay 方法：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtUczK9qlxRq-TQdEndwzXTgfn6F.png" alt=""><br>首先这个方法返回的是 VirtualDisplay。<br>前四个不用说了，分别是 VirtualDisplay 的名字，宽，高和dpi。</p>
+<p><strong>第五个参数</strong>，大家可以访问</p>
+<blockquote>
+<p><a href="https://developer.android.google.cn/reference/android/hardware/display/DisplayManager.html" target="_blank" rel="external">https://developer.android.google.cn/reference/android/hardware/display/DisplayManager.html</a></p>
+</blockquote>
+<p>查看 DisplayManager 的所有flags，我没有具体的研究过，在本次要实现的例子里，除了 VIRTUAL_DISPLAY_FLAG_SECURE 这个会报错，其他的 flags 效果都一样。</p>
+<p><strong>第六个参数</strong> 是一个 Surface。我这里表达一下我的理解，当 VirtualDisplay 被创建出来时，也就是 createVirtualDisplay 调用后，你在真实屏幕上的每一帧都会输入到 Surface参数 里。也就是说，如果你放个 SurfaceView，然后传入 SurfaceView 的 Surface 那么你在屏幕上的操作都会显示在 SurfaceView 里(这里我们后面录屏会讲)。我们这里传入的是 ImageReader 的 Surface。这其中的逻辑我的理解是这样的，真实屏幕的每一帧都都会传给 ImageReader，根据 ImageReader 的 maxImages参数，比如说 maxImages 是 2，那么 ImageReader 始终保持两帧图片，但这两帧图片是一直随着真实屏幕的操作而更新的(不知道大家有没有听懂)。</p>
+<p><strong>第七个参数</strong> 是一个回调函数，在 VirtualDisplay 状态改变时调用。因为我们这里没有，所以传 null。</p>
+<p><strong>第八个参数</strong> 这里我给出原文：“The Handler on which the callback should be invoked, or null if the callback should be invoked on the calling thread’s main Looper.” 因为我翻译不好。不过和普通的 Handler 使用场景类似。</p>
+<p>现在我们 ImageReader 和 VirtualDisplay，接下来我们就可以通过 ImageReader 的 acquireLatestImage() 或 acquireNextImage() 来得到 Image对象 了。</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SystemClock.<span class="built_in">sleep</span>(<span class="number">1000</span>);</div><div class="line"><span class="built_in">Image</span> <span class="built_in">image</span> = imageReader.acquireNextImage();</div></pre></td></tr></table></figure>
+<p>这里有个坑，就是你在获取 Image 的时候，得先暂停1秒左右，不然就会获取失败(原因未知)。</p>
+<p>现在我们有了 Image对象，但是 Image对象 并不能直接作为UI资源被使用，我们可以将它转换成 Bitmap对象。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FkMjyveYJT5Rk3XXBS6V8-3xAb31.png" alt=""></p>
+<p>这里最主要的逻辑就是像素与字节的转换，我们需要将 Image对象 的字节流写进 Bitmap 里，但是 Bitmap 接收的是像素格式的。</p>
+<p>我们一行一行来看：</p>
+<p>首先获取 image对象 的宽和高，注意 width 和 height 是像素格式的。</p>
+<p>然后获取 ByteBuffer，里面存放的就是图片的字节流，是字节格式的。我是这么理解的，ByteBuffer 里面是一长串的字节序列，按照某种格式分成行列就变成了图片。</p>
+<p>然后获取 PixelStride，这指的是两个像素的距离(就是一个像素头部到相邻像素的头部)，这是字节格式的。</p>
+<p>RowStride 是一行占用的距离(就是一行像素头部到相邻行像素的头部)，这个大小和 width 有关，这里需要注意，因为内存对齐的原因，所以每行会有一些空余。这个值也是字节格式的。</p>
+<p>紧接着我们需要创建一个 Bitmap 用来接受 Image 的 buffer 的输入，buffer 是字节流，它会按照我们设置的 format 转换成像素，所以这里最重要的一个地方就是 Bitmap 创建的大小，因为高度就是行数所以就是 height，但是宽度因为上面说的内存对齐问题会有些空余，所以我们要先求出空余部分，然后加上 width。</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> rowPadding = rowStride - pixelStride * <span class="built_in">width</span>;</div></pre></td></tr></table></figure>
+<p>这句话用整行的距离减去了一行里像素及空隙占用的距离，剩下的就是空余部分。但是这个是字节格式的。我们将它除以 pixelStride，也就是一个像素及空隙占用的字节大小，就转换成了像素格式。然后：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">width</span> + rowPadding / pixelStride</div></pre></td></tr></table></figure>
+<p>这个就是一行里像素的占用了，我们将它传给Bitmap：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FjyAwd7uOuIyoNuuaec1qCa3nymr.png" alt=""></p>
+<p>创建出合适大小的 Bitmap，然后把 Image 的 buffer 传给它，就成功的将 Image对象 转换成了 Bitmap。这里我可能讲的不清楚，我给大家画了张图：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnWlneYKo0wXmd93bqaRDI4M34d4.png" alt=""></p>
+<p>上面的一小格一小格是一块块像素。</p>
+<p>好了，现在我们已经获取到了 bitmap 了，我们可以把它放到 ImageView 里显示一下，我写了一个例子，效果如下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtWvLYP7rKhdUAWUPx34llXrOGK3.png" alt=""></p>
+<p>点击按钮，弹出一个对话框请求截屏，点击立即开始的话，截屏就会显示在下面的 ImageView 里。</p>
+<h2 id="录屏"><a href="#录屏" class="headerlink" title="录屏"></a>录屏</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>录屏的前三步和截屏是一样的，出现分歧点的地方在于 VirtualDisplay 创建时传入的 Surface，还记得我们上面说的吗，说在创建 VirtualDisplay 的时候，传入一个 SurfaceView 的 Surface 的话，那么你在真实屏幕上的操作，都会重现在 SurfaceView 上。我们来试一下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnytHOMHEcK-U27XqYMkI8d69TrV.png" alt=""></p>
+<p>我们在Surface参数中传入一个 SurfaceView 的 Surface，效果如下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FrUySmrKvQ8DIsbBwUNS2O_VRUMk.png" alt=""></p>
+<p>可以看到我们放了一个 Button，放了一个 ImageView，放了一个 SurfaceView。点击 Button，然后点立即开始之后，真实屏幕就映射到了 SurfaceView 里。</p>
+<p>所以当创建 VirtualDisplay 时，真实屏幕就映射到了 Surface，也就是我们可以再 Surface 里拿到屏幕的一个输入。那我们要录屏的话，就只要把 Surface 转换成我们需要的格式就行了。</p>
+<p>在本篇文章的例子中，我们会将 Surface对象 转换成 mp4格式。这就需要用到MediaCodec类 和 MediaMuxer类。MediaCodec 生成一个 Surface 用来接收屏幕的输出并按照格式编码，然后传给 MediaMuxer 用来封装成 mp4格式 的视频。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Frwb1-cIhukMvnpralVVIChnGnxj.png" alt=""><br>上面讲了 MediaCodec 的创建，我们也可以从中看到屏幕数据是怎么进入 MediaCodec 的。具体的我已经注释了。</p>
+<p>接下来我们创建一个 MediaMuxer对象：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FghD5GELyVoh3Q10yfrrEyxvGmIJ.png" alt=""><br>然后创建 VirtualDisplay，把 MediaCodec的surface 传进去：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FlSvfgcwQfAnOYlwK965rqsxvQw1.png" alt=""><br>最后就是视频的编码与转换MP4还有保存了：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FkgEsiyPE32QpetqNVJ-1RJsZZy2.png" alt=""><br>好了，录屏到此结束了。我们来看下实例演示：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FuksI4ntCx3D9s-GcPmdh6vpQHu9.png" alt=""></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=17194024&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/13/17-05-12/" title="http://dinson.win/2017/05/13/17-05-12/" target="_blank">http://dinson.win/2017/05/13/17-05-12/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#截屏"><span class="toc-text">截屏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤如下"><span class="toc-text">步骤如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#录屏"><span class="toc-text">录屏</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li></ol></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

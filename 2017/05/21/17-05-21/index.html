@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Python,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Python从入门到放弃（2）</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/21/17-05-21/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Python从入门到放弃（2）</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-21</span>
+      
+      <a href="/categories/Python从入门到放弃/" class="post-categories">Python从入门到放弃</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<ol>
+<li>列表、元组操作</li>
+<li>字符串操作</li>
+<li>字典操作</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进 -->
+<h2 id="列表、元组操作"><a href="#列表、元组操作" class="headerlink" title="列表、元组操作"></a>列表、元组操作</h2><p><strong>列表</strong>是我们最以后最常用的数据类型之一，通过列表可以对数据实现最方便的存储、修改等操作<br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line">name = [<span class="string">"张三"</span>, <span class="string">"李四"</span>, <span class="string">"王五"</span>, <span class="string">"赵六"</span>, <span class="string">"赵六"</span>]</div><div class="line"></div><div class="line">print(name.clear())  # []</div><div class="line">print(name.count(<span class="string">"赵六"</span>))  # <span class="number">2</span></div><div class="line">print(name.index(<span class="string">"赵六"</span>))  # <span class="number">3</span></div><div class="line">print(name[<span class="number">0</span>], name[<span class="number">2</span>], name[<span class="number">-4</span>])  # 张三 王五 李四</div><div class="line">print(name[:])  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line">print(name[<span class="number">0</span>:<span class="number">2</span>])  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>]</div><div class="line"></div><div class="line">name.remove(<span class="string">"李四"</span>)</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">del name[<span class="number">2</span>]</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">name[<span class="number">4</span>] = <span class="string">"孙七"</span></div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'孙七'</span>]</div><div class="line"></div><div class="line">name.insert(<span class="number">2</span>, <span class="string">"周八"</span>)</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'周八'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">name.append(<span class="string">"孙七"</span>)</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'孙七'</span>]</div><div class="line"></div><div class="line">name.pop()</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">name.pop(<span class="number">1</span>)  # 李四</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">name.remove(<span class="string">"赵六"</span>)</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>]</div><div class="line"></div><div class="line">name.reverse();</div><div class="line">print(name)  # [<span class="string">'赵六'</span>, <span class="string">'赵六'</span>, <span class="string">'王五'</span>, <span class="string">'李四'</span>, <span class="string">'张三'</span>]</div><div class="line"></div><div class="line">name2 = [<span class="string">"b"</span>, <span class="string">"d"</span>, <span class="string">"a"</span>, <span class="string">"e"</span>, <span class="string">"c"</span>]</div><div class="line">name2.sort();</div><div class="line">print(name2)  # [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"></div><div class="line">name2 = [<span class="string">"b"</span>, <span class="string">"d"</span>, <span class="string">"a"</span>, <span class="string">"e"</span>, <span class="string">"c"</span>]</div><div class="line">name.extend(name2)</div><div class="line">print(name)  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'a'</span>, <span class="string">'e'</span>, <span class="string">'c'</span>]</div><div class="line"></div><div class="line"># 浅copy</div><div class="line">name1 = [<span class="string">"a"</span>, <span class="string">"b"</span>, [<span class="string">"张三"</span>, <span class="string">"李四"</span>], <span class="string">"d"</span>, <span class="string">"e"</span>]</div><div class="line">name2 = name.copy();</div><div class="line">name1[<span class="number">1</span>] = <span class="string">"f"</span></div><div class="line">name1[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">"王五"</span></div><div class="line">print(name1)  # [<span class="string">'a'</span>, <span class="string">'f'</span>, [<span class="string">'王五'</span>, <span class="string">'李四'</span>], <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line">print(name2)  # [<span class="string">'a'</span>, <span class="string">'b'</span>, [<span class="string">'王五'</span>, <span class="string">'李四'</span>], <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"></div><div class="line"># 深copy</div><div class="line">import copy</div><div class="line">name1 = [<span class="string">"a"</span>, <span class="string">"b"</span>, [<span class="string">"张三"</span>, <span class="string">"李四"</span>], <span class="string">"d"</span>, <span class="string">"e"</span>]</div><div class="line">name2 = copy.deepcopy(name1)</div><div class="line">name1[<span class="number">1</span>] = <span class="string">"f"</span></div><div class="line">name1[<span class="number">2</span>][<span class="number">0</span>] = <span class="string">"王五"</span></div><div class="line">print(name1)  # [<span class="string">'a'</span>, <span class="string">'f'</span>, [<span class="string">'王五'</span>, <span class="string">'李四'</span>], <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line">print(name2)  # [<span class="string">'a'</span>, <span class="string">'b'</span>, [<span class="string">'张三'</span>, <span class="string">'李四'</span>], <span class="string">'d'</span>, <span class="string">'e'</span>]</div><div class="line"></div><div class="line"># 遍历</div><div class="line">print(name[<span class="number">0</span>:-<span class="number">1</span>:<span class="number">2</span>])  # [<span class="string">'张三'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>]</div><div class="line">print(name[::<span class="number">2</span>])  # [<span class="string">'张三'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>]</div><div class="line">print(name[:])  # [<span class="string">'张三'</span>, <span class="string">'李四'</span>, <span class="string">'王五'</span>, <span class="string">'赵六'</span>, <span class="string">'赵六'</span>]</div><div class="line">for i in name:</div><div class="line">    print(i)  # 张三李四王五赵六赵六</div></pre></td></tr></table></figure></p>
+<p><strong>元组</strong><br>元组其实跟列表差不多，也是存一组数，只不是它一旦创建，便不能再修改，所以又叫只读列表<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">names = (<span class="string">"alex"</span>,<span class="string">"jack"</span>,<span class="string">"eric"</span>)</div><div class="line">它只有<span class="number">2</span>个方法，一个是<span class="keyword">count</span>,一个是<span class="keyword">index</span>，完毕。</div></pre></td></tr></table></figure></p>
+<h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">str = "My Name is Dinson"</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> <span class="built_in">print</span>(str.index(<span class="string">"n"</span>))  <span class="comment"># 13  索引字符 无该字符则报错</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.rindex(<span class="string">"n"</span>))  <span class="comment"># 16 从右边开始索引字符 无该字符则报错</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.find(<span class="string">"y"</span>))  <span class="comment"># 1 索引字符 无该字符则返回-1</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.rfind(<span class="string">"n"</span>))  <span class="comment"># 16 从右边开始索引字符 无该字符则返回-1</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.count(<span class="string">"n"</span>))  <span class="comment"># 2  字符出现的个数</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"dinson"</span>.capitalize())  <span class="comment"># Dinson    首字母大写</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.center(24, <span class="string">"-"</span>))  <span class="comment"># ---My Name is Dinson----</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.ljust(24, <span class="string">"-"</span>))   <span class="comment"># My Name is Dinson-------</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.rjust(24, <span class="string">"-"</span>))   <span class="comment"># -------My Name is Dinson</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.zfill(24))        <span class="comment"># 0000000My Name is Dinson</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.endswith(<span class="string">"on"</span>))  <span class="comment"># True 判断是否以该字符结束</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.startswith(<span class="string">"my"</span>))  <span class="comment"># False  判断是否以该字符开始</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"a\ta"</span>.expandtabs(10))  <span class="comment"># a         a</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"_"</span>.join([<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>]))  <span class="comment"># a_b_c_d</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.swapcase())  <span class="comment"># mY nAME IS dINSON 大小写互换</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.lower())  <span class="comment"># my name is dinson</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.upper())  <span class="comment"># MY NAME IS DINSON</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.replace(<span class="string">"Dinson"</span>, <span class="string">"Mike"</span>))  <span class="comment"># My Name is Mike</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"\n  Dinson  \n"</span>.strip())  <span class="comment"># Dinson 去除左右空格和换行</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"\n  Dinson  \n"</span>.lstrip())  <span class="comment"># Dinson  \n 去除左边空格和换行</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"\n  Dinson  \n"</span>.rstrip())  <span class="comment"># \n  Dinson 去除右边空格和换行</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"aaaaa"</span>.split(<span class="string">"a"</span>, 2))  <span class="comment"># ['', '', 'aaa'] 从左切割</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"aaaaa"</span>.rsplit(<span class="string">"a"</span>, 2))  <span class="comment"># ['aaa', '', ''] 从右切割</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"Dinson"</span>.partition(<span class="string">"n"</span>))  <span class="comment"># ('Di', 'n', 'son') 切割成固定三个元组</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"Dinson"</span>.rpartition(<span class="string">"n"</span>))  <span class="comment"># ('Dinso', 'n', '')从右边切割成固定三个元组</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"a\nb"</span>.splitlines())  <span class="comment"># ['a', 'b'] 根据不用系统换行符分割</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"my name is dinson"</span>.title())  <span class="comment"># My Name Is Dinson</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> p1 = str.maketrans(<span class="string">"abcdefghijklmnopqrstuvwxyz MND"</span>, <span class="string">"9352401867peiwqcmzoshlmabv$*&amp;^"</span>)</span></div><div class="line"><span class="meta">#</span><span class="bash"> p2 = str.maketrans(<span class="string">"9352401867peiwqcmzoshlmabv$*&amp;^"</span>, <span class="string">"abcdefghijklmnopqrstuvwxyz MND"</span>)</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.translate(p1))                <span class="comment"># *b$&amp;9i4$6o$^6woqw</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.translate(p1).translate(p2))  <span class="comment"># My Name is Dinson</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"name:&#123;name&#125;,age:&#123;age&#125;"</span>.format(name=<span class="string">"Dinson"</span>, age=18))  <span class="comment"># name:Dinson,age:18</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"name:&#123;name&#125;,age:&#123;age&#125;"</span>.format_map(&#123;<span class="string">"name"</span>: <span class="string">"Dinson"</span>, <span class="string">"age"</span>: 18&#125;))  <span class="comment"># name:Dinson,age:18</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> <span class="built_in">print</span>(<span class="string">"123"</span>.isdecimal())  <span class="comment"># True 是否为阿拉伯数字(非负整数)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"123"</span>.isalnum())  <span class="comment"># True 是否为阿拉伯数字(非负整数)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"123"</span>.isnumeric())  <span class="comment"># True 是否为阿拉伯数字(非负整数)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"123"</span>.isdigit())  <span class="comment"># True 是否为阿拉伯数字(非负整数)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"abcdABCD"</span>.isalpha())  <span class="comment"># True 是否为字母</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"_1a中国"</span>.isidentifier())  <span class="comment"># True 是否为合法标识符</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"abcd"</span>.islower())  <span class="comment"># True 是否全部为小写</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"ABCD"</span>.isupper())  <span class="comment"># True 是否全部为大写</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"My Name Is Dinson"</span>.istitle())  <span class="comment"># True 是否为标题格式</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(<span class="string">"\t"</span>.isspace())  <span class="comment"># True 是否全部为空格</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(str.isprintable())  <span class="comment"># True tty file,drive file不可打印</span></span></div></pre></td></tr></table></figure>
+<h2 id="字典操作"><a href="#字典操作" class="headerlink" title="字典操作"></a>字典操作</h2><p>字典一种key - value 的数据类型，使用就像我们上学用的字典，通过笔划、字母来查对应页的详细内容。<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">cinfo</span> = &#123;</div><div class="line">    <span class="string">'stu1101'</span>: <span class="string">"TengLan Wu"</span>,</div><div class="line">    <span class="string">'stu1102'</span>: <span class="string">"LongZe Luola"</span>,</div><div class="line">    <span class="string">'stu1103'</span>: <span class="string">"XiaoZe Maliya"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>字典的特性</strong></p>
+<ul>
+<li>dict是无序的</li>
+<li>key必须是唯一的,so 天生去重</li>
+</ul>
+<p><strong>增加</strong><br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">info</span>[<span class="string">"stu1104"</span>] = <span class="string">"苍井空"</span></div></pre></td></tr></table></figure></p>
+<p><strong>修改</strong><br><figure class="highlight prolog"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">info[<span class="string">'stu1101'</span>] = <span class="string">"武藤兰"</span></div></pre></td></tr></table></figure></p>
+<p><strong>删除</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">info.pop(<span class="string">"stu1101"</span>) <span class="comment">#标准删除姿势</span></div><div class="line">或者</div><div class="line"><span class="keyword">del</span> info[<span class="string">'stu1103'</span>] <span class="comment">#换个姿势删除</span></div><div class="line">或者</div><div class="line">info.popitem() <span class="comment">#随机删除</span></div></pre></td></tr></table></figure></p>
+<p><strong>查找</strong><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"stu1102"</span> <span class="keyword">in</span> info <span class="comment">#标准用法，返回Ture，False</span></div><div class="line">或者</div><div class="line">info.<span class="keyword">get</span>(<span class="string">"stu1102"</span>)  <span class="comment">#获取，返回value</span></div><div class="line">或者</div><div class="line">info[<span class="string">"stu1102"</span>] <span class="comment">#同上，但是看下面</span></div><div class="line">info[<span class="string">"stu1105"</span>] <span class="comment">#如果一个key不存在，就报错，get不会，不存在只返回None</span></div></pre></td></tr></table></figure></p>
+<p><strong>其它姿势</strong><br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#values</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info.values()</div><div class="line">dict_values([<span class="string">'LongZe Luola'</span>, <span class="string">'XiaoZe Maliya'</span>])</div><div class="line"></div><div class="line"><span class="comment">#keys</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info.keys()</div><div class="line">dict_keys([<span class="string">'stu1102'</span>, <span class="string">'stu1103'</span>])</div><div class="line"></div><div class="line"><span class="comment">#setdefault</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info.setdefault(<span class="string">"stu1106"</span>,<span class="string">"Alex"</span>)</div><div class="line"><span class="string">'Alex'</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info</div><div class="line">&#123;<span class="string">'stu1102'</span>: <span class="string">'LongZe Luola'</span>, <span class="string">'stu1103'</span>: <span class="string">'XiaoZe Maliya'</span>, <span class="string">'stu1106'</span>: <span class="string">'Alex'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info.setdefault(<span class="string">"stu1102"</span>,<span class="string">"龙泽萝拉"</span>)</div><div class="line"><span class="string">'LongZe Luola'</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info</div><div class="line">&#123;<span class="string">'stu1102'</span>: <span class="string">'LongZe Luola'</span>, <span class="string">'stu1103'</span>: <span class="string">'XiaoZe Maliya'</span>, <span class="string">'stu1106'</span>: <span class="string">'Alex'</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">#update </span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info</div><div class="line">&#123;<span class="string">'stu1102'</span>: <span class="string">'LongZe Luola'</span>, <span class="string">'stu1103'</span>: <span class="string">'XiaoZe Maliya'</span>, <span class="string">'stu1106'</span>: <span class="string">'Alex'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; b = &#123;<span class="number">1</span><span class="symbol">:</span><span class="number">2</span>,<span class="number">3</span><span class="symbol">:</span><span class="number">4</span>, <span class="string">"stu1102"</span><span class="symbol">:<span class="string">"龙泽萝拉"</span></span>&#125;</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info.update(b)</div><div class="line"><span class="meta">&gt;&gt;</span>&gt; info</div><div class="line">&#123;<span class="string">'stu1102'</span>: <span class="string">'龙泽萝拉'</span>, <span class="number">1</span>: <span class="number">2</span>, <span class="number">3</span>: <span class="number">4</span>, <span class="string">'stu1103'</span>: <span class="string">'XiaoZe Maliya'</span>, <span class="string">'stu1106'</span>: <span class="string">'Alex'</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">#items</span></div><div class="line">info.items()</div><div class="line">dict_items([(<span class="string">'stu1102'</span>, <span class="string">'龙泽萝拉'</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">3</span>, <span class="number">4</span>), (<span class="string">'stu1103'</span>, <span class="string">'XiaoZe Maliya'</span>), (<span class="string">'stu1106'</span>, <span class="string">'Alex'</span>)])</div><div class="line"></div><div class="line"><span class="comment">#通过一个列表生成默认dict,有个没办法解释的坑，少用吧这个</span></div><div class="line"><span class="meta">&gt;&gt;</span>&gt; dict.fromkeys([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">'testd'</span>)</div><div class="line">&#123;<span class="number">1</span>: <span class="string">'testd'</span>, <span class="number">2</span>: <span class="string">'testd'</span>, <span class="number">3</span>: <span class="string">'testd'</span>&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>循环dict</strong><br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#方法1</span></div><div class="line"><span class="keyword">for</span> <span class="built_in">key</span> in info:</div><div class="line">    <span class="keyword">print</span>(<span class="built_in">key</span>,info[<span class="built_in">key</span>])</div><div class="line"></div><div class="line"><span class="meta">#方法2</span></div><div class="line"><span class="keyword">for</span> k,v in info.items(): <span class="meta">#会先把dict转成list,数据里大时莫用</span></div><div class="line">    <span class="keyword">print</span>(k,v)</div></pre></td></tr></table></figure></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=26372969&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/21/17-05-21/" title="http://dinson.win/2017/05/21/17-05-21/" target="_blank">http://dinson.win/2017/05/21/17-05-21/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表、元组操作"><span class="toc-text">列表、元组操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串操作"><span class="toc-text">字符串操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典操作"><span class="toc-text">字典操作</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

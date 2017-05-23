@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/10/17-05-10/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-10</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/Android软键盘/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Android软键盘</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>在开发中，经常会遇到键盘挡住输入框的情况，比如登录界面或注册界面，弹出的软键盘把登录或注册按钮挡住了，用户必须把软键盘收起，才能点击相应按钮，这样的用户体验非常不好。像微信则直接把登录按钮做在输入框的上面，但有很多情况下，这经常满足不了需求。同时如果输入框特别多的情况下，点击输入时，当前输入框没被挡住，但是当前输入框下面的输入框却无法获取焦点，必须先把键盘收起，再去获取下面输入框焦点，这样用户体验也非常不好，那有什么办法呢？ </p>
+</blockquote>
+<a id="more"></a>
+<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><blockquote>
+<p>非透明状态栏下使用adjustResize和adjustPan，或是透明状态栏下使用fitsSystemWindows=true属性</p>
+</blockquote>
+<p>主要实现方法：<br>在AndroidManifest.xml对应的Activity里添加<br>Android:windowSoftInputMode=”adjustPan”或是android:windowSoftInputMode=”adjustResize”属性 </p>
+<p>这两种属性的区别，官方的解释是： </p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adjustResize</td>
+<td>该活动的主窗口始终调整大小，以使屏幕上的软键盘的余地。</td>
+</tr>
+<tr>
+<td>adjustPan</td>
+<td>该活动的主窗口无法调整大小，使软键盘的余地。相反，窗口的内容是自动平移以便当前焦点从来没有遮挡键盘，用户始终可以看到他们正在键入。这是比调整大小，一般是较不可取，因为用户可能需要关闭软键盘在获取和与模糊部分窗口的互动。</td>
+</tr>
+</tbody>
+</table>
+<p>这两个属性作用都是为了调整界面使键盘不挡住输入框 ，我这里对这两种属性使用场景、优缺点、注意事项进行了全方面总结，不知大家平时使用时是否注意到了。</p>
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>注意事项</strong></th>
+<th><strong>优缺点</strong></th>
+<th><strong>失效情况</strong></th>
+<th><strong>适用情况</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adjustResize</td>
+<td>需要界面本身可调整尺寸，如在布局添加ScrollView，或输入控件属于RecycleView/ListView某一项</td>
+<td>优点：1.不会把标题栏顶出当前布局；<br>2.有多项输入时，当前输入框下面的输入框可上下滑动输入<br>缺点：1.需要界面本身可调整尺寸;<br>2. 全屏时失效</td>
+<td>1.Activity主窗口尺寸无法调整；<br>2.Activity全屏<br>3.android5.0以上通过style设置沉浸式状态栏模式而不设置fitSystemWindow为true</td>
+<td>非全屏或是非沉浸式状态栏输入界面，输入框比较多</td>
+</tr>
+<tr>
+<td>adjustPan</td>
+<td>页面不会重新布局，当前输入框和键盘会直接将当前输入框以上界面整体向上平移，这样即使界面包含标题栏，也会被顶上去</td>
+<td>优点： 使用简单，不需要界面本身可调整尺寸，不会有失效情况 <br>缺点： 会把标题栏顶出当前布局；有多项输入时，当前输入框下面的输入框无法输入，必须收起键盘显示输入框再输入</td>
+<td>无</td>
+<td>有少量输入项，且输入量居界面上方</td>
+</tr>
+<tr>
+<td>fitsSystemWindows</td>
+<td>如果多个View设置了fitsSystemWindows=”true”,只有初始的view起作用，都是从第一个设置了fitsSystemWindows的view开始计算padding</td>
+<td>优点：使用简单，需要沉浸式状态栏的界面，不需要自己计算padding状态栏的高度<br>缺点：使用有限制</td>
+<td>1.View 的其他 padding 值被重新改写了<br>2.手机系统版本&gt;=android 4.4</td>
+<td>1.界面全屏<br>2.设置界面主题为沉浸式状态栏</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>adjustResize失效情况：activity设置了全屏属性指Theme.Light.NotittleBar.Fullscreen(键盘弹起时会将标题栏也推上去)或者设置了activity对应的主题中android:windowTranslucentStatus属性，设置方式为：android:windowTranslucentStatus=true，这时如果对应的页面上含有输入框，将会导致点击输入框时软键盘弹出后键盘覆盖输入框，导致输入框看不见。</li>
+<li>fitsSystemWindows=”true”,只有初始的view起作用：如果在布局中不是最外层控件设置fitsSystemWindows=”true”, 那么设置的那个控件高度会多出一个状态栏高度。若有多个view设置了，因第一个view已经消耗掉insect，其他view设置了也会被系统忽略。</li>
+</ul>
+<p>假设原始界面是一个LinearLayout包含若干EditText,如下图所示，在分别使用两种属性时的表现。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FiBssb1owc6o5RWvY8jttNlNpqEw.png" alt=""></p>
+<h3 id="adjustPan"><a href="#adjustPan" class="headerlink" title="adjustPan"></a>adjustPan</h3><p>整个界面向上平移，使输入框露出，它不会改变界面的布局；界面整体可用高度还是屏幕高度，这个可以通过下面的截图看出，如点击输入框6,输入框会被推到键盘上方，但输入框1被顶出去了，如果界面包含标题栏，也会被顶出去。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqcA0acjqFTCdq7fhGMQAQLCymuy.png" alt=""></p>
+<h3 id="adjustResize"><a href="#adjustResize" class="headerlink" title="adjustResize"></a>adjustResize</h3><p><img src="http://ondlsj2sn.bkt.clouddn.com/FlalEPmcfHwUAaQzlmbOZCOny3Qq.png" alt=""></p>
+<p>但使用这两种属性，我们可以总结以下几点：<br>1) 使用adjustPan, 如果需要输入的项比较多时，点击输入框，当前输入项会被顶到软键盘上方，但若当前输入框下面还有输入项时，却需要先收起键盘，再点击相应的输入项才能输入。这样操作太繁琐了，对于用户体验不大好；<br>2) adjustResize的使用，需要界面本身可显示的窗口内容能调整，可结合scrollview使用；</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><blockquote>
+<p>在界面最外层布局包裹ScrollView</p>
+</blockquote>
+<h3 id="只使用ScrollView"><a href="#只使用ScrollView" class="headerlink" title="只使用ScrollView"></a>只使用ScrollView</h3><p>在相应界面的xml布局中，最外层添加一个ScrollView，不在AndroidMainfest.xml中设置任何android:windowSoftInputMode属性，此时点击输入框，输入框均不会被软键盘档住。即使当前输入框下方也有输入框，在键盘显示的情况下，也可以通过上下滑动界面来输入，而不用先隐藏键盘，点击下方输入框，再显示键盘输入。 </p>
+<p>我们可以根据Android Studio的Inspect Layout工具来查看界面真正占用的布局高度，工具在<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtVH5PO3wZr8dcUo_npuTi46j9Aj.png" alt=""><br>通过该工具，我们看到：<br>界面真正能用的高度=屏幕高度-状态栏高度-软键盘高度<br>界面中蓝框是真正界面所用的高度：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fnd8_JCSsg5tPYqYC7yOjESZXX3U.png" alt=""></p>
+<h3 id="ScrollView-adjustPan"><a href="#ScrollView-adjustPan" class="headerlink" title="ScrollView+adjustPan"></a>ScrollView+adjustPan</h3><p>我们再在该类的AndroidMainfest.xml中设置windowSoftInputMode属性为adjustPan<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;activity <span class="string">android:</span>name=<span class="string">".TestInputActivity"</span> <span class="string">android:</span>windowSoftInputMode=<span class="string">"adjustPan"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>发现当前输入框不会被挡住，但是输入框比较多时，在有键盘显示时，界面上下滑动，但只能滑动部分，且如果输入框在界面靠下方时，点击输入框，标题栏也会被顶出去，如下图所示：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvQ_kx2DYkusBw3VGgEvueIr8kEb.png" alt=""></p>
+<p>我们借助Inspect Layout工具查看此设置布局可用高度，从下图可以看出，此时布局可用高度是屏幕的高度，上下滑动也只是此屏的高度，在输入框9以下的输入框滑不出来，向上滑动，也只能滑到输入框1。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FhsoS1St7ob22uZpH5n2ZCvDp-Q-.png" alt=""></p>
+<h3 id="ScrollView-adjustResize"><a href="#ScrollView-adjustResize" class="headerlink" title="ScrollView+adjustResize"></a>ScrollView+adjustResize</h3><p>我们前面说过adjustResize的使用必须界面布局高度是可变的，如最外层套个ScrollView或是界面可收缩的，才起作用。这里在该类的AndroidMainfest.xml中设置windowSoftInputMode属性为adjustResize<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;activity <span class="string">android:</span>name=<span class="string">".TestInputActivity"</span> <span class="string">android:</span>windowSoftInputMode=<span class="string">"adjustResize"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>发现效果和1不设置任何windowSoftInputMode属性类似，其使用高度也是：屏幕高度-状态栏高度-软键盘高度<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fk4K9zDXpOsQlqHUKCqrBP20zEAI.png" alt=""></p>
+<p>我们再来看看windowSoftInputMode默认属性值stateUnspecified:</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stateUnspecified</td>
+<td>软键盘的状态(隐藏或可见)没有被指定。系统将选择一个合适的状态或依赖于主题的设置</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出，系统将选择合适的状态，也就是在界面最外层包含一层ScrollView时，设置默认属性值stateUnspecified其实就是adjustResize属性。</p>
+<p>但以下两方面无法满足需求：<br>1) 当Activity设置成全屏fullscreen模式时或是使用沉浸式状态栏时，界面最外层包裹 ScrollView，当输入框超过一屏，当前输入框下面的输入框并不能上下滑动来输入，情况类似于ScrollView+adjustPan，只能滑动部分，通过Inspect Layout也可以看到，界面可用高度是整个屏幕高度，并不会进行调整高度。即使设置adjustResize，也不起作用。<br>2) 如果是类似于注册界面或是登录界面，键盘会挡住输入框下面的登录按钮。</p>
+<h3 id="沉浸式状态栏／透明状态栏情况下"><a href="#沉浸式状态栏／透明状态栏情况下" class="headerlink" title="沉浸式状态栏／透明状态栏情况下"></a>沉浸式状态栏／透明状态栏情况下</h3><p>自android系统4.4(API&gt;=19）就开始支持沉浸式状态栏，当使用觉System windows(系统窗口),显示系统一些属性和操作区域，如 最上方的状态及没有实体按键的最下方的虚拟导航栏。<br>android:fitsSystemWindows=“true”会使得屏幕上的可布局空间位于状态栏下方与导航栏上方</p>
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2><blockquote>
+<p>使用scrollTo方法，当键盘弹起时，让界面整体上移；键盘收起，让界面整体下移<br>使用场景：针对界面全屏或是沉浸式状态栏，输入框不会被键盘遮挡。主要用于一些登录界面，或是需要把界面整体都顶上去的场景。</p>
+</blockquote>
+<h3 id="主要实现步骤"><a href="#主要实现步骤" class="headerlink" title="主要实现步骤"></a>主要实现步骤</h3><ol>
+<li><p>获取Activity布局xml的最外层控件，如xml文件如下：</p>
+ <figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;RelativeLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    xmlns:tools=<span class="string">"http://schemas.android.com/tools"</span></div><div class="line">    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">    android:layout_height=<span class="string">"match_parent"</span></div><div class="line">    android:<span class="built_in">id</span>=<span class="string">"@+id/main"</span></div><div class="line">    tools:context=<span class="string">"com.example.liubin1.softkeyboardhelper.MainActivity"</span>&gt;</div><div class="line"></div><div class="line">    &lt;EditText</div><div class="line">        android:<span class="built_in">id</span>=<span class="string">"@+id/name"</span></div><div class="line">        android:hint=<span class="string">"请输入用户名："</span></div><div class="line">        android:layout_centerInParent=<span class="string">"true"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"50dp"</span></div><div class="line">        /&gt;</div><div class="line">    &lt;EditText</div><div class="line">        android:<span class="built_in">id</span>=<span class="string">"@+id/pas"</span></div><div class="line">        android:layout_below=<span class="string">"@id/name"</span></div><div class="line">        android:hint=<span class="string">"请输入密码："</span></div><div class="line">        android:layout_centerInParent=<span class="string">"true"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"50dp"</span></div><div class="line">        /&gt;</div><div class="line">    &lt;Button</div><div class="line">        android:<span class="built_in">id</span>=<span class="string">"@+id/login_btn"</span></div><div class="line">        android:layout_below=<span class="string">"@id/rpas"</span></div><div class="line">        android:layout_centerHorizontal=<span class="string">"true"</span></div><div class="line">        android:<span class="built_in">text</span>=<span class="string">"登录"</span></div><div class="line">        android:layout_width=<span class="string">"180dp"</span></div><div class="line">        android:layout_height=<span class="string">"50dp"</span> /&gt;</div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>先获取到最外层控件，再获取到最后一个控件，如上面的xml文件，最后一个控件是Button</p>
+ <figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">RelativeLayout main = (<span class="name">RelativeLayout</span>) findViewById(<span class="name">R</span>.id.main)<span class="comment">;</span></div><div class="line">Button login_btn = (<span class="name">Button</span>) findViewById(<span class="name">R</span>.id.login_btn)<span class="comment">;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>给最外层控件和最后一个控件添加监听事件</p>
+</li>
+</ol>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在Activity的onCreate里添加如下方法</span></div><div class="line">addLayoutListener(main,login_btn);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**   </span></div><div class="line"> * addLayoutListener方法如下</div><div class="line"> * <span class="doctag">@param</span> main 根布局</div><div class="line"> * <span class="doctag">@param</span> scroll 需要显示的最下方View</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">addLayoutListener</span><span class="params">(<span class="keyword">final</span> View main, <span class="keyword">final</span> View scroll)</span> </span>&#123;</div><div class="line">	main.getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span>  ViewTreeObserver.OnGlobalLayoutListener() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">                Rect rect = <span class="keyword">new</span> Rect();</div><div class="line">                <span class="comment">//1、获取main在窗体的可视区域</span></div><div class="line">                main.getWindowVisibleDisplayFrame(rect);</div><div class="line">                <span class="comment">//2、获取main在窗体的不可视区域高度，在键盘没有弹起时，main.getRootView().getHeight()调节度应该和rect.bottom高度一样</span></div><div class="line">                <span class="keyword">int</span> mainInvisibleHeight = main.getRootView().getHeight() - rect.bottom;</div><div class="line">                <span class="keyword">int</span> screenHeight = main.getRootView().getHeight();<span class="comment">//屏幕高度</span></div><div class="line">                <span class="comment">//3、不可见区域大于屏幕本身高度的1/4：说明键盘弹起了</span></div><div class="line">                <span class="keyword">if</span> (mainInvisibleHeight &gt; screenHeight / <span class="number">4</span>) &#123;</div><div class="line">                    <span class="keyword">int</span>[] location = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</div><div class="line">                    scroll.getLocationInWindow(location);</div><div class="line">                    <span class="comment">// 4､获取Scroll的窗体坐标，算出main需要滚动的高度</span></div><div class="line">                    <span class="keyword">int</span> srollHeight = (location[<span class="number">1</span>] + scroll.getHeight()) - rect.bottom;</div><div class="line">                    <span class="comment">//5､让界面整体上移键盘的高度</span></div><div class="line">                    main.scrollTo(<span class="number">0</span>, srollHeight);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="comment">//3、不可见区域小于屏幕高度1/4时,说明键盘隐藏了，把界面下移，移回到原有高度</span></div><div class="line">                    main.scrollTo(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">        		&#125;</div><div class="line">    		&#125;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>此方法通过监听Activity最外层布局控件来检测软键盘是否弹出，然后去手动调用控件的scrollTo方法达到调整布局目的。</p>
+<h3 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h3><p>此种方法需要在当前界面写比较多的代码，在某些手机上，若输入时，软键盘高度是可变的，如中英文切换，高度变化时，会发现适配的不大好。如下图：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FkeMDvMrmpqiAagMm2xTPeIq-nMV.gif" alt=""><br>从上图可以看出，如果键盘高度变化，键盘还是会挡住登录按钮。</p>
+<h2 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h2><blockquote>
+<p>适配键盘高度变化情况，当键盘弹起时，让界面整体上移；键盘收起，让界面整体下移<br>此方法主要是通过在需要移动的控件外套一层scrollView，同时最布局最外层使用自定义view监听键盘弹出状态，计算键盘高度，再进行计算需要移动的位置，这个和方法三有点类似，但能适配键盘高度变化情况。</p>
+</blockquote>
+<h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><ol>
+<li><p>先写自定义View，实时临听界面键盘弹起状态，计算键盘高度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KeyboardLayout</span> <span class="keyword">extends</span> <span class="title">FrameLayout</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> KeyboardLayoutListener mListener;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> mIsKeyboardActive = <span class="keyword">false</span>; <span class="comment">//输入法是否激活</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mKeyboardHeight = <span class="number">0</span>; <span class="comment">// 输入法高度</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">KeyboardLayout</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">KeyboardLayout</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">KeyboardLayout</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line">        <span class="comment">// 监听布局变化</span></div><div class="line">        getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> KeyboardOnGlobalChangeListener());</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setKeyboardListener</span><span class="params">(KeyboardLayoutListener listener)</span> </span>&#123;</div><div class="line">        mListener = listener;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> KeyboardLayoutListener <span class="title">getKeyboardListener</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mListener;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isKeyboardActive</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mIsKeyboardActive;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 获取输入法高度</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span></div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getKeyboardHeight</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mKeyboardHeight;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">KeyboardLayoutListener</span> </span>&#123;</div><div class="line">        <span class="comment">/**</span></div><div class="line">         * <span class="doctag">@param</span> isActive       输入法是否激活</div><div class="line">         * <span class="doctag">@param</span> keyboardHeight 输入法面板高度</div><div class="line">         */</div><div class="line">        <span class="function"><span class="keyword">void</span> <span class="title">onKeyboardStateChanged</span><span class="params">(<span class="keyword">boolean</span> isActive, <span class="keyword">int</span> keyboardHeight)</span></span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">KeyboardOnGlobalChangeListener</span> <span class="keyword">implements</span> <span class="title">ViewTreeObserver</span>.<span class="title">OnGlobalLayoutListener</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">int</span> mScreenHeight = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getScreenHeight</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">if</span> (mScreenHeight &gt; <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span> mScreenHeight;</div><div class="line">            &#125;</div><div class="line">            mScreenHeight = ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE))</div><div class="line">                    .getDefaultDisplay().getHeight();</div><div class="line">            <span class="keyword">return</span> mScreenHeight;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span><span class="params">()</span> </span>&#123;</div><div class="line">            Rect rect = <span class="keyword">new</span> Rect();</div><div class="line">            <span class="comment">// 获取当前页面窗口的显示范围</span></div><div class="line">            ((Activity) getContext()).getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);</div><div class="line">            <span class="keyword">int</span> screenHeight = getScreenHeight();</div><div class="line">            <span class="keyword">int</span> keyboardHeight = screenHeight - rect.bottom; <span class="comment">// 输入法的高度</span></div><div class="line">            <span class="keyword">boolean</span> isActive = <span class="keyword">false</span>;</div><div class="line">            <span class="keyword">if</span> (Math.abs(keyboardHeight) &gt; screenHeight / <span class="number">4</span>) &#123;</div><div class="line">                isActive = <span class="keyword">true</span>; <span class="comment">// 超过屏幕五分之一则表示弹出了输入法</span></div><div class="line">                mKeyboardHeight = keyboardHeight;</div><div class="line">            &#125;</div><div class="line">            mIsKeyboardActive = isActive;</div><div class="line">            <span class="keyword">if</span> (mListener != <span class="keyword">null</span>) &#123;</div><div class="line">                mListener.onKeyboardStateChanged(isActive, keyboardHeight);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>xml文件编写，在界面最外层套上自定义view，在需要滚动的控件外层添加scrollView</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line">&lt;com<span class="selector-class">.example</span><span class="selector-class">.smilexie</span><span class="selector-class">.softboradblockedittext</span><span class="selector-class">.util</span><span class="selector-class">.KeyboardLayout</span></div><div class="line">        android:id=<span class="string">"@+id/main_ll"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span></div><div class="line">        android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_bg"</span></div><div class="line">        android:orientation=<span class="string">"vertical"</span>&gt;</div><div class="line"></div><div class="line">        &lt;ScrollView</div><div class="line">            android:id=<span class="string">"@+id/login_ll"</span></div><div class="line">            android:layout_width=<span class="string">"match_parent"</span></div><div class="line">            android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line"></div><div class="line">            &lt;LinearLayout</div><div class="line">                android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                android:orientation=<span class="string">"vertical"</span>&gt;</div><div class="line"></div><div class="line">                &lt;LinearLayout</div><div class="line">                    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                    android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                    android:layout_marginLeft=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginRight=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginTop=<span class="string">"200dp"</span></div><div class="line">                    android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_input_field_icon"</span></div><div class="line">                    android:orientation=<span class="string">"horizontal"</span>&gt;</div><div class="line"></div><div class="line">                    &lt;ImageView</div><div class="line">                        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">                        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                        android:layout_gravity=<span class="string">"center_vertical"</span></div><div class="line">                        android:layout_marginLeft=<span class="string">"20dp"</span></div><div class="line">                        android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_yonghuming_icon"</span> /&gt;</div><div class="line"></div><div class="line">                    &lt;EditText</div><div class="line">                        android:id=<span class="string">"@+id/ui_username_input"</span></div><div class="line">                        style=<span class="string">"@style/editext_input_style"</span></div><div class="line">                        android:layout_marginLeft=<span class="string">"40dp"</span></div><div class="line">                        android:layout_marginRight=<span class="string">"20dp"</span></div><div class="line">                        android:<span class="attribute">background</span>=<span class="string">"@null"</span></div><div class="line">                        android:hint=<span class="string">"@string/login_hint_username"</span></div><div class="line">                        android:imeOptions=<span class="string">"actionNext"</span></div><div class="line">                        android:textColor=<span class="string">"@android:color/white"</span></div><div class="line">                        android:textColorHint=<span class="string">"@android:color/white"</span>&gt;</div><div class="line"></div><div class="line">                        &lt;requestFocus /&gt;</div><div class="line">                    &lt;/EditText&gt;</div><div class="line">                &lt;/LinearLayout&gt;</div><div class="line"></div><div class="line"></div><div class="line">                &lt;LinearLayout</div><div class="line">                    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                    android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                    android:layout_marginLeft=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginRight=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginTop=<span class="string">"20dp"</span></div><div class="line">                    android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_input_field_icon"</span></div><div class="line">                    android:orientation=<span class="string">"horizontal"</span>&gt;</div><div class="line"></div><div class="line">                    &lt;ImageView</div><div class="line">                        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">                        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                        android:layout_gravity=<span class="string">"center_vertical"</span></div><div class="line">                        android:layout_marginLeft=<span class="string">"20dp"</span></div><div class="line">                        android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_mima_icon"</span> /&gt;</div><div class="line"></div><div class="line"></div><div class="line">                    &lt;EditText</div><div class="line">                        android:id=<span class="string">"@+id/ui_password_input"</span></div><div class="line">                        style=<span class="string">"@style/editext_input_style"</span></div><div class="line">                        android:layout_marginLeft=<span class="string">"40dp"</span></div><div class="line">                        android:layout_marginRight=<span class="string">"20dp"</span></div><div class="line">                        android:<span class="attribute">background</span>=<span class="string">"@null"</span></div><div class="line">                        android:hint=<span class="string">"@string/login_hint_pwd"</span></div><div class="line">                        android:imeOptions=<span class="string">"actionDone"</span></div><div class="line">                        android:inputType=<span class="string">"textPassword"</span></div><div class="line">                        android:textColor=<span class="string">"@android:color/white"</span></div><div class="line">                        android:textColorHint=<span class="string">"@android:color/white"</span>&gt;&lt;/EditText&gt;</div><div class="line">                &lt;/LinearLayout&gt;</div><div class="line"></div><div class="line">                &lt;Button</div><div class="line">                    android:id=<span class="string">"@+id/login_btn"</span></div><div class="line">                    android:layout_width=<span class="string">"match_parent"</span></div><div class="line">                    android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">                    android:layout_marginLeft=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginRight=<span class="string">"50dp"</span></div><div class="line">                    android:layout_marginTop=<span class="string">"20dp"</span></div><div class="line">                    android:<span class="attribute">background</span>=<span class="string">"@mipmap/login_button_bg_icon"</span></div><div class="line">                    android:text=<span class="string">"@string/login"</span></div><div class="line">                    android:textColor=<span class="string">"@color/titlebar_main_color"</span></div><div class="line">                    android:textSize=<span class="string">"@dimen/font_normal"</span> /&gt;</div><div class="line">            &lt;/LinearLayout&gt;</div><div class="line">        &lt;/ScrollView&gt;</div><div class="line">&lt;/com<span class="selector-class">.example</span><span class="selector-class">.smilexie</span><span class="selector-class">.softboradblockedittext</span><span class="selector-class">.util</span><span class="selector-class">.KeyboardLayout</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Activity调用，自定义view控件添加键盘响应，在键盘变化时调用scrollView的smoothScrollTo去滚动界面</p>
+</li>
+</ol>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 监听键盘状态，布局有变化时，靠scrollView去滚动界面</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">addLayoutListener</span><span class="params">()</span> </span>&#123;</div><div class="line">    bindingView.mainLl.setKeyboardListener(<span class="keyword">new</span>  KeyboardLayout.KeyboardLayoutListener() &#123;</div><div class="line">      	 <span class="meta">@Override</span></div><div class="line">            <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onKeyboardStateChanged</span><span class="params">(<span class="keyword">boolean</span> isActive, <span class="keyword">int</span> keyboardHeight)</span> </span>&#123;</div><div class="line">                Log.e(<span class="string">"onKeyboardStateChanged"</span>, <span class="string">"isActive:"</span> + isActive + <span class="string">" keyboardHeight:"</span> + keyboardHeight);</div><div class="line">                <span class="keyword">if</span> (isActive) &#123;</div><div class="line">                    scrollToBottom();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 弹出软键盘时将SVContainer滑到底</div><div class="line">     */</div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">scrollToBottom</span><span class="params">()</span> </span>&#123;</div><div class="line"></div><div class="line">        bindingView.loginLl.postDelayed(<span class="keyword">new</span> Runnable() &#123;</div><div class="line"></div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                bindingView.loginLl.smoothScrollTo(<span class="number">0</span>, bindingView.loginLl.getBottom() + SoftKeyInputHidWidget.getStatusBarHeight(LoginActivityForDiffkeyboardHeight.<span class="keyword">this</span>));</div><div class="line">            &#125;</div><div class="line">        &#125;, <span class="number">100</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>具体实现代码见demo中的LoginActivityForDiffkeyboardHeight类。实现效果如下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fprl5ny3iQ-8LXr6R_IOJNDsDlxY.gif" alt=""><br>可以看到键盘高度变化了，也不会影响界面布局</p>
+<h2 id="方法五"><a href="#方法五" class="headerlink" title="方法五"></a>方法五</h2><blockquote>
+<p>监听Activity顶层View，判断软键盘是否弹起，对界面重新绘制<br>使用场景：针对界面全屏或是沉浸式状态栏，界面包含比较多输入框，界面即使包裹了一层ScrollView,在键盘显示时，当前输入框下面的输入不能通过上下滑动界面来输入。</p>
+</blockquote>
+<h3 id="实现步骤-1"><a href="#实现步骤-1" class="headerlink" title="实现步骤"></a>实现步骤</h3><ol>
+<li>把SoftHideKeyBoardUtil类复制到项目中； </li>
+<li>在需要使用的Activity的onCreate方法中添加：SoftHideKeyBoardUtil.assistActivity(this);即可。</li>
+</ol>
+<h3 id="实现原理-1"><a href="#实现原理-1" class="headerlink" title="实现原理"></a>实现原理</h3><p>SoftHideKeyBoardUtil类具体代码如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 解决键盘档住输入框</div><div class="line"> * Created by SmileXie on 2017/4/3.</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SoftHideKeyBoardUtil</span> &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">assistActivity</span> (<span class="params">Activity activity</span>) </span>&#123;</div><div class="line">        <span class="keyword">new</span> SoftHideKeyBoardUtil(activity);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">private</span> View mChildOfContent;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> usableHeightPrevious;</div><div class="line">    <span class="keyword">private</span> FrameLayout.LayoutParams frameLayoutParams;</div><div class="line">    <span class="comment">//为适应华为小米等手机键盘上方出现黑条或不适配</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> contentHeight;<span class="comment">//获取setContentView本来view的高度</span></div><div class="line">    <span class="keyword">private</span> boolean isfirst = <span class="literal">true</span>;<span class="comment">//只用获取一次</span></div><div class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> statusBarHeight;<span class="comment">//状态栏高度</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SoftHideKeyBoardUtil</span>(<span class="params">Activity activity</span>) </span>&#123;</div><div class="line">   <span class="comment">//1､找到Activity的最外层布局控件，它其实是一个DecorView,它所用的控件就是FrameLayout</span></div><div class="line">        FrameLayout content = (FrameLayout) activity.findViewById(android.R.id.content);</div><div class="line">        <span class="comment">//2､获取到setContentView放进去的View</span></div><div class="line">        mChildOfContent = content.getChildAt(<span class="number">0</span>);</div><div class="line">        <span class="comment">//3､给Activity的xml布局设置View树监听，当布局有变化，如键盘弹出或收起时，都会回调此监听  </span></div><div class="line">          mChildOfContent.getViewTreeObserver().addOnGlobalLayoutListener(<span class="keyword">new</span> ViewTreeObserver.OnGlobalLayoutListener() &#123;</div><div class="line">        <span class="comment">//4､软键盘弹起会使GlobalLayout发生变化</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onGlobalLayout</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> (isfirst) &#123;</div><div class="line">                    contentHeight = mChildOfContent.getHeight();<span class="comment">//兼容华为等机型</span></div><div class="line">                    isfirst = <span class="literal">false</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="comment">//5､当前布局发生变化时，对Activity的xml布局进行重绘</span></div><div class="line">                possiblyResizeChildOfContent();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//6､获取到Activity的xml布局的放置参数</span></div><div class="line">        frameLayoutParams = (FrameLayout.LayoutParams) mChildOfContent.getLayoutParams();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// 获取界面可用高度，如果软键盘弹起后，Activity的xml布局可用高度需要减去键盘高度  </span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">possiblyResizeChildOfContent</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">//1､获取当前界面可用高度，键盘弹起后，当前界面可用布局会减少键盘的高度</span></div><div class="line">        <span class="keyword">int</span> usableHeightNow = computeUsableHeight();</div><div class="line">        <span class="comment">//2､如果当前可用高度和原始值不一样</span></div><div class="line">        <span class="keyword">if</span> (usableHeightNow != usableHeightPrevious) &#123;</div><div class="line">            <span class="comment">//3､获取Activity中xml中布局在当前界面显示的高度</span></div><div class="line">            <span class="keyword">int</span> usableHeightSansKeyboard = mChildOfContent.getRootView().getHeight();</div><div class="line">            <span class="comment">//4､Activity中xml布局的高度-当前可用高度</span></div><div class="line">            <span class="keyword">int</span> heightDifference = usableHeightSansKeyboard - usableHeightNow;</div><div class="line">            <span class="comment">//5､高度差大于屏幕1/4时，说明键盘弹出</span></div><div class="line">            <span class="keyword">if</span> (heightDifference &gt; (usableHeightSansKeyboard/<span class="number">4</span>)) &#123;</div><div class="line">                <span class="comment">// 6､键盘弹出了，Activity的xml布局高度应当减去键盘高度</span></div><div class="line">                <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT)&#123;</div><div class="line">                    frameLayoutParams.height = usableHeightSansKeyboard - heightDifference + statusBarHeight;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    frameLayoutParams.height = usableHeightSansKeyboard - heightDifference;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                frameLayoutParams.height = contentHeight;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//7､ 重绘Activity的xml布局</span></div><div class="line">            mChildOfContent.requestLayout();</div><div class="line">            usableHeightPrevious = usableHeightNow;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">computeUsableHeight</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        Rect r = <span class="keyword">new</span> Rect();</div><div class="line">        mChildOfContent.getWindowVisibleDisplayFrame(r);</div><div class="line">        <span class="comment">// 全屏模式下：直接返回r.bottom，r.top其实是状态栏的高度</span></div><div class="line">        <span class="keyword">return</span> (r.bottom - r.top);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h3><p>( 1 ) 找到Activity的最外层布局控件，我们知道所有的Activity都是DecorView，它就是一个FrameLayout控件，该控件id是系统写死叫R.id.content，就是我们setContentView时，把相应的View放在此FrameLayout控件里<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">FrameLayout content</span> = (FrameLayout) activity.findViewById(android.R.id.content);</div></pre></td></tr></table></figure></p>
+<p>所以content.getChildAt(0)获取到的mChildOfContent，也就是我们用setContentView放进去的View。 </p>
+<p>( 2 ) 给我们的Activity的xml布局View设置一个Listener监听<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mChildOfContent.getViewTreeObserver().<span class="keyword">addOnGlobalLayoutListener(&#123; </span></div><div class="line">        possiblyResizeChildOfContent()<span class="comment">;</span></div><div class="line">&#125;)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>View.getViewTreeObserver()可以获取一个ViewTreeObserver对象——它是一个观察者，用以监听当前View树所发生的变化。这里所注册的addOnGlobalLayoutListener，就是会在当前的View树的全局布局（GlobalLayout）发生变化、或者其中的View可视状态有变化时，进行通知回调。『软键盘弹出/隐 』都能监听到。</p>
+<p>( 3 ) 获取当前界面可用高度<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">int</span> computeUsableHeight() &#123;</div><div class="line">    Rect <span class="built_in">rect</span> = <span class="keyword">new</span> Rect();</div><div class="line">    mChildOfContent.getWindowVisibleDisplayFrame(<span class="built_in">rect</span>);</div><div class="line">    <span class="comment">// rect.top其实是状态栏的高度，如果是全屏主题，直接 return rect.bottom就可以了</span></div><div class="line">    <span class="built_in">return</span> (<span class="built_in">rect</span>.bottom - <span class="built_in">rect</span>.top);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如下图所示：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fu0LdpFKY1wxCoC-_00ybugeipUu.png" alt=""></p>
+<p>( 4 ) 重设高度， 我们计算出的可用高度，是目前在视觉效果上能看到的界面高度。但当前界面的实际高度是比可用高度要多出一个软键盘的距离的。</p>
+<p>注意：如果既使用了沉浸式状态栏，又加了fitSystetemWindow=true属性，就需要在AndroidMainfest.xml注册Activity的地方添加上以下属性。因为你两种都用，系统不知道用哪种了。fitSystetemWindow已经有resize屏幕的作用。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>下面对上面几种方法进行对比：</p>
+<ul>
+<li><p>方法一：优点：使用简单，只需在Activity的AndroidMainfest.xml中设置windowSoftInput属性即可。<br>注意点：adjustResize属性必须要界面大小可以自身改变；<br>缺点：当输入框比较多时，当前输入框下方的输入框会初键盘挡住，须收起键盘再进入输入；使用adjustPan，输入框较多时，因它是把界面当成一个整体，只会显示一屏的高度，会把ActionBar顶上去。</p>
+</li>
+<li><p>方法二：优点：使用简单，只需在Activity的最外层布局包裹一个ScrollView即可。<br>注意点：不可使用adjustPan属性，否则ScrollView失效；<br>缺点：对于全屏时，在键盘显示时，无法上下滑动界面达到输入的目的；</p>
+</li>
+<li><p>方法三：优点：可以解决全屏时，键盘挡入按钮问题。<br>缺点：只要有此需求的Activity均需要获取到最外层控件和最后一个控件，监测键盘是否弹出，再调用控件的scrollTo方法对界面整体上移或是下移。代码冗余。对于键盘高度变化时，适配不好。</p>
+</li>
+<li><p>方法四：优点：可以解决全屏时，键盘挡入按钮问题。<br>缺点：只要有此需求的Activity均需要获取到最外层控件和最后一个控件，布局多出一层。</p>
+</li>
+<li><p>方法五：优点：可以解决全屏时，键盘挡入输入框问题。只需要写一个全局类，其他有需求的界面直接在onCreate方法里调用此类的全局方法，即可。<br>缺点：多用了一个类。</p>
+</li>
+</ul>
+<p>综上所述： </p>
+<ol>
+<li>当输入框比较少时，界面只有一个输入框时，可以通过方法一设置adjustPan； </li>
+<li>如果对于非全屏/非沉浸式状态栏需求，只需要使用方法二ScrollView+adjustResize； </li>
+<li>如果对于使用沉浸式状态栏，使用fitSystemWindow=true属性，按道理android系统已经做好适配，键盘不会挡住输入框； </li>
+<li>如果全屏/沉浸式状态栏界面，类似于登录界面，有需要把登录键钮或是评论按钮也顶起，如果键盘没有变化需求，可以使用方法三，若需要适配键盘高度变化，则需要使用方法四； </li>
+<li>如果界面使用全屏或沉浸式状态栏，没有使用fitSystemWindow=true属性，一般如需要用到抽屈而且状态栏颜色也需要跟着变化，则选择方法五更恰当。</li>
+</ol>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=4154790&auto=1&height=66"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/10/17-05-10/" title="http://dinson.win/2017/05/10/17-05-10/" target="_blank">http://dinson.win/2017/05/10/17-05-10/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法一"><span class="toc-text">方法一</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#adjustPan"><span class="toc-text">adjustPan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adjustResize"><span class="toc-text">adjustResize</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法二"><span class="toc-text">方法二</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#只使用ScrollView"><span class="toc-text">只使用ScrollView</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView-adjustPan"><span class="toc-text">ScrollView+adjustPan</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ScrollView-adjustResize"><span class="toc-text">ScrollView+adjustResize</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#沉浸式状态栏／透明状态栏情况下"><span class="toc-text">沉浸式状态栏／透明状态栏情况下</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法三"><span class="toc-text">方法三</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主要实现步骤"><span class="toc-text">主要实现步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-text">实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#弊端"><span class="toc-text">弊端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法四"><span class="toc-text">方法四</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现步骤"><span class="toc-text">实现步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法五"><span class="toc-text">方法五</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现步骤-1"><span class="toc-text">实现步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理-1"><span class="toc-text">实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理分析"><span class="toc-text">原理分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

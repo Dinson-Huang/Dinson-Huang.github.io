@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android keycode</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2016/07/21/16-07-21/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android keycode</h1>
+    <p class="post-meta">
+      <span class="post-time">2016-07-21</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/安卓按键/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>安卓按键</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Android 常用按键大全</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="电话键"><a href="#电话键" class="headerlink" title="电话键"></a>电话键</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+<th>键值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_CALL</td>
+<td>拨号键</td>
+<td>5</td>
+</tr>
+<tr>
+<td>KEYCODE_ENDCALL</td>
+<td>挂机键</td>
+<td>6</td>
+</tr>
+<tr>
+<td>KEYCODE_HOME</td>
+<td>按键Home</td>
+<td>3</td>
+</tr>
+<tr>
+<td>KEYCODE_MENU</td>
+<td>菜单键</td>
+<td>82</td>
+</tr>
+<tr>
+<td>KEYCODE_BACK</td>
+<td>返回键</td>
+<td>4</td>
+</tr>
+<tr>
+<td>KEYCODE_SEARCH</td>
+<td>搜索键</td>
+<td>84</td>
+</tr>
+<tr>
+<td>KEYCODE_CAMERA</td>
+<td>拍照键</td>
+<td>27</td>
+</tr>
+<tr>
+<td>KEYCODE_FOCUS</td>
+<td>拍照对焦键</td>
+<td>80</td>
+</tr>
+<tr>
+<td>KEYCODE_POWER</td>
+<td>电源键</td>
+<td>26</td>
+</tr>
+<tr>
+<td>KEYCODE_NOTIFICATION</td>
+<td>通知键</td>
+<td>83</td>
+</tr>
+<tr>
+<td>KEYCODE_MUTE</td>
+<td>话筒静音键</td>
+<td>91</td>
+</tr>
+<tr>
+<td>KEYCODE_VOLUME_MUTE</td>
+<td>扬声器静音键</td>
+<td>164</td>
+</tr>
+<tr>
+<td>KEYCODE_VOLUME_UP</td>
+<td>音量增加键</td>
+<td>24</td>
+</tr>
+<tr>
+<td>KEYCODE_VOLUME_DOWN</td>
+<td>音量减小键</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+<p>##控制键</p>
+<table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+<th>键值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_ENTER</td>
+<td>回车键</td>
+<td>66</td>
+</tr>
+<tr>
+<td>KEYCODE_ESCAPE</td>
+<td>ESC键</td>
+<td>111</td>
+</tr>
+<tr>
+<td>KEYCODE_DPAD_CENTER</td>
+<td>导航键 确定键</td>
+<td>23</td>
+</tr>
+<tr>
+<td>KEYCODE_DPAD_UP</td>
+<td>导航键 向上</td>
+<td>19</td>
+</tr>
+<tr>
+<td>KEYCODE_DPAD_DOWN</td>
+<td>导航键 向下</td>
+<td>20</td>
+</tr>
+<tr>
+<td>KEYCODE_DPAD_LEFT</td>
+<td>导航键 向左</td>
+<td>21</td>
+</tr>
+<tr>
+<td>KEYCODE_DPAD_RIGHT</td>
+<td>导航键 向右</td>
+<td>22</td>
+</tr>
+<tr>
+<td>KEYCODE_MOVE_HOME</td>
+<td>光标移动到开始键</td>
+<td>122</td>
+</tr>
+<tr>
+<td>KEYCODE_MOVE_END</td>
+<td>光标移动到末尾键</td>
+<td>123</td>
+</tr>
+<tr>
+<td>KEYCODE_PAGE_UP</td>
+<td>向上翻页键</td>
+<td>92</td>
+</tr>
+<tr>
+<td>KEYCODE_PAGE_DOWN</td>
+<td>向下翻页键</td>
+<td>93</td>
+</tr>
+<tr>
+<td>KEYCODE_DEL</td>
+<td>退格键</td>
+<td>67</td>
+</tr>
+<tr>
+<td>KEYCODE_FORWARD_DEL</td>
+<td>删除键</td>
+<td>112</td>
+</tr>
+<tr>
+<td>KEYCODE_INSERT</td>
+<td>插入键</td>
+<td>124</td>
+</tr>
+<tr>
+<td>KEYCODE_TAB</td>
+<td>Tab键</td>
+<td>61</td>
+</tr>
+<tr>
+<td>KEYCODE_NUM_LOCK</td>
+<td>小键盘锁</td>
+<td>143</td>
+</tr>
+<tr>
+<td>KEYCODE_CAPS_LOCK</td>
+<td>大写锁定键</td>
+<td>115</td>
+</tr>
+<tr>
+<td>KEYCODE_BREAK</td>
+<td>Break/Pause键</td>
+<td>121</td>
+</tr>
+<tr>
+<td>KEYCODE_SCROLL_LOCK</td>
+<td>滚动锁定键</td>
+<td>116</td>
+</tr>
+<tr>
+<td>KEYCODE_ZOOM_IN</td>
+<td>放大键</td>
+<td>168</td>
+</tr>
+<tr>
+<td>KEYCODE_ZOOM_OUT</td>
+<td>缩小键</td>
+<td>169</td>
+</tr>
+</tbody>
+</table>
+<h2 id="组合键"><a href="#组合键" class="headerlink" title="组合键"></a>组合键</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_ALT_LEFT</td>
+<td>Alt+Left</td>
+</tr>
+<tr>
+<td>KEYCODE_ALT_RIGHT</td>
+<td>Alt+Right</td>
+</tr>
+<tr>
+<td>KEYCODE_CTRL_LEFT</td>
+<td>Control+Left</td>
+</tr>
+<tr>
+<td>KEYCODE_CTRL_RIGHT</td>
+<td>Control+Right</td>
+</tr>
+<tr>
+<td>KEYCODE_SHIFT_LEFT</td>
+<td>Shift+Left</td>
+</tr>
+<tr>
+<td>KEYCODE_SHIFT_RIGHT</td>
+<td>Shift+Right</td>
+</tr>
+</tbody>
+</table>
+<h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+<th>键值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_0</td>
+<td>按键’0’</td>
+<td>7</td>
+</tr>
+<tr>
+<td>KEYCODE_1</td>
+<td>按键’1’</td>
+<td>8</td>
+</tr>
+<tr>
+<td>KEYCODE_2</td>
+<td>按键’2’</td>
+<td>9</td>
+</tr>
+<tr>
+<td>KEYCODE_3</td>
+<td>按键’3’</td>
+<td>10</td>
+</tr>
+<tr>
+<td>KEYCODE_4</td>
+<td>按键’4’</td>
+<td>11</td>
+</tr>
+<tr>
+<td>KEYCODE_5</td>
+<td>按键’5’</td>
+<td>12</td>
+</tr>
+<tr>
+<td>KEYCODE_6</td>
+<td>按键’6’</td>
+<td>13</td>
+</tr>
+<tr>
+<td>KEYCODE_7</td>
+<td>按键’7’</td>
+<td>14</td>
+</tr>
+<tr>
+<td>KEYCODE_8</td>
+<td>按键’8’</td>
+<td>15</td>
+</tr>
+<tr>
+<td>KEYCODE_9</td>
+<td>按键’9’</td>
+<td>16</td>
+</tr>
+<tr>
+<td>KEYCODE_A</td>
+<td>按键’A’</td>
+<td>29</td>
+</tr>
+<tr>
+<td>KEYCODE_B</td>
+<td>按键’B’</td>
+<td>30</td>
+</tr>
+<tr>
+<td>KEYCODE_C</td>
+<td>按键’C’</td>
+<td>31</td>
+</tr>
+<tr>
+<td>KEYCODE_D</td>
+<td>按键’D’</td>
+<td>32</td>
+</tr>
+<tr>
+<td>KEYCODE_E</td>
+<td>按键’E’</td>
+<td>33</td>
+</tr>
+<tr>
+<td>KEYCODE_F</td>
+<td>按键’F’</td>
+<td>34</td>
+</tr>
+<tr>
+<td>KEYCODE_G</td>
+<td>按键’G’</td>
+<td>35</td>
+</tr>
+<tr>
+<td>KEYCODE_H</td>
+<td>按键’H’</td>
+<td>36</td>
+</tr>
+<tr>
+<td>KEYCODE_I</td>
+<td>按键’I’</td>
+<td>37</td>
+</tr>
+<tr>
+<td>KEYCODE_J</td>
+<td>按键’J’</td>
+<td>38</td>
+</tr>
+<tr>
+<td>KEYCODE_K</td>
+<td>按键’K’</td>
+<td>39</td>
+</tr>
+<tr>
+<td>KEYCODE_L</td>
+<td>按键’L’</td>
+<td>40</td>
+</tr>
+<tr>
+<td>KEYCODE_M</td>
+<td>按键’M’</td>
+<td>41</td>
+</tr>
+<tr>
+<td>KEYCODE_N</td>
+<td>按键’N’</td>
+<td>42</td>
+</tr>
+<tr>
+<td>KEYCODE_O</td>
+<td>按键’O’</td>
+<td>43</td>
+</tr>
+<tr>
+<td>KEYCODE_P</td>
+<td>按键’P’</td>
+<td>44</td>
+</tr>
+<tr>
+<td>KEYCODE_Q</td>
+<td>按键’Q’</td>
+<td>45</td>
+</tr>
+<tr>
+<td>KEYCODE_R</td>
+<td>按键’R’</td>
+<td>46</td>
+</tr>
+<tr>
+<td>KEYCODE_S</td>
+<td>按键’S’</td>
+<td>47</td>
+</tr>
+<tr>
+<td>KEYCODE_T</td>
+<td>按键’T’</td>
+<td>48</td>
+</tr>
+<tr>
+<td>KEYCODE_U</td>
+<td>按键’U’</td>
+<td>49</td>
+</tr>
+<tr>
+<td>KEYCODE_V</td>
+<td>按键’V’</td>
+<td>50</td>
+</tr>
+<tr>
+<td>KEYCODE_W</td>
+<td>按键’W’</td>
+<td>51</td>
+</tr>
+<tr>
+<td>KEYCODE_X</td>
+<td>按键’X’</td>
+<td>52</td>
+</tr>
+<tr>
+<td>KEYCODE_Y</td>
+<td>按键’Y’</td>
+<td>53</td>
+</tr>
+<tr>
+<td>KEYCODE_Z</td>
+<td>按键’Z’</td>
+<td>54</td>
+</tr>
+</tbody>
+</table>
+<p>符号</p>
+<table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_PLUS</td>
+<td>按键’+’</td>
+</tr>
+<tr>
+<td>KEYCODE_MINUS</td>
+<td>按键’-‘</td>
+</tr>
+<tr>
+<td>KEYCODE_STAR</td>
+<td>按键’*’</td>
+</tr>
+<tr>
+<td>KEYCODE_SLASH</td>
+<td>按键’/‘</td>
+</tr>
+<tr>
+<td>KEYCODE_EQUALS</td>
+<td>按键’=’</td>
+</tr>
+<tr>
+<td>KEYCODE_AT</td>
+<td>按键’@’</td>
+</tr>
+<tr>
+<td>KEYCODE_POUND</td>
+<td>按键’#’</td>
+</tr>
+<tr>
+<td>KEYCODE_APOSTROPHE</td>
+<td>按键’’’ (单引号)</td>
+</tr>
+<tr>
+<td>KEYCODE_BACKSLASH</td>
+<td>按键’\’</td>
+</tr>
+<tr>
+<td>KEYCODE_COMMA</td>
+<td>按键’,’</td>
+</tr>
+<tr>
+<td>KEYCODE_PERIOD</td>
+<td>按键’.’</td>
+</tr>
+<tr>
+<td>KEYCODE_LEFT_BRACKET</td>
+<td>按键’[‘</td>
+</tr>
+<tr>
+<td>KEYCODE_RIGHT_BRACKET</td>
+<td>按键’]’</td>
+</tr>
+<tr>
+<td>KEYCODE_SEMICOLON</td>
+<td>按键’;’</td>
+</tr>
+<tr>
+<td>KEYCODE_GRAVE</td>
+<td>按键’`’</td>
+</tr>
+<tr>
+<td>KEYCODE_SPACE</td>
+<td>空格键</td>
+</tr>
+</tbody>
+</table>
+<h2 id="小键盘"><a href="#小键盘" class="headerlink" title="小键盘"></a>小键盘</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_NUMPAD_0</td>
+<td>小键盘按键’0’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_1</td>
+<td>小键盘按键’1’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_2</td>
+<td>小键盘按键’2’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_3</td>
+<td>小键盘按键’3’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_4</td>
+<td>小键盘按键’4’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_5</td>
+<td>小键盘按键’5’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_6</td>
+<td>小键盘按键’6’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_7</td>
+<td>小键盘按键’7’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_8</td>
+<td>小键盘按键’8’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_9</td>
+<td>小键盘按键’9’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_ADD</td>
+<td>小键盘按键’+’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_SUBTRACT</td>
+<td>小键盘按键’-‘</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_MULTIPLY</td>
+<td>小键盘按键’*’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_DIVIDE</td>
+<td>小键盘按键’/‘</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_EQUALS</td>
+<td>小键盘按键’=’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_COMMA</td>
+<td>小键盘按键’,’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_DOT</td>
+<td>小键盘按键’.’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_LEFT_PAREN</td>
+<td>小键盘按键’(‘</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_RIGHT_PAREN</td>
+<td>小键盘按键’)’</td>
+</tr>
+<tr>
+<td>KEYCODE_NUMPAD_ENTER</td>
+<td>小键盘按键回车</td>
+</tr>
+</tbody>
+</table>
+<h2 id="功能键"><a href="#功能键" class="headerlink" title="功能键"></a>功能键</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_F1</td>
+<td>按键F1</td>
+</tr>
+<tr>
+<td>KEYCODE_F2</td>
+<td>按键F2</td>
+</tr>
+<tr>
+<td>KEYCODE_F3</td>
+<td>按键F3</td>
+</tr>
+<tr>
+<td>KEYCODE_F4</td>
+<td>按键F4</td>
+</tr>
+<tr>
+<td>KEYCODE_F5</td>
+<td>按键F5</td>
+</tr>
+<tr>
+<td>KEYCODE_F6</td>
+<td>按键F6</td>
+</tr>
+<tr>
+<td>KEYCODE_F7</td>
+<td>按键F7</td>
+</tr>
+<tr>
+<td>KEYCODE_F8</td>
+<td>按键F8</td>
+</tr>
+<tr>
+<td>KEYCODE_F9</td>
+<td>按键F9</td>
+</tr>
+<tr>
+<td>KEYCODE_F10</td>
+<td>按键F10</td>
+</tr>
+<tr>
+<td>KEYCODE_F11</td>
+<td>按键F11</td>
+</tr>
+<tr>
+<td>KEYCODE_F12</td>
+<td>按键F12</td>
+</tr>
+</tbody>
+</table>
+<h2 id="多媒体键"><a href="#多媒体键" class="headerlink" title="多媒体键"></a>多媒体键</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_MEDIA_PLAY</td>
+<td>多媒体键 播放</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_STOP</td>
+<td>多媒体键 停止</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_PAUSE</td>
+<td>多媒体键 暂停</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_PLAY_PAUSE</td>
+<td>多媒体键 播放/暂停</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_FAST_FORWARD</td>
+<td>多媒体键 快进</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_REWIND</td>
+<td>多媒体键 快退</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_NEXT</td>
+<td>多媒体键 下一首</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_PREVIOUS</td>
+<td>多媒体键 上一首</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_CLOSE</td>
+<td>多媒体键 关闭</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_EJECT</td>
+<td>多媒体键 弹出</td>
+</tr>
+<tr>
+<td>KEYCODE_MEDIA_RECORD</td>
+<td>多媒体键 录音</td>
+</tr>
+</tbody>
+</table>
+<h2 id="手柄按键"><a href="#手柄按键" class="headerlink" title="手柄按键"></a>手柄按键</h2><table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_BUTTON_1</td>
+<td>通用游戏手柄按钮 #1</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_2</td>
+<td>通用游戏手柄按钮 #2</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_3</td>
+<td>通用游戏手柄按钮 #3</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_4</td>
+<td>通用游戏手柄按钮 #4</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_5</td>
+<td>通用游戏手柄按钮 #5</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_6</td>
+<td>通用游戏手柄按钮 #6</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_7</td>
+<td>通用游戏手柄按钮 #7</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_8</td>
+<td>通用游戏手柄按钮 #8</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_9</td>
+<td>通用游戏手柄按钮 #9</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_10</td>
+<td>通用游戏手柄按钮 #10</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_11</td>
+<td>通用游戏手柄按钮 #11</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_12</td>
+<td>通用游戏手柄按钮 #12</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_13</td>
+<td>通用游戏手柄按钮 #13</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_14</td>
+<td>通用游戏手柄按钮 #14</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_15</td>
+<td>通用游戏手柄按钮 #15</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_16</td>
+<td>通用游戏手柄按钮 #16</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_A</td>
+<td>游戏手柄按钮 A</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_B</td>
+<td>游戏手柄按钮 B</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_C</td>
+<td>游戏手柄按钮 C</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_X</td>
+<td>游戏手柄按钮 X</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_Y</td>
+<td>游戏手柄按钮 Y</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_Z</td>
+<td>游戏手柄按钮 Z</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_L1</td>
+<td>游戏手柄按钮 L1</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_L2</td>
+<td>游戏手柄按钮 L2</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_R1</td>
+<td>游戏手柄按钮 R1</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_R2</td>
+<td>游戏手柄按钮 R2</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_MODE</td>
+<td>游戏手柄按钮 Mode</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_SELECT</td>
+<td>游戏手柄按钮 Select</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_START</td>
+<td>游戏手柄按钮 Start</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_THUMBL</td>
+<td>Left Thumb Button</td>
+</tr>
+<tr>
+<td>KEYCODE_BUTTON_THUMBR</td>
+<td>Right Thumb Button</td>
+</tr>
+</tbody>
+</table>
+<p>待查</p>
+<table>
+<thead>
+<tr>
+<th>键名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEYCODE_NUM</td>
+<td>按键Number modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_INFO</td>
+<td>按键Info</td>
+</tr>
+<tr>
+<td>KEYCODE_APP_SWITCH</td>
+<td>按键App switch</td>
+</tr>
+<tr>
+<td>KEYCODE_BOOKMARK</td>
+<td>按键Bookmark</td>
+</tr>
+<tr>
+<td>KEYCODE_AVR_INPUT</td>
+<td>按键A/V Receiver input</td>
+</tr>
+<tr>
+<td>KEYCODE_AVR_POWER</td>
+<td>按键A/V Receiver power</td>
+</tr>
+<tr>
+<td>KEYCODE_CAPTIONS</td>
+<td>按键Toggle captions</td>
+</tr>
+<tr>
+<td>KEYCODE_CHANNEL_DOWN</td>
+<td>按键Channel down</td>
+</tr>
+<tr>
+<td>KEYCODE_CHANNEL_UP</td>
+<td>按键Channel up</td>
+</tr>
+<tr>
+<td>KEYCODE_CLEAR</td>
+<td>按键Clear</td>
+</tr>
+<tr>
+<td>KEYCODE_DVR</td>
+<td>按键DVR</td>
+</tr>
+<tr>
+<td>KEYCODE_ENVELOPE</td>
+<td>按键Envelope special function</td>
+</tr>
+<tr>
+<td>KEYCODE_EXPLORER</td>
+<td>按键Explorer special function</td>
+</tr>
+<tr>
+<td>KEYCODE_FORWARD</td>
+<td>按键Forward</td>
+</tr>
+<tr>
+<td>KEYCODE_FORWARD_DEL</td>
+<td>按键Forward Delete</td>
+</tr>
+<tr>
+<td>KEYCODE_FUNCTION</td>
+<td>按键Function modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_GUIDE</td>
+<td>按键Guide</td>
+</tr>
+<tr>
+<td>KEYCODE_HEADSETHOOK</td>
+<td>按键Headset Hook</td>
+</tr>
+<tr>
+<td>KEYCODE_META_LEFT</td>
+<td>按键Left Meta modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_META_RIGHT</td>
+<td>按键Right Meta modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_PICTSYMBOLS</td>
+<td>按键Picture Symbols modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_PROG_BLUE</td>
+<td>按键Blue “programmable”</td>
+</tr>
+<tr>
+<td>KEYCODE_PROG_GREEN</td>
+<td>按键Green “programmable”</td>
+</tr>
+<tr>
+<td>KEYCODE_PROG_RED</td>
+<td>按键Red “programmable”</td>
+</tr>
+<tr>
+<td>KEYCODE_PROG_YELLOW</td>
+<td>按键Yellow “programmable”</td>
+</tr>
+<tr>
+<td>KEYCODE_SETTINGS</td>
+<td>按键Settings</td>
+</tr>
+<tr>
+<td>KEYCODE_SOFT_LEFT</td>
+<td>按键Soft Left</td>
+</tr>
+<tr>
+<td>KEYCODE_SOFT_RIGHT</td>
+<td>按键Soft Right</td>
+</tr>
+<tr>
+<td>KEYCODE_STB_INPUT</td>
+<td>按键Set-top-box input</td>
+</tr>
+<tr>
+<td>KEYCODE_STB_POWER</td>
+<td>按键Set-top-box power</td>
+</tr>
+<tr>
+<td>KEYCODE_SWITCH_CHARSET</td>
+<td>按键Switch Charset modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_SYM</td>
+<td>按键Symbol modifier</td>
+</tr>
+<tr>
+<td>KEYCODE_SYSRQ</td>
+<td>按键System Request / Print Screen</td>
+</tr>
+<tr>
+<td>KEYCODE_TV</td>
+<td>按键TV</td>
+</tr>
+<tr>
+<td>KEYCODE_TV_INPUT</td>
+<td>按键TV input</td>
+</tr>
+<tr>
+<td>KEYCODE_TV_POWER</td>
+<td>按键TV power</td>
+</tr>
+<tr>
+<td>KEYCODE_WINDOW</td>
+<td>按键Window</td>
+</tr>
+<tr>
+<td>KEYCODE_UNKNOWN</td>
+<td>未知按键</td>
+</tr>
+</tbody>
+</table>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=139551&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2016/07/21/16-07-21/" title="http://dinson.win/2016/07/21/16-07-21/" target="_blank">http://dinson.win/2016/07/21/16-07-21/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#电话键"><span class="toc-text">电话键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合键"><span class="toc-text">组合键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本"><span class="toc-text">基本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小键盘"><span class="toc-text">小键盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#功能键"><span class="toc-text">功能键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多媒体键"><span class="toc-text">多媒体键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#手柄按键"><span class="toc-text">手柄按键</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

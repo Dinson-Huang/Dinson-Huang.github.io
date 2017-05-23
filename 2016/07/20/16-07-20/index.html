@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android自动测试之Monkey工具</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2016/07/20/16-07-20/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android自动测试之Monkey工具</h1>
+    <p class="post-meta">
+      <span class="post-time">2016-07-20</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/Monkey工具/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Monkey工具</a>
+      
+      <a href="/tags/自动化测试/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>自动化测试</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在开发的应用程序进行压力测试，可以根据获取的log信息进行修复。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Monkey的基本使用"><a href="#Monkey的基本使用" class="headerlink" title="Monkey的基本使用"></a>Monkey的基本使用</h2><blockquote>
+<ol>
+<li>连接设备：adb devices 查看设备是否连接成功</li>
+<li>adb shell 进入shell界面</li>
+<li>设备安装要运行的程序包或apk（或者通过查看data/data下的程序包)：adb安装apk：在所安装的apk路径下，使用adb install **.apk</li>
+<li>执行monkey测试命令：monkey -p your.package.name -v 500</li>
+</ol>
+</blockquote>
+<p>在不知道所安装的apk的包名的时候，采用adb命令查看包名：</p>
+<blockquote>
+<ol>
+<li>清除logcat内容，使用命令adb logcat -c</li>
+<li>启动logcat，使用命令adb logcat ActivityManager:I *:s</li>
+<li>启动要查看的程序，</li>
+<li>打开已安装的apk，查看出现的ActivityManager信息，cmp=name，此name就是打开的apk的包名。</li>
+</ol>
+</blockquote>
+<h2 id="Monkey命令使用"><a href="#Monkey命令使用" class="headerlink" title="Monkey命令使用"></a>Monkey命令使用</h2><ul>
+<li><p><strong>-help</strong><br>列出简单用法</p>
+</li>
+<li><p><strong>-v</strong><br>作用：命令行上的每一个-v都将增加反馈信息的详细级别。<br>Lv0：默认，除了启动、测试完成和最终结果外只提供较少的信息。<br>Lv1：提供了较为详细的测试信息，如逐个发送到Activity的事件信息。<br>Lv2：提供了更多的设置信息，如测试中选中或未选中的Activity信息。<br>例：adb shell monkey -v 10<br>  adb shell monkey -v -v 10<br>  adb shell monkey -v -v -v 10</p>
+</li>
+<li><p><strong>-s <seed></seed></strong><br>伪随机数生成器的seed值。如果用相同的seed值再次运行monkey，将生成相同的事件序列。<br>例： adb shell monkey -s 12345 -v 10</p>
+</li>
+<li><p><strong>-p <allowed-package-name></allowed-package-name></strong><br>如果你指定一个或多个包，Monkey将只允许访问这些包中的Activity。如果你的应用程序需要访问这些包(如选择联系人)以外的Activity，你需要指定这些包。如果你不指定任何包，Monkey将允许系统启动所有包的Activity。指定多个包，使用多个-p，一个-p后面接一个包名。<br>例： adb shell monkey -p com.android.browser -v 10 </p>
+</li>
+<li><p><strong>-c <main-category></main-category></strong><br>如果你指定一个或多个类别，Monkey将只允许系统启动这些指定类别中列出的Activity。如果你不指定任何类别，Monkey将选择谢列类别中列出的Activity，Intent.CATEGORY_LAUNCHER和Intent.CATEGORY_MONKEY。指定多个类别使用多个-c，每个-c指定一个类别。<br>例： adb shell monkey -p com.paipai.ershou -v 10 -c </p>
+</li>
+<li><p><strong>–ignore-crashes</strong><br>通常，应用发生崩溃或异常时Monkey会停止运行。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。</p>
+</li>
+<li><p><strong>–ignore-timeouts</strong><br>事件请求超时会影响monkey的测试。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。</p>
+</li>
+<li><p><strong>adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; monkeytest.txt</strong><br>保存测试日志</p>
+</li>
+</ul>
+<h2 id="九个事件及百分比控制"><a href="#九个事件及百分比控制" class="headerlink" title="九个事件及百分比控制"></a>九个事件及百分比控制</h2><p><code>0</code> <strong>–pct-touch <percent></percent></strong><br>    调整触摸事件的百分比(触摸事件是一个down-up事件，它发生在屏幕上的某单一位置)（——点击事件，涉及down、up）</p>
+<p><code>1</code> <strong>–pct-motion <percent></percent></strong><br>    调整动作事件的百分比(动作事件由屏幕上某处的一个down事件、一系列的伪随机事件和一个up事件组成) （——注：move事件，涉及down、up、move三个事件）</p>
+<p><code>2</code> <strong>–pct-pinchzoom <percent></percent></strong><br>    二指缩放百分比，即智能机上的放大缩小手势操作</p>
+<p><code>3</code> <strong>–pct-trackball <percent> </percent></strong><br>    调整轨迹事件的百分比(轨迹事件由一个或几个随机的移动组成，有时还伴随有点击)–（轨迹球）</p>
+<p><code>4</code> <strong>–pct-rotation <percent></percent></strong><br>    屏幕旋转百分比，横屏竖屏</p>
+<p><code>5</code> <strong>–pct-permission <percent></percent></strong><br>    权限变换测试</p>
+<p><code>6</code><strong>–pct-nav <percent></percent></strong><br>    调整“基本”导航事件的百分比(导航事件由来自方向输入设备的up/down/left/right组成)</p>
+<p><code>7</code><strong>–pct-majornav <percent> </percent></strong><br>    调整“主要”导航事件的百分比(这些导航事件通常引发图形界面中的动作，如：5-way键盘的中间按键、回退按键、菜单按键)</p>
+<p><code>8</code><strong>–pct-syskeys <percent></percent></strong><br>    调整“系统”按键事件的百分比(这些按键通常被保留，由系统使用，如Home、Back、Start Call、End Call及音量控制键)</p>
+<p><code>9</code><strong>–pct-appswitch <percent></percent></strong><br>    调整启动Activity的百分比。在随机间隔里，Monkey将执行一个startActivity()调用，作为最大程度覆盖包中全部Activity的一种方法。（从一个Activity跳转到另一个Activity）</p>
+<p><code>10</code><strong>–pct-flip <percent></percent></strong><br>    调整“键盘翻转”事件的百分比。    </p>
+<p><code>11</code><strong>–pct-anyevent <percent></percent></strong><br>    调整其它类型事件的百分比。它包罗了所有其它类型的事件，如：按键、其它不常用的设备按钮、等等。<br>红色的数字对应下面百分比对应的数字。比如下图中0：15.0%，表示分配–pct-touch事件15%。测试100次分配15次测试down-up。</p>
+<p>如果在monkey参数中不指定上述参数，这些动作都是随机分配的，9个动作其每个动作分配的百分比之和为100%，我们可以通过添加命令选项来控制每个事件的百分比，进而可以将操作限制在一定的范围内。<br>我们先来看一下不加动作百分比控制，系统默认分配事件百分比的情况<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvLtGNYniHZe0Z4UzzjG9Bvsjzk6.png" alt=""></p>
+<p>再看一下指定事件，控制事件百分比之后的情况<br><img src="http://ondlsj2sn.bkt.clouddn.com/FunYqkTAgsV-8KpRPmDN_qDkpX3g.png" alt=""></p>
+<h2 id="Monkey测试信息"><a href="#Monkey测试信息" class="headerlink" title="Monkey测试信息"></a>Monkey测试信息</h2><blockquote>
+<p>在Monkey测试过程中可能会出现程序崩溃(CRASH)和程序无响应的情况(ANR),要将测试的log信息获取到，从而解决bug。</p>
+</blockquote>
+<ul>
+<li><p>CRASH:即崩溃信息，程序在运行中非正常退出。 不设置忽略crashes，在测试过程中出现CRASH，会中断测试，并显示CRASH信息和seed信息<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fi_n0qusMRBTZCF8LzfVbOQj05Gy.png" alt=""><br>根据seed值来完成bug的复现：adb shell monkey -p com.feicuiedu.monkeytestdemo -s 1476474162566 -v 1000</p>
+</li>
+<li><p>ANR:同样在monkey测试过程中，如果出现ANR现象，会输出相应的信息，以ANR开头，获取到信息进行问题的解决，同样可以通过seed来进行复现。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FiBg8JdFLfnqL9U3c32bplyUzrz6.png" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p>附：如果在手动测试过程中出现ANR，日志信息出现在手机中：</p>
+<ul>
+<li>adb shell</li>
+<li>cd /data/anr 切换到设备路径下</li>
+<li>ls 可以看到traces.txt 里面即为log信息</li>
+</ul>
+</blockquote>
+<h2 id="MonkeyScript"><a href="#MonkeyScript" class="headerlink" title="MonkeyScript"></a>MonkeyScript</h2><blockquote>
+<p>MonkeyScript是monkey的脚本语言，是一组可以被Monkey识别的命令集合，可以帮我们完成一系列的被固定的重复性操作，Monkey通过脚本来进行测试，简单快捷、不需要任何工具，只是一个记事本文件，缺点是在坐标、按键等方面没有逻辑性。</p>
+</blockquote>
+<h3 id="脚本格式"><a href="#脚本格式" class="headerlink" title="脚本格式"></a>脚本格式</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#头文件、控制monkey发送消息的参数</span></div><div class="line">type=raw events</div><div class="line">count=10</div><div class="line">speed=1.0</div><div class="line"></div><div class="line"><span class="comment">#以下为monkey命令</span></div><div class="line">start data &gt;&gt;</div><div class="line">DispatchPress (KEYCODE_HOME)</div><div class="line">DispatchPress (KEYCODE_MENU)</div></pre></td></tr></table></figure>
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><blockquote>
+<p>常用API的介绍，其中keycode参考keycode列表</p>
+</blockquote>
+<ul>
+<li><p>LaunchActivity(pkg_name, cl_name)<br>  启动应用的Activity。参数：包名和启动的Activity。</p>
+</li>
+<li><p>Tap(x, y, tapDuration)<br>  模拟一次手指单击事件。参数：x,y为控件坐标，tapDuration为点击的持续时间，此参数可省略。</p>
+</li>
+<li><p>DispatchPress(keyName)<br>  按键。参数： keycode</p>
+</li>
+<li><p>RotateScreen(rotationDegree, persist)<br>  旋转屏幕。 参数：rotationDegree为旋转角度， e.g. 1代表90度；persist表示旋转之后是否固定，0表示旋转后恢复，非0则表示固定不变。</p>
+</li>
+<li><p>DispatchFlip(true/false)<br>  打开或者关闭软键盘。</p>
+</li>
+<li><p>LongPress()<br>  长按2秒。</p>
+</li>
+<li><p>PressAndHold(x, y, pressDuration)<br>  模拟长按事件。</p>
+</li>
+<li><p>DispatchString(input)<br>  输入字符串。</p>
+</li>
+<li><p>Drag(xStart, yStart, xEnd, yEnd, stepCount)<br>  用于模拟一个拖拽操作。</p>
+</li>
+<li><p>PinchZoom(x1Start, y1Start, x1End, y1End, x2Start, y2Start, x2End, y2End, stepCount)<br>  模拟缩放手势。</p>
+</li>
+<li><p>UserWait(sleepTime)<br>  休眠一段时间</p>
+</li>
+<li><p>DeviceWakeUp()<br>  唤醒屏幕。</p>
+</li>
+<li><p>PowerLog(power_log_type, test_case_status)<br>  模拟电池电量信息。</p>
+</li>
+<li><p>WriteLog()<br>  将电池信息写入sd卡。</p>
+</li>
+<li><p>RunCmd(cmd)<br>  运行shell命令。</p>
+</li>
+<li><p>DispatchPointer(downtime,eventTime,action,x,yxpressure,size,metastate,xPrecision,yPrecision,device,edgeFlags)<br>  向指定位置，发送单个手势。</p>
+</li>
+<li><p>DispatchPointer(downtime,eventTime,action,x,yxpressure,size,metastate,xPrecision,yPrecision,device,edgeFilags)<br>  发送按键消息。</p>
+</li>
+<li><p>LaunchInstrumentation(test_name,runner_name)<br>  运行一个instrumentation测试用例。</p>
+</li>
+<li><p>DispatchTrackball<br>  模拟发送轨迹球事件。</p>
+</li>
+<li><p>ProfileWait<br>  等待5秒。</p>
+</li>
+<li><p>StartCaptureFramerate()<br>  获取帧率。</p>
+</li>
+<li><p>EndCaptureFramerate(input)<br>  结束获取帧率。</p>
+</li>
+</ul>
+<blockquote>
+<p>API方法中控件位置(X,Y轴的坐标)的获取：使用Android提供的工具uiautomatorviewer.bat</p>
+<p>在Android SDK路径下–&gt; tools –&gt; uiautomatorviewer.bat，打开就可以展示设备/模拟器上展示的视图，展示视图结构和坐标。</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FhYFzvVV6xPr3fV33wdz8hSNcYZm.png" alt=""></p>
+<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">#头文件、控制monkey发送消息的参数</div><div class="line">type=raw events</div><div class="line">count=<span class="number">10</span></div><div class="line">speed=<span class="number">1.0</span></div><div class="line">#以下为脚本正文</div><div class="line">start data &gt;&gt;</div><div class="line">#<span class="number">1</span>.打开浏览器</div><div class="line"><span class="function"><span class="title">LaunchActivity</span><span class="params">(com.android.browser,com.android.browser.BrowserActivity)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div><div class="line">#<span class="number">2</span>.清空网址</div><div class="line"><span class="function"><span class="title">Tap</span><span class="params">(<span class="number">223</span>,<span class="number">146</span>)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div><div class="line"><span class="function"><span class="title">DispatchPress</span><span class="params">(<span class="number">112</span>)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div><div class="line">#<span class="number">3</span>.输入网址</div><div class="line"><span class="function"><span class="title">DispatchString</span><span class="params">(www.baidu.com)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div><div class="line">#<span class="number">4</span>.确认，载入网址</div><div class="line"><span class="function"><span class="title">DispatchPress</span><span class="params">(KEYCODE_ENTER)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div><div class="line">#<span class="number">5</span>.完成退出浏览器</div><div class="line"><span class="function"><span class="title">DispatchPress</span><span class="params">(KEYCODE_HOME)</span></span></div><div class="line"><span class="function"><span class="title">ProfileWait</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>1.脚本完成后将.txt 文件push到手机中</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb push name<span class="selector-class">.txt</span> path</div></pre></td></tr></table></figure>
+<p>其中name是指monkey脚本文件的名称，path是要push到手机上的路径</p>
+<blockquote>
+<p>2.运行Monkey脚本</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">monkey -f path/name<span class="selector-class">.txt</span> -v <span class="number">500</span></div></pre></td></tr></table></figure>
+<p>path是push的路径，name是脚本文件的名称。</p>
+<h2 id="案例实践"><a href="#案例实践" class="headerlink" title="案例实践"></a>案例实践</h2><p>随机事件流对MonketTestDemo进行测试：</p>
+<blockquote>
+<ol>
+<li>adb devices 查看设备是否连接</li>
+<li>adb shell 进入shell界面</li>
+<li>monkey -p com.feicuiedu.monkeytestdemo -v 500 执行monkey命令</li>
+<li>(可选)monkey -p com.feicuiedu.monkeytestdemo -v 500 &gt; monkeytest.txt 执行monkey命令，并将monkey日志存储</li>
+</ol>
+</blockquote>
+<p>一次随机的自动化Monkey测试完成。<br>MonkeyScript对MonkeyTestDemo进行测试：</p>
+<blockquote>
+<ol>
+<li>完成monkey.txt脚本的编写，保存到某一路径下</li>
+<li>切换到monkey.txt路径下</li>
+<li>adb push monkey.txt /data/local/temp/(设备的任一路径，无确切规定)</li>
+<li>adb shell 切换到设备下</li>
+<li>cd /data/local/temp 切换到monkey.txt路径下</li>
+<li>monkey -f monkey.txt -v 10 执行monkey脚本及执行次数</li>
+</ol>
+</blockquote>
+<p>一次MonkeyScript的自动化Monkey测试完成。</p>
+<h2 id="关于Monkey测试的停止条件"><a href="#关于Monkey测试的停止条件" class="headerlink" title="关于Monkey测试的停止条件"></a>关于Monkey测试的停止条件</h2><p>Monkey Test执行过程中在下列三种情况下会自动停止：</p>
+<ol>
+<li>如果限定了Monkey运行在一个或几个特定的包上，那么它会监测试图转到其它包的操作，并对其进行阻止。</li>
+<li>如果应用程序崩溃或接收到任何失控异常，Monkey将停止并报错。</li>
+<li>如果应用程序产生了应用程序不响应(application not responding)的错误，Monkey将会停止并报错。</li>
+</ol>
+<p>通过多次并且不同设定下的Monkey测试才算它是一个稳定性足够的程序。 </p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=33162226&auto=1&height=66"></iframe>
+
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2016/07/20/16-07-20/" title="http://dinson.win/2016/07/20/16-07-20/" target="_blank">http://dinson.win/2016/07/20/16-07-20/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Monkey的基本使用"><span class="toc-text">Monkey的基本使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Monkey命令使用"><span class="toc-text">Monkey命令使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九个事件及百分比控制"><span class="toc-text">九个事件及百分比控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Monkey测试信息"><span class="toc-text">Monkey测试信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MonkeyScript"><span class="toc-text">MonkeyScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#脚本格式"><span class="toc-text">脚本格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用API"><span class="toc-text">常用API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单示例"><span class="toc-text">简单示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例实践"><span class="toc-text">案例实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于Monkey测试的停止条件"><span class="toc-text">关于Monkey测试的停止条件</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

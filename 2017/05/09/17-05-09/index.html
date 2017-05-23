@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android双缓冲绘图技术分析</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/09/17-05-09/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android双缓冲绘图技术分析</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-09</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/优化/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>优化</a>
+      
+      <a href="/tags/自定义控件/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>自定义控件</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>双缓冲、多缓冲技术在计算机科学中其实是一个广义的概念，不过其本质上的意思都是差不多的。今天我们就来讲一讲双缓冲技术在android绘图中的应用。所谓的双缓冲技术其实就是当程序需要在指定的View上进行绘制时，程序并不需要直接绘制到该View组件，而是先绘制到一个内存中的Bitmap图片上（就是缓冲），等内存中的Bitmap绘制好之后，再一次性将Bitmap绘制到View组件上。当进行复杂的绘制操作时会导致呈现的图像闪烁或具有 其他不可接受的外观。双缓冲的使用解决这些问题。双缓冲使用内存缓冲区来解决由多重 绘制操作造成的闪烁问题。当使用双缓冲时，首先在内存缓冲区里完成所有绘制操作，而 不是在屏幕上直接进行绘图。当所有绘制操作完成后，把内存缓冲区完成的图像直接复制 到屏幕。因为在屏幕上只执行一个图形操作，所以消除了由复杂绘制操作造成的图像闪烁 问题。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Android绘图中的双缓冲"><a href="#Android绘图中的双缓冲" class="headerlink" title="Android绘图中的双缓冲"></a>Android绘图中的双缓冲</h2><p>我们知道，我们在绘图时有两样东西是少不了的，一个是Canvas（画布），一个是Paint(画笔）。Canvas提供画各种图形的方法，如画圆（drawCircle)，画矩形（drawRect）等等，Paint用来设置画笔的样式，比如笔的粗细，颜色等。每个Canvas内部持有一个Bitmap对象的引用，画图的过程其实就是往这个Bitmap当中写入ARGB信息。<br>比如我们现在自定义一个View,在上面画一个矩形和一个圆：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">	canvas.drawRect(rect,mPaint);</div><div class="line">	canvas.drawCircle(cx,cy,<span class="number">100</span>,mPaint);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>那么现在有一个问题，画矩形和画圆是两个独立的动作，会不会在drawRect执行完之后屏幕上马上就会显示出来一个矩形呢？<br>为了验证我们的猜想，我们在两个绘图动作中加一个sleep:<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">	canvas.drawRect(rect,mPaint);</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">	TimeUnit.MILLISECONDS.sleep(<span class="number">2000</span>);</div><div class="line">	&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">	e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">	canvas.drawCircle(cx,cy,<span class="number">100</span>,mPaint);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们会看到，并不是先显示矩形再显示圆，而是两个几乎同时一起显示出来的。这就说明必须要等onDraw方法执行完成之后，才会把数据交给GPU去处理展示。这就是android绘图当中的第一道缓冲，即显示缓冲区。</p>
+<p>而所谓的双缓冲，在android绘图中其实就是再创建一个Canvas和对应的Bitmap，然后在onDraw方法里默认的Canvas通过drawBitmap画刚才new的那个bitmap从而实现双缓冲。用代码简单的表述是这样的：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</div><div class="line">    Bitmap bufferBm = Bitmap.create(getWidth,getHeight,Bitmap.Config.ARGB_8888);</div><div class="line">    Canvas bufferCanvas = <span class="keyword">new</span> Canvas(bufferBm);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">void</span> <span class="title">drawSomething</span><span class="params">()</span></span>&#123;</div><div class="line">    bufferCanvas.drawRect();</div><div class="line">    bufferCanvas.drawCircle();</div><div class="line">    ...</div><div class="line">    invalidate();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    canvas.drawBitmap(bufferBm,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>示意图：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FjYCnjDP3ixkk0ZniR2-KFHD4eGi.png" alt=""></p>
+<h2 id="双缓冲绘图的优缺点及适用场景"><a href="#双缓冲绘图的优缺点及适用场景" class="headerlink" title="双缓冲绘图的优缺点及适用场景"></a>双缓冲绘图的优缺点及适用场景</h2><p>我们通过一个例子来说明。<br>实现这样一个功能，一个自定义View,每次点击的时候在点击处画一个圆。我们先不使用双缓冲来实现：</p>
+<ul>
+<li>不用双缓冲的代码<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyView</span> <span class="keyword">extends</span> <span class="title">View</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Paint mPaint;</div><div class="line">    <span class="keyword">private</span> List&lt;Point&gt; mPoints;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs);</div><div class="line">        mPaint = <span class="keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);</div><div class="line">        mPaint.setStyle(Paint.Style.FILL);</div><div class="line">        mPaint.setColor(Color.GREEN);</div><div class="line">        setBackgroundColor(Color.WHITE);</div><div class="line">        mPoints = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> action = event.getAction();</div><div class="line">        <span class="keyword">switch</span> (action)&#123;</div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</div><div class="line">                mPoints.add(<span class="keyword">new</span> Point((<span class="keyword">int</span>)event.getX(),(<span class="keyword">int</span>)event.getY()));</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_UP:</div><div class="line">                invalidate();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> (Point p : mPoints) &#123;</div><div class="line">            canvas.drawCircle(p.x,p.y,<span class="number">50</span>,mPaint);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在实验之前，我们先打开开发者选项里的”GPU呈现模式分析“，设置为“在屏幕上显示为条形图”。可以看到，当画的圆数目比较少时，GPU的负荷较低，但是出现一个逐步上升的趋势：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqUK07_35kXMCMkICr4rhu2YQIvD.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/FkxoIY31BZ0xVhm9r1GZXOf66qKg.png" alt=""></p>
+<p>当画的圆数目增加到比较大时，GPU负荷有点惨不妨睹了：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Ft4kjiraYoIF9GysLMRPNYFpNdrc.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/Fgthd-vIMt0Lbc_jdyx8sJxuPhcD.png" alt=""></p>
+<ul>
+<li>我们现在改用双缓冲来绘图，代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyView</span> <span class="keyword">extends</span> <span class="title">View</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Paint mPaint;</div><div class="line">    <span class="keyword">private</span> Canvas mBufferCanvas;</div><div class="line">    <span class="keyword">private</span> Bitmap mBufferBitmap;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyView</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs);</div><div class="line">        mPaint = <span class="keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);</div><div class="line">        mPaint.setStyle(Paint.Style.FILL);</div><div class="line">        mPaint.setColor(Color.GREEN);</div><div class="line">        setBackgroundColor(Color.WHITE);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> action = event.getAction();</div><div class="line">        <span class="keyword">switch</span> (action)&#123;</div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</div><div class="line">                <span class="keyword">if</span> (mBufferBitmap == <span class="keyword">null</span>) &#123;</div><div class="line">                    mBufferBitmap = Bitmap.createBitmap(getWidth(),getHeight(), Bitmap.Config.ARGB_8888);</div><div class="line">                    mBufferCanvas = <span class="keyword">new</span> Canvas(mBufferBitmap);</div><div class="line">                &#125;</div><div class="line">                mBufferCanvas.drawCircle((<span class="keyword">int</span>)event.getX(),(<span class="keyword">int</span>)event.getY(),<span class="number">50</span>,mPaint);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_UP:</div><div class="line">                invalidate();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mBufferBitmap == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        canvas.drawBitmap(mBufferBitmap,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用双缓冲，在数量较小时的GPU使用情况是这样的：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqdunQxqjgDDyO1Y5a6wXJO4NiJi.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/FmLMpDHp359u2m-LX67kNEaViR0D.png" alt=""></p>
+<p>使用双缓冲，在数量非常大的时候，GPU使用情况是这样的：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtmsmsWOtLxCv9ZuBos1HVAxIir9.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/Fj_TW47YAjMiSJTIgCAtRnApTv5_.png" alt=""></p>
+<p>从上面的实验数据我们可以得出结论：</p>
+<ul>
+<li>在绘制数据量较小时，不使用双缓冲，GPU的负荷更低，即绘制性能更高；</li>
+<li>在绘制数据量较大时，使用双缓冲绘图，绘制性能明显高于不使用双缓冲的情况；</li>
+<li>使用双缓冲会增加内存消耗。</li>
+</ul>
+<p>其实上面的结论也很好理解，就像上面举的搬砖的例子，如果砖少的话，用车来拉明显是划不来的，砖的数量很多的时候，用车来拉就可以节省很多时间，但是用车就要消耗额外的资源，这就需要根据不同的情况做出正确的选择。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=2526613&auto=1&height=66"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/09/17-05-09/" title="http://dinson.win/2017/05/09/17-05-09/" target="_blank">http://dinson.win/2017/05/09/17-05-09/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android绘图中的双缓冲"><span class="toc-text">Android绘图中的双缓冲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双缓冲绘图的优缺点及适用场景"><span class="toc-text">双缓冲绘图的优缺点及适用场景</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

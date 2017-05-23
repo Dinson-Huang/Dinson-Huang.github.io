@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="适配器,Android,设计模式,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>适配器模式在Android开发中的应用</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/14/17-05-14/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">适配器模式在Android开发中的应用</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-14</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/设计模式/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>设计模式</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>适配器：Adapter，大家看到这个单词是不是非常眼熟了？没错，这就是我们平时用到 ListView 和 RecyclerView 时必定会配合使用的 Adapter。列表显示数据几乎是任何一个安卓项目都会用到的一个功能，谷歌使用适配器模式来封装等使之异常灵活且非常实用，我们想要了解谷歌为什么这样做，就要先理解Java适配器模式是怎样运作的，这篇文章我们就学习一下java设计模式之一的适配器模式以及它在安卓中的应用。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2><p>使用场景：适配器模式把一个类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法在一起工作的两个类能够在一起工作。</p>
+<p>引用网上的一个例子：笔记本电脑电源一般用的都是5V电压，但是我们的家用电是220V，我们要让笔记本充上电，最好的办法应该是通过一个工具把220V的电压转换成5V，这个工具就是适配器</p>
+<blockquote>
+<p>好好理解一下设计模式的使用场景比起去记住代码是怎样写的效果要好很多，说不定你哪天编码的时候灵光一现用上了，那就是你真正掌握了。</p>
+</blockquote>
+<h2 id="适配器模式的种类"><a href="#适配器模式的种类" class="headerlink" title="适配器模式的种类"></a>适配器模式的种类</h2><ol>
+<li>类适配器<br> UML图(强烈建议大家去了解一下UML图，它很简单粗暴的把类与类之间的关系描述的很清楚易懂)<br> <img src="http://ondlsj2sn.bkt.clouddn.com/Fs4FzeduZqZwKp_valNHL2xixG_a.png" alt=""><br> 我们可以看到，目标接口 Target 就相当于是上面的5V电压，Adaptee 就是被适配的220V电压，Adapter 就是适配器。看代码：<br> <img src="http://ondlsj2sn.bkt.clouddn.com/FrnD7GHFRzAkfWsCBsW6S9RyJdCa.png" alt=""><br>输出结果：<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">充<span class="number">5</span>V电啦</div><div class="line">充<span class="number">220</span>V电啦</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>结合上面给点UML图稍微分析一下：</p>
+<p>Adapter类 继承了 Adaptee220V类 然后实现了接口 Target5V 并实现了目标方法 chong5V()，类适配器的一个特点就是 Adapter 会去继承被适配类，这样适配器就直接拥有了被适配类中的方法，所以类适配器的缺点就是不够灵活，让我们看一下另外一种适配器。</p>
+<p>2.对象适配器<br>    <img src="http://ondlsj2sn.bkt.clouddn.com/FqlJTeYjCEyqfW1TkXVFWhfXNlBj.png" alt=""><br>    这里的 Target 依然是 5V电压，Adaptee 依然是 220V电压，比起类适配器，Adapter 和 Adaptee 的关系从继承变成了组合，上代码：<br>    <img src="http://ondlsj2sn.bkt.clouddn.com/Fp19DHfUfVXxpmoVLljE8cbVk_y7.png" alt=""><br>输出结果：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">充<span class="number">5</span>V电啦</div><div class="line">充<span class="number">220</span>V电啦</div></pre></td></tr></table></figure></p>
+<p>这里我们把 Adaptee220V 通过 Adapter 的构造方法传入到 Adapter 中，当调用 Adapter 的 chong220V()方法 时，实际是调用传进来 Adaptee220V 对象的 chong220V 方法，这样就会变得很灵活。</p>
+<h2 id="项目中的运用"><a href="#项目中的运用" class="headerlink" title="项目中的运用"></a>项目中的运用</h2><p>之所以写这篇关于适配器设计模式的文章，是因为作者在以前有一次实际开发中，在没有学习过适配器模式的前提下，为了解决项目中的一个开发痛点，自己费劲脑筋想出来的一种模式，到现在才知道原来这个叫适配器模式，在学习了这个设计模式之后更加深入了解了一下。接下来，就来演示一下作者在实际工作中使用到的变异形态的对象适配器模式。</p>
+<p>当时开发场景：当时作者开发一个基于POS机的APP，APP要求有打印功能，像订单打印、日期打印等等。我们知道POS机是有多种型号的，每种型号的POS机会有他们单独的SDK，也就是说打印方法是不同的！<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvDRdNm9GjhtZcVJU3zGmFJjlRsS.png" alt=""><br>首先，我们每次调用打印的时候都会先判断 POS机 型号，因为型号不对程序肯定会报错，假如某一天，APP适配的 POS机 类型要增加一款，也就是说我每个判断 POS机 型号的地方都要多家一个if语句，并且还要把 新POS机型 的打印方法加上去，如果我有5个地方用到了打印，就要加5次，这样是很痛苦的，别问我为什么知道。。。经过2次这样的真实情况发生后，我暴走了，痛定思痛要想个办法结局，于是有了以下代码：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FivN4O4hC_9t73vDyjI-waTLQrd0.png" alt=""><br>每种 POS机 都实现 IPrint 中的打印方法：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fpn2N2ZOurpL1MYk_KQGbUy99_Xn.png" alt=""><br>这里我把 POS机 型号判断的代码放到了 PrintManager 的构造方法中，每次 new 出实例时就会去判断。然后我让 PrintManager 也实现了IPrint接口，因为我认为项目中的打印管理类必须要拥有这三种打印方法。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FthJ065I8Q4WZIDg4qvY6O3y3i-6.png" alt=""><br>发现没，改过之后的代码，在不同的调用的地方再也不用担心新增POS机型需要改代码了，只需要在 PrintManager 的构造方法中增加一个判断就好了。要是改成单例：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Ft17x0u3weV_Vr1eGsOH5E_OWCG5.png" alt=""><br>改完之后我哭了。。。我他吗的是个天才啊。。。后面果然加了多款POS机，但是我再也不痛苦了！看一下我的UML图：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FouB2lpViMCX2QC5qam7YltZBmoZ.png" alt=""><br>其实，光看UML图，作者在项目中的这种写法已经不算是适配器模式了，因为 Adaptee 已经直接实现了Target中的方法，也就是说根本就不存在不满足目标接口这个说法了。。不过作者这样写完全是自己想出来的，没有基于任何设计模式，就现在目前的效果来说还是不错的，通过这篇文章，我对于适配器模式有了一个清晰的理解，同时也反思了一下我这种写法，还是很有收获的。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=19107967&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/14/17-05-14/" title="http://dinson.win/2017/05/14/17-05-14/" target="_blank">http://dinson.win/2017/05/14/17-05-14/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#适配器模式"><span class="toc-text">适配器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#适配器模式的种类"><span class="toc-text">适配器模式的种类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中的运用"><span class="toc-text">项目中的运用</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

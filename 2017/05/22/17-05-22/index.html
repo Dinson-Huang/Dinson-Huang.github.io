@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Python,基础,教学,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Python从入门到放弃（3）</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/22/17-05-22/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Python从入门到放弃（3）</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-22</span>
+      
+      <a href="/categories/Python从入门到放弃/" class="post-categories">Python从入门到放弃</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<ol>
+<li>集合操作</li>
+<li>文件操作</li>
+<li>字符编码与转码</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><p>集合是一个无序的，不重复的数据组合，它的主要作用如下：</p>
+<ul>
+<li>去重，把一个列表变成集合，就自动去重了,天生去重</li>
+<li>关系测试，测试两组数据之前的交集、差集、并集等关系</li>
+</ul>
+<p><strong>创建</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">s = set([5, 2, 1, 4, 3])</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 增</span></div><div class="line"><span class="meta">#</span><span class="bash"> s.add(<span class="string">"Dinson"</span>)  <span class="comment"># &#123;1, 2, 3, 4, 5, 'Dinson'&#125;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> s.update([<span class="string">"Disnon"</span>, 4, 6])  <span class="comment"># &#123;1, 2, 3, 4, 5, 'Disnon', 6&#125;</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删</span></div><div class="line"><span class="meta">#</span><span class="bash"> s.remove(1)  <span class="comment"># &#123;2, 3, 4, 5&#125; 删除一项</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> s.discard(8)  <span class="comment"># &#123;1, 2, 3, 4, 5&#125; 有则删，不会崩溃</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> s.pop();  <span class="comment"># &#123;2, 3, 4, 5&#125; 随机删除一项</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 查</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(4 <span class="keyword">in</span> s)  <span class="comment"># True</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(4 not <span class="keyword">in</span> s)  <span class="comment"># False</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 其他</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(len(s))  <span class="comment"># 5 集合长度</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s.clear())  <span class="comment"># None</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s.copy())  <span class="comment"># 浅copy</span></span></div><div class="line"></div><div class="line">s1 = set([1, 2])</div><div class="line">s2 = set([2, 3])</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 交集</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1 &amp; s2)  <span class="comment"># &#123;2&#125;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.intersection(s2))  <span class="comment"># &#123;2&#125;</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 并集</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1 | s2)  <span class="comment"># &#123;1, 2, 3&#125;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.union(s2))  <span class="comment"># &#123;1, 2, 3&#125;</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 差集</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1 - s2)  <span class="comment"># &#123;1&#125;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.difference(s2))  <span class="comment"># &#123;1&#125;</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 对称差集</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1 ^ s2)  <span class="comment"># &#123;1, 3&#125;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.symmetric_difference(s2))  <span class="comment"># &#123;1, 3&#125;</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 两个集合是否不相交</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.isdisjoint(s2))  <span class="comment"># False</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 判断子父集</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.issubset(s2))  <span class="comment"># False</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(s1.issuperset(s2))  <span class="comment"># False</span></span></div></pre></td></tr></table></figure></p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>对文件操作流程</p>
+<ol>
+<li>打开文件，得到文件句柄并赋值给一个变量</li>
+<li>通过句柄对文件进行操作</li>
+<li>关闭文件 </li>
+</ol>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作　　"></a>基本操作　　</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">f = <span class="keyword">open</span>(<span class="string">'source_name'</span>) <span class="comment">#打开文件</span></div><div class="line">first_line = f.readline()</div><div class="line"><span class="keyword">print</span>(<span class="string">'first line:'</span>,first_line) <span class="comment">#读一行</span></div><div class="line"><span class="keyword">print</span>(<span class="string">'我是分隔线'</span>.center(<span class="number">50</span>,<span class="string">'-'</span>))</div><div class="line">data = f.read()<span class="comment"># 读取剩下的所有内容,文件大时不要用</span></div><div class="line"><span class="keyword">print</span>(data) <span class="comment">#打印文件</span></div><div class="line"> </div><div class="line">f.close() <span class="comment">#关闭文件</span></div></pre></td></tr></table></figure>
+<p><strong>打开文件的模式有：</strong></p>
+<ul>
+<li>r，只读模式（默认）。</li>
+<li>w，只写模式。【不可读；不存在则创建；存在则删除内容；】</li>
+<li>a，追加模式。【可读；   不存在则创建；存在则只追加内容；】</li>
+</ul>
+<p><strong>“+” 表示可以同时读写某个文件</strong></p>
+<ul>
+<li>r+，可读写文件。【可读；可写；可追加】</li>
+<li>w+，写读</li>
+<li>a+，同a</li>
+</ul>
+<p><strong>“U”表示在读取时，可以将 \r \n \r\n自动转换成 \n （与 r 或 r+ 模式同使用）</strong></p>
+<ul>
+<li>rU</li>
+<li>r+U</li>
+</ul>
+<p><strong>“b”表示处理二进制文件（如：FTP发送上传ISO镜像文件，linux可忽略，windows处理二进制文件时需标注）</strong></p>
+<ul>
+<li>rb</li>
+<li>wb</li>
+<li>ab</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">f = open("lyrice", encoding="utf-8")</div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> <span class="built_in">print</span>(f.read(50))  <span class="comment"># 读取，带参表示读取字符数</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.readline(50))  <span class="comment"># 读取一行，带参表示读取字符数</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.readable())  <span class="comment"># Ture or False 判断文件是否可读</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> f.write()  <span class="comment"># 写数据</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.writelines())  <span class="comment"># 写一行数据</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.writable())  <span class="comment"># Ture or False 判断文件是否可写</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> <span class="built_in">print</span>(f.name)  <span class="comment"># lyrice    文件名</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.encoding)  <span class="comment"># utf-8 文件格式</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.errors)</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.closed)  <span class="comment"># Ture or False 查询文件是否关闭</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.buffer)  <span class="comment"># &lt;_io.BufferedReader name='lyrice'&gt;</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.newlines)</span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.line_buffering)</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> <span class="built_in">print</span>(f.flush())  <span class="comment"># 强制刷新</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.close())  <span class="comment"># 关闭文件</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.fileno())  <span class="comment"># 3 操作系统IO在内存的编号</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.isatty())  <span class="comment"># 是否是终端设备(打印机之类)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.tell())  <span class="comment"># 查询当前光标在第几个字符位置</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.seek(10))  <span class="comment"># 光标移动到指定字符</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.seekable())  <span class="comment"># 光标是否可移动(tty file,device file等返回False)</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.truncate(10))  <span class="comment"># 截断，无视光标位置</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">print</span>(f.detach())  <span class="comment"># 有问题，会造成文件格式异常</span></span></div></pre></td></tr></table></figure>
+<p><strong>with语句</strong><br>为了避免打开文件后忘记关闭，可以通过管理上下文，即：<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'log'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">    </div><div class="line">   ...</div></pre></td></tr></table></figure></p>
+<p>如此方式，当with代码块执行完毕时，内部会自动关闭并释放文件资源。<br>在Python 2.7 后，with又支持同时对多个文件的上下文进行管理，即：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'log1'</span>) <span class="keyword">as</span> obj1, <span class="built_in">open</span>(<span class="string">'log2'</span>) <span class="keyword">as</span> obj2:</div><div class="line">    pass</div></pre></td></tr></table></figure></p>
+<h2 id="字符编码与转码"><a href="#字符编码与转码" class="headerlink" title="字符编码与转码"></a>字符编码与转码</h2><p>详细文章:<br><a href="http://www.cnblogs.com/yuanchenqi/articles/5956943.html" target="_blank" rel="external">http://www.cnblogs.com/yuanchenqi/articles/5956943.html</a><br><a href="http://www.diveintopython3.net/strings.html" target="_blank" rel="external">http://www.diveintopython3.net/strings.html</a></p>
+<p><strong>需知</strong></p>
+<blockquote>
+<p>1.在python2默认编码是ASCII, python3里默认是unicode</p>
+<p>2.unicode 分为 utf-32(占4个字节),utf-16(占两个字节)，utf-8(占1-4个字节)， so utf-16就是现在最常用的unicode版本， 不过在文件里存的还是utf-8，因为utf8省空间</p>
+<p>3.在py3中encode,在转码的同时还会把string 变成bytes类型，decode在解码的同时还会把bytes变回string</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fl1tIyvZx5Wxfyzqt82Z1rdGwdkO.png" alt=""></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=29950496&auto=1&height=66"></iframe>  </div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/22/17-05-22/" title="http://dinson.win/2017/05/22/17-05-22/" target="_blank">http://dinson.win/2017/05/22/17-05-22/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合操作"><span class="toc-text">集合操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-text">文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-text">基本操作　　</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符编码与转码"><span class="toc-text">字符编码与转码</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

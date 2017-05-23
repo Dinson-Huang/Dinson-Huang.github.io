@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android ConstraintLayout 使用指南</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/11/17-05-11/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android ConstraintLayout 使用指南</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-11</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/ConstraintLayout/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ConstraintLayout</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>升级Android Studio 2.3之后，IDE默认生成的Activity布局都是以ConstraintLayout做为根布局，体验了一把这个Google去年就开始力推的ConstraintLayout后，觉得非常不错，本文用于记录ConstraintLayout各个方面的使用知识。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="平台支持"><a href="#平台支持" class="headerlink" title="平台支持"></a>平台支持</h2><ul>
+<li>ConstraintLayout最低兼容Android 2.3；</li>
+<li>目前Android Studio 2.3默认使用ConstraintLayout作为布局文件的根布局；</li>
+<li>想要使用ConstraintLayout，需在项目的build.gradle添加com.android.support.constraint:constraint-layout：XXX版本号依赖；</li>
+</ul>
+<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><p>ConstraintLayout翻译成中文也称为约束布局，在整个使用体验过程中真的是贯穿约束二字，这一节先来介绍一些基础使用，后面你就会慢慢感受到约束布局的魅力。创建完工程后打开布局文件，底部切换Design的Tab上，可以看到整个操作界面<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fh88OzTWuj-tCkdgHRA4cfXqVNiZ.png" alt=""> </p>
+<p>左上角的面板是放置了系统内置各种各样的控件，想要布局直接拖到到布局文件中即可（所见即所得），右边的面板是选中布局文件中的控件时期各种各样的空间属性，ConstraintLayout最大的好处在于让我们通过拖控件的形式进行布局，并且不用担心适配问题。所以，先来拖个控件试试看，将一个Button拖动到屏幕正中央，然后运行显示看看效果。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fk9RCseEVhX1YMe1HgpvyfRgXSgK.gif" alt=""></p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fh5ZFnU_lprrxHcRDq6bRkSfn_dH.png" alt=""><br>而实际运行后却发现，这个Button还是位于屏幕左上角，说好的居中效果呢？<br>这里就要开始引入ConstraintLayout的约束概念，我们切换回去看xml的布局代码，发现了两个问题。<br>第一，布局预览时能够看到显示居中的Button，是因为控件属性设置中引用了两个tools命名空间下的属性。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FhfHzegfsnDjDfUcSq1myX6wS65z.png" alt=""><br>我们都知道，这两个属性只在布局编辑器的预览中有效，实际运行效果是不生效的。</p>
+<p>第二，Button标签下有红色波浪线警告，我们把鼠标移到对应位置会发现警告内容，告诉我们Button没有任何约束设置，当前效果只支持预览，实际运行后会返回到左上角去，同时提示我们应该给控件添加约束。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvQG1W61UkNfFJgK2koGJ_YsIbHf.png" alt=""><br>如何增加约束？回到Design页面，对着控件上下左右四个原点拖动添加对应的约束即可<br><img src="http://ondlsj2sn.bkt.clouddn.com/FuIMSr43yM-CT5v1UrwDfaY1aZld.gif" alt=""><br>成功添加约束后，即可得到正常的运行效果了。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FmuneIrlzFFdwgBcyb-e0BIsMnbw.png" alt=""><br>实际操作不一定要在Tab，也可以直接在Text页面拖动控件添加约束<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqukVcGA7UTeISA3PFnP1tz2cQku.png" alt=""><br>成功实现添加约束后，可以看到Button多了下面几个属性设置<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fl1j15gsnVPfVL1sZONRs5ERxYXC.png" alt=""></p>
+<p><code>app:layout_constraintBottom_toBottomOf=&quot;parent&quot;</code> 意思是Button底部的布局约束是位于parent的底部，parent是指包裹着它的ConstraintLayout，也可以设置指定某个控件的id，其他类似的属性就不再赘述，以上四个约束联合起来便实现了Button的居中，ConstraintLayout总共有下面这些同类的属性<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">app:</span>layout_constraintLeft_toLeftOf</div><div class="line"><span class="symbol">app:</span>layout_constraintLeft_toRightOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintRight_toLeftOf</div><div class="line"><span class="symbol">app:</span>layout_constraintRight_toRightOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintTop_toTopOf</div><div class="line"><span class="symbol">app:</span>layout_constraintTop_toBottomOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintBottom_toTopOf</div><div class="line"><span class="symbol">app:</span>layout_constraintBottom_toBottomOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintStart_toEndOf</div><div class="line"><span class="symbol">app:</span>layout_constraintStart_toStartOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintEnd_toStartOf</div><div class="line"><span class="symbol">app:</span>layout_constraintEnd_toEndOf</div><div class="line"></div><div class="line"><span class="symbol">app:</span>layout_constraintBaseline_toBaselineOf</div></pre></td></tr></table></figure></p>
+<p>你会发现ConstraintLayout非常灵活的把RelativeLayout的活给干了，关于left、right、top、bottom、start、end、baseline的基准可以参照下图<br><img src="http://ondlsj2sn.bkt.clouddn.com/FsKl7bMhdTD8qXyQDnFAi-4Kxfjo.png" alt=""><br>如果我想加多一个Button2并且将其放置到原先居中Button的右方并且与其底部对齐，只需如下操作即可<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqliwdR_M5jojMB502KyRRSJIzjp.gif" alt=""><br>并且你也可以发现，Button2依赖与Button后会随着Button的移动而跟着发生相对移动，目的是了保证我设置的依赖，时刻保持Button2就在Button的右边，并且底部对齐。你也可以看到布局文件中也为Button2添加了如下两个属性<br><img src="http://ondlsj2sn.bkt.clouddn.com/FudjacpmywOSX8_e4celVfQh76Sw.png" alt=""><br>如果你已经理解上面提到的属性含义，这里应该不会有疑惑。</p>
+<p>介绍完上下左右的依赖设置后，下面介绍一些Margin属性，除了Android常见的各种android:layout_marginXXX外，ConstraintLayout自行添加了如下属性<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">app:</span>layout_goneMarginBottom</div><div class="line"><span class="symbol">app:</span>layout_goneMarginEnd</div><div class="line"><span class="symbol">app:</span>layout_goneMarginLeft</div><div class="line"><span class="symbol">app:</span>layout_goneMarginRight</div><div class="line"><span class="symbol">app:</span>layout_goneMarginStart</div><div class="line"><span class="symbol">app:</span>layout_goneMarginTop</div></pre></td></tr></table></figure></p>
+<p>这些设置生效于当依赖的约束对象被设置visibility为gone时。<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">app:</span>layout_constraintVertical_bias</div><div class="line"><span class="symbol">app:</span>layout_constraintHorizontal_bias</div></pre></td></tr></table></figure></p>
+<p>当为目标控件设置好横纵向的约束时（app:layout_constraintLeft_toLeftOf=”parent”、app:layout_constraintRight_toRightOf=”parent”或者app:layout_constraintTop_toTopOf=”parent”、app:layout_constraintBottom_toBottomOf=”parent”），这个两个属性才会生效。实际操作过程中，你会发现对着设置好横纵向约束的Button进行拖动，布局中的layout_constraintHorizontal_bias和layout_constraintVertical_bias会一直发生相应的变化，如果你需要Button居中，那么直接将这两个属性的参数值设置为0.5即可。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fj8JMcH1IR1cbDpfn7TnzupsmW2Y.gif" alt=""></p>
+<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><blockquote>
+<p>这里先补充一个关于ConstraintLayout的知识点，与其他Layout不同之处在于，它的layout_width和layout_height不支持设置match_parent，其属性取值只有以下三种情况：</p>
+<ul>
+<li>wrap_content；</li>
+<li>指定具体dp值；</li>
+<li>0dp（match_constraint），代表填充约束之意，注意不要以为和match_parent是一样的；</li>
+</ul>
+</blockquote>
+<p>想想如果没有ConstraintLayout，我们要让一个控件的宽高按某个比例进行布局应该怎么做？有了ConstraintLayout后，我们可以使用layout_constraintDimentionRatio属性设置宽高比例，前提是目标控件的layout_width和layout_height至少有一个设置为0dp，如下让一个ImageView宽高按照2:1的比例显示</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fsf4Y9m69YwE5HujvsEGNIr-HBNH.png" alt=""><br>layout_constraintDimentionRatio默认参数比例是指宽：高，变成高:宽可以设app:layout_constraintDimensionRatio=”H,2:1”。</p>
+<p>ConstraintLayout的链条（Chains）特性非常强大，在没有ConstraintLayout之前，线性布局我们主要都依靠LinearLayout来完成，有了ConstraintLayout之后，它把LinearLayout的活也干了，例如要把按钮水平排成一行，可以这样操作<br><img src="http://ondlsj2sn.bkt.clouddn.com/FqYICFlgWhQmP9vk-xHU8hPF0i33.gif" alt=""><br>这样ButtonA、B、C就在水平方向形成了一条Chain，并且底部对齐。回去看xml文件，会见到ButtonA新增app:layout_constraintHorizontal_chainStyle的属性设置，这个属性在一条Chain中只会出现在第一个控件中，这个控件是整条Chain的Head。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtGPVrfIVjFmGFRNWHqzxnoLXTbl.png" alt=""><br>除了水平方向的layout_constraintHorizontal_chainStyle外还有垂直方向的layout_constraintVertical_chainStyle，两者均有spread,spread_inside,packed这三种取值，如果将控件的layout_width和layout_height设置成为0dp，还可以配合layout_constraintHorizontal_weight、layout_constraintVertical_weight两个属性实现和LinearLayout中设置layout_weight相同的效果，具体的操作这里就不再展示了，下面一张图告诉你Chain的强大之处。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnHoSNDHIKaTMcmeAQLkqovC0ZDs.png" alt=""><br>关于Chain的就介绍到此，进阶的最后一部分再介绍一下Guideline功能，如果我们需要对着屏幕的中轴线进行布局，就可以使用到Guideline进行操作，例如下面两个Button分别分布在中轴线的左右两侧<br><img src="http://ondlsj2sn.bkt.clouddn.com/FpwkfWafTRKbMMwnblVjXogv9uiW.gif" alt=""><br>从操作上我们可以看到Guideline也分为垂直和水平两种，并且支持设置在屏幕中所处的位置，可以使用layout_constraintGuide_begin和layout_constraintGuide_end设置具体dp值，也可以使用layout_constraintGuide_percent来设置比例。实际上它也只是一个辅助我们布局的View而已，其源码内部实现也非常简单，并且默认设置了visibility为gone，关于ConstraintLayout的进阶使用便介绍到这里。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>ConstraintLayout的使用优势</p>
+<ul>
+<li>高效布局，Android这么多年以来真正意义上的实现了所见即所得的拖曳方式布局，极大的提高开发效率；</li>
+<li>轻松灵活的实现复杂的布局；</li>
+<li>解决多重布局嵌套问题，通过前面介绍你会发现ConstraintLayout真的是非常灵活，可以很大程度的避免Layout之间的嵌套；</li>
+<li>满足屏幕适配的需求，想想没有ConstraintLayout之前的拖曳式布局，你就知道有多恶心；</li>
+</ul>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=33410478&auto=1&height=66"></iframe>
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/11/17-05-11/" title="http://dinson.win/2017/05/11/17-05-11/" target="_blank">http://dinson.win/2017/05/11/17-05-11/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平台支持"><span class="toc-text">平台支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础使用"><span class="toc-text">基础使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶使用"><span class="toc-text">进阶使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

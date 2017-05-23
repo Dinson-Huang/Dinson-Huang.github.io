@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>你真的了解SharedPreferences吗？</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/08/17-05-08/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">你真的了解SharedPreferences吗？</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-08</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/SharedPreferences/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>SharedPreferences</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="SharedPreferences踩坑"><a href="#SharedPreferences踩坑" class="headerlink" title="SharedPreferences踩坑"></a>SharedPreferences踩坑</h2><blockquote>
+<p>在日常开发中SharedPreferences想必肯定是经常被我们使用的了，通常情况下使用它并不会发生什么问题，但是假如遇到了在不同进程中使用SharedPreferences（例如指定了process的activity/service），那坑就来了。</p>
+</blockquote>
+<a id="more"></a>
+<p>这里我们可以实验一下，创建两个Activity，在AndroidManifest其中一个将其process指定为second进程</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fhv03YDAqb37rRk1FWWGv-fyvmsN.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/Fobj0jcsuu1wYcODuqLR49DgDDFj.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/FufFaJXxAFaPYmQbS5MqVKue-IzK.png" alt=""></p>
+<p>代码比较简单，就是将输入框的内容存入到SharedPreferences中，并显示到TextView上，点击跳转按钮跳转到SecondActivity<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fo2znhVgjpF8V3xIm3ongiFU9KrY.png" alt=""><br><img src="http://ondlsj2sn.bkt.clouddn.com/FiaPwAVp3_Ce5qAJ8FbniDgNU1Zc.png" alt=""></p>
+<p>SecondActivity就是点击按钮获取SharedPreferences的值并显示到TextView，不过这里要注意它是运行在不同的进程中的。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FhMLVx8S6Oaul-hMY7ORp4iNYYLP.png" alt=""></p>
+<p>这里我们将值改为hello，然后点击修改，可以看到SharedPreferences的值已经改成功了。</p>
+<p>然后我们跳转到SecondActivity并获取值，<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fsd7m-sUEmjdUWtWeykZrhoXedTU.png" alt=""></p>
+<p>一切正常，好现在我们回到MainActivity，并再次修改SharedPreferences中的值，<br><img src="http://ondlsj2sn.bkt.clouddn.com/FpLCVsm2nu14bNeSUKYC7LbXvfGS.png" alt=""></p>
+<p>可以看到SharedPreferences的值已经再次被修改成功，这时我们再跳转到SecondActivity并获取值，<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fo32ZpcZ9M3arNwdAgyQ-KgIKfna.png" alt=""></p>
+<p>不管怎么获取都是之前的值，然后重启app，再进入SecondActivity，便又能获取到正确的值了。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FlO8FVy_A5NO-2oWgQE1m4ey_y7U.png" alt=""><br>-SecondActivity(重启app后)-</p>
+<p>这里我们先总结一下结论</p>
+<ul>
+<li>先启动主进程并获取SharedPreferences对象，然后启动其他进程并获取SharedPreferences对象，那么此时对SharedPreferences的数值进行修改均不能对其他进程产生作用。</li>
+<li>先启动主进程并获取SharedPreferences对象，然后对值进行修改，然后启动其他进程并获取SharedPreferences对象，能取得修改后的值，但此时如果再对此值进行修改，均不能对其他进程产生作用。</li>
+</ul>
+<p>总结下来就是，其他进程在启动时获取到的SharedPreferences的值只能是这个进程启动前这个值的最后值，即在进程启动后对值的修改只对当前进程有效，须等到进程重启或者app重启才能与其他进程进行“同步”。</p>
+<p>这里<strong>即使把获取SharedPreferences对象的模式改为MODE_MULTI_PROCESS，也仅仅是在Android 3.0以下才有效，在Android 3.0以上也是一样不行的。</strong></p>
+<p>那么为什么会这样子呢，笔者带大家从源码的角度来分析一下，我们来看一下关于SharedPreferences的源码。</p>
+<h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><p>通常我们获取SharedPreferences对象一般是这样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line"><span class="comment">//或者这样</span></div><div class="line">SharedPreferences sharedPreferences = getSharedPreferences(<span class="string">"name"</span>, Context.MODE_PRIVATE);</div></pre></td></tr></table></figure></p>
+<p>实际上PreferenceManager.getDefaultSharedPreferences(context)方法也是对getSharedPreferences做了封装</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FvywJ70yizMOhfF3aaqGv2vpojew.png" alt=""></p>
+<p>所以不管通过哪种方式，最终都是通过Context中的getSharedPreferences方法来获取SharedPreferences对象，在Context中，getSharedPreferences方法是一个抽象方法，没有具体实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">public abstract SharedPreferences </div><div class="line">           getSharedPreferences(<span class="built_in">String</span> name, int mode);</div></pre></td></tr></table></figure></p>
+<p>我们知道Context的实现类其实就是ContextImpl，所以这里我们直接去到ContextImpl的getSharedPreferences方法中，<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvnQplSy9iuRj4G-AdhNU3jApBRS.png" alt=""></p>
+<p>这里比较简单，先判断了ArrayMap中是否存在该File对象，不存在则创建一个并放入ArrayMap，然后调用getSharedPreferences的重载方法getSharedPreferences(file, mode)，我们看一下这个方法的源码<br><img src="http://ondlsj2sn.bkt.clouddn.com/FudqaDKO4sr06vuTurN5IHzJq5a0.png" alt=""></p>
+<p>可以看到，这里将SharedPreferences的实例对象SharedPreferencesImpl缓存起来，以后每次获取如果内存中已经存在那么直接返回，如果不存在才会进行重新创建;</p>
+<p>那么这里我们可以有个猜想，即是否只有在创建SharedPreferences对象的时候才会从磁盘中进行读取，读取后的值保存在了内存中，获取SharedPreferences对象优先从缓存中获取，再次创建时才会重新从磁盘中再次读取文件。</p>
+<p>我们直接看一下SharedPreferencesImpl的源码，验证一下我们的猜想。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FoBTygVx4rT-JlInHmhTXGSzK7Pd.png" alt=""></p>
+<p>可以看到，在SharedPreferencesImpl的构造方法中调用了startLoadFromDisk，startLoadFromDisk方法中开启了一个线程加载磁盘中的文件，loadFromDisk源码如下<br><img src="http://ondlsj2sn.bkt.clouddn.com/FteY8ItDC7WESvhix2ob3oIM5wAK.png" alt=""></p>
+<p>看到这里，已经逐步验证了我们之前的猜想，在构造方法中读取了磁盘文件的内容并赋值给了成员变量mMap集合，我们只需要看看所有的get方法是不是从mMap成员变量中获取值就能完全验证我们的猜想是否正确，因为get方法都大同小异，所以我们就只分析一下getString方法就可以了。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fp848IwmUi2p-UpRmBfCADLmnUtj.png" alt=""></p>
+<p>可以看到，果然是这样的，从mMap集合中直接取出值进行返回，那么看到这里肯定会有个疑问，为什么在同个进程却又没有问题呢，或者其他进程对SharedPreferences的获取在值修改完毕之后也没有问题，这里我们看一下SharedPreferencesImpl的内部类EditorImpl的源码，EditorImpl是Editor的实现类。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FsnC_5x72iexCxpU7_w6p1A01f5D.png" alt=""></p>
+<p>可以看到，EditorImpl内部有一个mModified的Map成员变量，我们所有的修改在调用了commit或者apply方法后才会执行保存，可以看到，不管调用哪个方法都会调用commitToMemory()和enqueueDiskWrite方法，那么我们看一下这两个方法的源码<br><img src="http://ondlsj2sn.bkt.clouddn.com/FtvV2I3jnenZxTJeCv6J-twW7eQy.png" alt=""></p>
+<p>其实通过方法名我们也可以猜到，就是将值提交到内存，从代码上也可以看出来，就是将Editor的所有put进去的值添加到SharedPreferences的mMap成员变量中。</p>
+<p>那么最后将内容写入磁盘的方法就是enqueueDiskWrite了，我们看一下它的源码<br><img src="http://ondlsj2sn.bkt.clouddn.com/FijRzuJIAO3jXq0PrHwylN1NAASG.png" alt=""></p>
+<p>源码比较简单，其中最主要的就是区分了apply方法调用和commit的调用,apply调用的话会将写入磁盘的任务加入到一个线程池中在后台运行，直接commit的话则会在当前线程进行写入。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>整个获取SharedPreferences对象过程的流程图如下<br><img src="http://ondlsj2sn.bkt.clouddn.com/FpnUPmqHC5RdoGU_HabRZXbQ4aip.png" alt=""></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=16686122&auto=1&height=66"></iframe>
+</div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/08/17-05-08/" title="http://dinson.win/2017/05/08/17-05-08/" target="_blank">http://dinson.win/2017/05/08/17-05-08/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SharedPreferences踩坑"><span class="toc-text">SharedPreferences踩坑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码分析"><span class="toc-text">源码分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

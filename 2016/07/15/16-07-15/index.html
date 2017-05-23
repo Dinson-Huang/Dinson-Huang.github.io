@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>GitHub+Hexo搭建个人博客辛酸史--分支控制(贰)</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2016/07/15/16-07-15/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">GitHub+Hexo搭建个人博客辛酸史--分支控制(贰)</h1>
+    <p class="post-meta">
+      <span class="post-time">2016-07-15</span>
+      
+      <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
+      
+      
+      <a href="/tags/博客/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>博客</a>
+      
+      <a href="/tags/Hexo/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Hexo</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客</p>
+<p>当然，这种方式也有缺点，那就是所有的静态页面由于都需要保存在github里的自己名下的网站同名项目仓库内，所以如果项目仓库是public的，那么<strong>所有人都会看到你的网站代码</strong>， 这个其实应该也没有关系吧！！！hexo都是开源的，而且静态博客是编译后的，框架和主题都是用的别人开源出来的，但博客写了不就是让别人看的？所以应该真的无所谓。。。</p>
+</blockquote>
+<a id="more"></a>
+<p>如果你实在不想让别人看到你的md原件，那么就不要使用本文所说的同一个项目的分支啦，就去新建一个项目来单独保存源码文件吧，并且把这个项目设为priviate的，要花钱的哦，这样别人就看不到啦。。。</p>
+<h2 id="新建hexo分支"><a href="#新建hexo分支" class="headerlink" title="新建hexo分支"></a>新建hexo分支</h2><p><img src="http://ondlsj2sn.bkt.clouddn.com/Fj58UGgezpzxA74yfWhnXoZTXI1j.png!web" alt=""></p>
+<p>如上图在红色输入框内写入新建的branch名 hexo 后，回车即可建立新的branch-hexo；</p>
+<h2 id="设置默认分支"><a href="#设置默认分支" class="headerlink" title="设置默认分支"></a>设置默认分支</h2><p>因为我们写博客更多的是更新这个分支，网站文件所在的 master 分支则由 <code>hexo d</code> 命令发布文章的时候进行推送，所以我们将 hexo分支设置为默认分支，这样我们在新的电脑环境下 git clone 该仓库时，自动切到 hexo分支。按下图进行操作。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FrjlF2U3nigZwuOi9sfTDlPCu3Hp.png" alt=""></p>
+<h2 id="配置hexo-deploy参数"><a href="#配置hexo-deploy参数" class="headerlink" title="配置hexo deploy参数"></a>配置hexo deploy参数</h2><p>为了保证 hexo d 命令可以正确部署到 master 分支，在hexo 的配置文件 _config.yml 文件中配置参数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>hexo 3.0之后 deploy type，将github改为了git，这样适用性更广了，如果你发现无法 hexo d ，使用下面的命令安装git deployer插件后重试即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<h2 id="修改推送到hexo分支"><a href="#修改推送到hexo分支" class="headerlink" title="修改推送到hexo分支"></a>修改推送到hexo分支</h2><p>上一步的deploy参数正确配置后，文章写完使用 hexo g -d 命令就可以直接部署了，生成的博客静态文件会自动部署到 username.github.io 仓库的 master 分支上。</p>
+<p>网站页面是保存了，但这时候我们还没有保存我们的hexo原始文件，包括我们的文章md文件，我们千辛万苦修改的主题配置等。。。接下来使用下面的步骤将他们都统统推送到 hexo 分支上去。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git commit -m “change description”</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure></p>
+<p>这样就OK了，我们的原始文件就都上去了，换电脑也不怕了。</p>
+<h2 id="日常写博客"><a href="#日常写博客" class="headerlink" title="日常写博客"></a>日常写博客</h2><p>有时候我们可能会在不同的电脑上写博客，那在不同的电脑上配置 hexo、git、node.js，以及配置git ssh key等都要折腾一下的，这是免不了的，也是比wordpress等其他博客框架麻烦的一点。</p>
+<h2 id="已有环境"><a href="#已有环境" class="headerlink" title="已有环境"></a>已有环境</h2><p>如果在电脑上已经写过博客，那么可以在已有的工作目录下同步之前写的博客。在你的仓库目录下右键’git bash shell’，起来bash命令行，然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull</div></pre></td></tr></table></figure></p>
+<p>这样你的状态就更新了，之后就是 hexo 命令写文章啦。。。</p>
+<p>写完 <code>hexo g -d</code> 部署好后，使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git commit -m “change description”</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure></p>
+<p>推送上去。</p>
+<h2 id="新的环境"><a href="#新的环境" class="headerlink" title="新的环境"></a>新的环境</h2><p>到了新的电脑上时，我们需要将项目先下载到本地，然后再进行hexo初始化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/username/username.github.io.git</div><div class="line">npm install hexo</div><div class="line">npm install</div><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>之后开始写博客，写好部署好之后，别忘记 git add , … , git push origin hexo…推上去…</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=27867499&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2016/07/15/16-07-15/" title="http://dinson.win/2016/07/15/16-07-15/" target="_blank">http://dinson.win/2016/07/15/16-07-15/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建hexo分支"><span class="toc-text">新建hexo分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置默认分支"><span class="toc-text">设置默认分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置hexo-deploy参数"><span class="toc-text">配置hexo deploy参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改推送到hexo分支"><span class="toc-text">修改推送到hexo分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日常写博客"><span class="toc-text">日常写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#已有环境"><span class="toc-text">已有环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新的环境"><span class="toc-text">新的环境</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Python,基础,教学,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Python从入门到放弃（4）</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/24/17-05-24/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Python从入门到放弃（4）</h1>
+    <p class="post-meta">
+      <span class="post-time">2017-05-24</span>
+      
+      <a href="/categories/Python从入门到放弃/" class="post-categories">Python从入门到放弃</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<ol>
+<li>函数基本语法及特性</li>
+<li>参数与局部变量</li>
+<li>返回值</li>
+<li>嵌套函数</li>
+<li>递归</li>
+<li>匿名函数</li>
+<li>函数式编程介绍</li>
+<li>高阶函数</li>
+<li>内置函数</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="函数基本语法及特性"><a href="#函数基本语法及特性" class="headerlink" title="函数基本语法及特性"></a>函数基本语法及特性</h2><p><strong>背景提要</strong><br>现在老板让你写一个监控程序，监控服务器的系统状况，当cpu＼memory＼disk等指标的使用量超过阀值时即发邮件报警，你掏空了所有的知识量，写出了以下代码<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> <span class="literal">True</span>：</div><div class="line">    <span class="keyword">if</span> cpu利用率 &gt; <span class="number">90</span>%:</div><div class="line">        <span class="meta">#发送邮件提醒</span></div><div class="line">        连接邮箱服务器</div><div class="line">        发送邮件</div><div class="line">        关闭连接</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> 硬盘使用空间 &gt; <span class="number">90</span>%:</div><div class="line">        <span class="meta">#发送邮件提醒</span></div><div class="line">        连接邮箱服务器</div><div class="line">        发送邮件</div><div class="line">        关闭连接</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> 内存占用 &gt; <span class="number">80</span>%:</div><div class="line">        <span class="meta">#发送邮件提醒</span></div><div class="line">        连接邮箱服务器</div><div class="line">        发送邮件</div><div class="line">        关闭连接</div></pre></td></tr></table></figure></p>
+<p>上面的代码实现了功能，但即使是邻居老王也看出了端倪，老王亲切的摸了下你家儿子的脸蛋，说，你这个重复代码太多了，每次报警都要重写一段发邮件的代码，太low了，这样干存在2个问题：</p>
+<ul>
+<li>代码重复过多，一个劲的copy and paste不符合高端程序员的气质</li>
+<li>如果日后需要修改发邮件的这段代码，比如加入群发功能，那你就需要在所有用到这段代码的地方都修改一遍</li>
+</ul>
+<p>你觉得老王说的对，你也不想写重复代码，但又不知道怎么搞，老王好像看出了你的心思，此时他抱起你儿子，笑着说，其实很简单，只需要把重复的代码提取出来，放在一个公共的地方，起个名字，以后谁想用这段代码，就通过这个名字调用就行了，如下<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> 发送邮件<span class="params">(内容)</span></span></div><div class="line">    <span class="comment">#发送邮件提醒</span></div><div class="line">    连接邮箱服务器</div><div class="line">    发送邮件</div><div class="line">    关闭连接</div><div class="line">     </div><div class="line"><span class="keyword">while</span> True：</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> cpu利用率 &gt; <span class="number">90</span>%:</div><div class="line">        发送邮件(<span class="string">'CPU报警'</span>)</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> 硬盘使用空间 &gt; <span class="number">90</span>%:</div><div class="line">        发送邮件(<span class="string">'硬盘报警'</span>)</div><div class="line">     </div><div class="line">    <span class="keyword">if</span> 内存占用 &gt; <span class="number">80</span>%:</div><div class="line">        发送邮件(<span class="string">'内存报警'</span>)</div></pre></td></tr></table></figure></p>
+<p><strong>函数是什么?</strong></p>
+<p>函数一词来源于数学，但编程中的「函数」概念，与数学中的函数是有很大不同的，具体区别，我们后面会讲，编程中的函数在英文中也有很多不同的叫法。在BASIC中叫做subroutine(子过程或子程序)，在Pascal中叫做procedure(过程)和function，在C中只有function，在Java里面叫做method。</p>
+<p><strong>定义: 函数是指将一组语句的集合通过一个名字(函数名)封装起来，要想执行这个函数，只需调用其函数名即可</strong><br><strong>特性:</strong></p>
+<ul>
+<li>减少重复代码</li>
+<li>使程序变的可扩展</li>
+<li>使程序变得易维护</li>
+<li>语法定义</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">sayhi</span><span class="params">()</span>:</span><span class="comment">#函数名</span></div><div class="line">    print(<span class="string">"Hello, I'm nobody!"</span>)</div><div class="line"> </div><div class="line">sayhi() <span class="comment">#调用函数</span></div></pre></td></tr></table></figure>
+<p>可以带参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#下面这段代码</span></div><div class="line">a,b = <span class="number">5</span>,<span class="number">8</span></div><div class="line">c = a**b</div><div class="line">print(c)</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="comment">#改成用函数写</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(x,y)</span>:</span></div><div class="line">    res = x**y</div><div class="line">    <span class="keyword">return</span> res <span class="comment">#返回函数执行结果</span></div><div class="line"> </div><div class="line">c = calc(a,b) ＃结果赋值给c变量</div><div class="line">print(c)</div></pre></td></tr></table></figure></p>
+<h2 id="函数参数与局部变量"><a href="#函数参数与局部变量" class="headerlink" title="函数参数与局部变量"></a>函数参数与局部变量</h2><p><strong>形参变量</strong>只有在被调用时才分配内存单元，在调用结束时，即刻释放所分配的内存单元。因此，形参只在函数内部有效。函数调用结束返回主调用函数后则不能再使用该形参变量</p>
+<p><strong>实参</strong>可以是常量、变量、表达式、函数等，无论实参是何种类型的量，在进行函数调用时，它们都必须有确定的值，以便把这些值传送给形参。因此应预先用赋值，输入等办法使参数获得确定值</p>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>看下面代码<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">def</span> <span class="selector-tag">stu_register</span>(name,age,country,course):</div><div class="line">    <span class="selector-tag">print</span>(<span class="string">"----注册学生信息------"</span>)</div><div class="line">    <span class="selector-tag">print</span>(<span class="string">"姓名:"</span>,name)</div><div class="line">    <span class="selector-tag">print</span>(<span class="string">"age:"</span>,age)</div><div class="line">    <span class="selector-tag">print</span>(<span class="string">"国籍:"</span>,country)</div><div class="line">    <span class="selector-tag">print</span>(<span class="string">"课程:"</span>,course)</div><div class="line"> </div><div class="line"><span class="selector-tag">stu_register</span>(<span class="string">"王山炮"</span>,<span class="number">22</span>,<span class="string">"CN"</span>,<span class="string">"python_devops"</span>)</div><div class="line"><span class="selector-tag">stu_register</span>(<span class="string">"张叫春"</span>,<span class="number">21</span>,<span class="string">"CN"</span>,<span class="string">"linux"</span>)</div><div class="line"><span class="selector-tag">stu_register</span>(<span class="string">"刘老根"</span>,<span class="number">25</span>,<span class="string">"CN"</span>,<span class="string">"linux"</span>)</div></pre></td></tr></table></figure></p>
+<p>发现 country 这个参数 基本都 是”CN”, 就像我们在网站上注册用户，像国籍这种信息，你不填写，默认就会是 中国， 这就是通过默认参数实现的，把country变成默认参数非常简单<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">stu_register</span><span class="params">(name,age,course,country=<span class="string">"CN"</span>)</span></span><span class="symbol">:</span></div></pre></td></tr></table></figure></p>
+<p>这样，这个参数在调用时不指定，那默认就是CN，指定了的话，就用你指定的值。</p>
+<blockquote>
+<p>另外，你可能注意到了，在把country变成默认参数后，我同时把它的位置移到了最后面，为什么呢？　</p>
+</blockquote>
+<h3 id="关键参数"><a href="#关键参数" class="headerlink" title="关键参数"></a>关键参数</h3><p>正常情况下，给函数传参数要按顺序，不想按顺序就可以用关键参数，只需指定参数名即可，<strong>但记住一个要求就是，关键参数必须放在位置参数之后。</strong><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">stu_register</span><span class="params">(age=<span class="number">22</span>,name=<span class="string">'alex'</span>,course=<span class="string">"python"</span>,)</span></span></div></pre></td></tr></table></figure></p>
+<h3 id="非固定参数"><a href="#非固定参数" class="headerlink" title="非固定参数"></a>非固定参数</h3><p>若你的函数在定义时不确定用户想传入多少个参数，就可以使用非固定参数<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def stu_register(<span class="name">name</span>,age,*args): # *args 会把多传入的参数变成一个元组形式</div><div class="line">    print(<span class="name">name</span>,age,args)</div><div class="line"> </div><div class="line">stu_register(<span class="string">"Alex"</span>,<span class="number">22</span>)</div><div class="line">#输出</div><div class="line">#Alex <span class="number">22</span> () #后面这个()就是args,只是因为没传值,所以为空</div><div class="line"> </div><div class="line">stu_register(<span class="string">"Jack"</span>,<span class="number">32</span>,<span class="string">"CN"</span>,<span class="string">"Python"</span>)</div><div class="line">#输出</div><div class="line"># Jack <span class="number">32</span> ('CN', 'Python')</div></pre></td></tr></table></figure></p>
+<p>还可以有一个**kwargs<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">def stu_register(<span class="name">name</span>,age,*args,**kwargs): # *kwargs 会把多传入的参数变成一个dict形式</div><div class="line">    print(<span class="name">name</span>,age,args,kwargs)</div><div class="line"> </div><div class="line">stu_register(<span class="string">"Alex"</span>,<span class="number">22</span>)</div><div class="line">#输出</div><div class="line">#Alex <span class="number">22</span> () &#123;&#125;#后面这个&#123;&#125;就是kwargs,只是因为没传值,所以为空</div><div class="line"> </div><div class="line">stu_register(<span class="string">"Jack"</span>,<span class="number">32</span>,<span class="string">"CN"</span>,<span class="string">"Python"</span>,sex=<span class="string">"Male"</span>,province=<span class="string">"ShanDong"</span>)</div><div class="line">#输出</div><div class="line"># Jack <span class="number">32</span> ('CN', 'Python') &#123;'province': 'ShanDong', 'sex': 'Male'&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">name</span> = <span class="string">"Disnon"</span></div><div class="line"> </div><div class="line">def change_name(<span class="built_in">name</span>):</div><div class="line">    print(<span class="string">"before change:"</span>,<span class="built_in">name</span>)</div><div class="line">    <span class="built_in">name</span> = <span class="string">"Mike"</span></div><div class="line">    print(<span class="string">"after change"</span>, <span class="built_in">name</span>)</div><div class="line"> </div><div class="line"> </div><div class="line">change_name(<span class="built_in">name</span>)</div><div class="line"> </div><div class="line">print(<span class="string">"在外面看看name改了么?"</span>,<span class="built_in">name</span>)</div></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">before</span> <span class="built_in">change</span>: Disnon</div><div class="line"><span class="built_in">after</span> <span class="built_in">change</span> Mike</div><div class="line">在外面看看name改了么? Disnon</div></pre></td></tr></table></figure></p>
+<h3 id="全局与局部变量"><a href="#全局与局部变量" class="headerlink" title="全局与局部变量"></a>全局与局部变量</h3><p>在子程序中定义的变量称为局部变量，在程序的一开始定义的变量称为全局变量。<br>全局变量作用域是整个程序，局部变量作用域是定义该变量的子程序。<br>当全局变量与局部变量同名时：<br>在定义局部变量的子程序内，局部变量起作用；在其它地方全局变量起作用。</p>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>要想获取函数的执行结果，就可以用return语句把结果返回<br>注意:</p>
+<ol>
+<li>函数在执行过程中只要遇到return语句，就会停止执行并返回结果，so 也可以理解为 return 语句代表着函数的结束</li>
+<li>如果未在函数中指定return,那这个函数的返回值为None </li>
+</ol>
+<h2 id="嵌套函数-函数套函数"><a href="#嵌套函数-函数套函数" class="headerlink" title="嵌套函数(函数套函数)　"></a>嵌套函数(函数套函数)　</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">name = <span class="string">"Dinson"</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_name</span><span class="params">()</span>:</span></div><div class="line">    name = <span class="string">"Dinson2"</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change_name2</span><span class="params">()</span>:</span></div><div class="line">        name = <span class="string">"Dinson3"</span></div><div class="line">        print(<span class="string">"第3层打印"</span>, name)</div><div class="line"></div><div class="line">    change_name2()  <span class="comment"># 调用内层函数</span></div><div class="line">    print(<span class="string">"第2层打印"</span>, name)</div><div class="line"></div><div class="line">change_name()</div><div class="line">print(<span class="string">"最外层打印"</span>, name)</div></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">第<span class="number">3</span>层打印 Di<span class="symbol">nson3</span></div><div class="line">第<span class="number">2</span>层打印 Di<span class="symbol">nson2</span></div><div class="line">最外层打印 Di<span class="symbol">nson</span></div></pre></td></tr></table></figure></p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。<br><figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def calc(<span class="built_in">n</span>)<span class="symbol">:</span></div><div class="line">    print(<span class="built_in">n</span>)</div><div class="line">    <span class="built_in">if</span> <span class="built_in">int</span>(<span class="built_in">n</span> / <span class="number">2</span>) == <span class="symbol">0:</span></div><div class="line">        return <span class="built_in">n</span></div><div class="line">    return calc(<span class="built_in">int</span>(<span class="built_in">n</span> / <span class="number">2</span>))</div><div class="line"></div><div class="line">calc(<span class="number">10</span>)</div></pre></td></tr></table></figure></p>
+<p>输出：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">10</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>递归特性:</p>
+<ol>
+<li>必须有一个明确的结束条件</li>
+<li>每次进入更深一层递归时，问题规模相比上次递归都应有所减少</li>
+<li>递归效率不高，递归层次过多会导致栈溢出（在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出）</li>
+</ol>
+<p><strong>递归函数实际应用案例，二分查找(要二分查找必须先排序)</strong><br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">data = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">20</span>, <span class="number">21</span>, <span class="number">22</span>, <span class="number">23</span>, <span class="number">30</span>, <span class="number">32</span>, <span class="number">33</span>, <span class="number">35</span>]</div><div class="line"></div><div class="line"></div><div class="line">def binary_search(dataset, find_num):</div><div class="line">    print(dataset)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(dataset) &gt; <span class="number">1</span>:</div><div class="line">        <span class="keyword">mid</span> = int(<span class="built_in">len</span>(dataset) / <span class="number">2</span>)</div><div class="line">        <span class="keyword">if</span> dataset[<span class="keyword">mid</span>] == find_num:  <span class="comment"># find it</span></div><div class="line">            print(<span class="string">"找到数字"</span>, dataset[<span class="keyword">mid</span>])</div><div class="line">        elif dataset[<span class="keyword">mid</span>] &gt; find_num:  <span class="comment"># 找的数在mid左面</span></div><div class="line">            print(<span class="string">"\033[31;1m找的数在mid[%s]左面\033[0m"</span> % dataset[<span class="keyword">mid</span>])</div><div class="line">            <span class="literal">return</span> binary_search(dataset[<span class="number">0</span>:<span class="keyword">mid</span>], find_num)</div><div class="line">        <span class="keyword">else</span>:  <span class="comment"># 找的数在mid右面</span></div><div class="line">            print(<span class="string">"\033[32;1m找的数在mid[%s]右面\033[0m"</span> % dataset[<span class="keyword">mid</span>])</div><div class="line">            <span class="literal">return</span> binary_search(dataset[<span class="keyword">mid</span> + <span class="number">1</span>:], find_num)</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">if</span> dataset[<span class="number">0</span>] == find_num:  <span class="comment"># find it</span></div><div class="line">            print(<span class="string">"找到数字啦"</span>, dataset[<span class="number">0</span>])</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"没的分了,要找的数字[%s]不在列表里"</span> % find_num)</div><div class="line"></div><div class="line"></div><div class="line">binary_search(data, <span class="number">66</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>匿名函数就是不需要显式的指定函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#这段代码</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">calc</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">return</span> n**n</div><div class="line">print(calc(<span class="number">10</span>))</div><div class="line"> </div><div class="line"><span class="comment">#换成匿名函数</span></div><div class="line">calc = <span class="keyword">lambda</span> n:n**n</div><div class="line">print(calc(<span class="number">10</span>))</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>你也许会说，用上这个东西没感觉有毛方便呀， 。。。。呵呵，如果是这么用，确实没毛线改进，不过匿名函数主要是和其它函数搭配使用的呢，如下</p>
+</blockquote>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">res = <span class="built_in">map</span>(<span class="built_in">lambda</span> x:x**<span class="number">2</span>,[<span class="number">1</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">8</span>])</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> res:</div><div class="line">    <span class="built_in">print</span>(i)</div></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">25</span></div><div class="line"><span class="number">49</span></div><div class="line"><span class="number">16</span></div><div class="line"><span class="number">64</span></div></pre></td></tr></table></figure></p>
+<h2 id="函数式编程介绍"><a href="#函数式编程介绍" class="headerlink" title="函数式编程介绍　　"></a>函数式编程介绍　　</h2><p>函数是Python内建支持的一种封装，我们通过把大段代码拆成函数，通过一层一层的函数调用，就可以把复杂任务分解成简单的任务，这种分解可以称之为面向过程的程序设计。函数就是面向过程的程序设计的基本单元。</p>
+<p><strong>函数式编程中的函数这个术语不是指计算机中的函数（实际上是Subroutine），而是指数学中的函数，即自变量的映射。也就是说一个函数的值仅决定于函数参数的值，不依赖其他状态。比如sqrt(x)函数计算x的平方根，只要x不变，不论什么时候调用，调用几次，值都是不变的。</strong></p>
+<p>Python对函数式编程提供部分支持。由于Python允许使用变量，因此，Python不是纯函数式编程语言。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>简单说，”函数式编程”是一种”<a href="https://en.wikipedia.org/wiki/Programming_paradigm" target="_blank" rel="external">编程范式</a>“（programming paradigm），也就是如何编写程序的方法论。</p>
+<p>主要思想是把运算过程尽量写成一系列嵌套的函数调用。举例来说，现在有这样一个数学表达式：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(<span class="number">1</span> + <span class="number">2</span>) * <span class="number">3</span> - <span class="number">4</span></div></pre></td></tr></table></figure></p>
+<p>传统的过程式编程，可能这样写：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var a</span> = 1 + 2;</div><div class="line"><span class="attribute">var b</span> = a * 3;</div><div class="line"><span class="attribute">var c</span> = b - 4;</div></pre></td></tr></table></figure></p>
+<p>函数式编程要求使用函数，我们可以把运算过程定义为不同的函数，然后写成下面这样：<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var result = subtract(<span class="name">multiply</span>(<span class="name">add</span>(<span class="number">1</span>,<span class="number">2</span>), <span class="number">3</span>), <span class="number">4</span>)<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>这段代码再演进以下，可以变成这样<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">add(<span class="number">1</span>,<span class="number">2</span>).multiply(<span class="number">3</span>).subtract(<span class="number">4</span>)</div></pre></td></tr></table></figure></p>
+<p>这基本就是自然语言的表达了。再看下面的代码，大家应该一眼就能明白它的意思吧：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">merge([<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]).sort().search(<span class="string">"2"</span>)</div></pre></td></tr></table></figure></p>
+<p>因此，函数式编程的代码更容易理解。<br>要想学好函数式编程，不要玩py,玩Erlang,Haskell, 好了，我只会这么多了。。。</p>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p>变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def <span class="built_in">add</span>(<span class="keyword">x</span>,<span class="keyword">y</span>,<span class="keyword">f</span>):</div><div class="line">    <span class="keyword">return</span> <span class="keyword">f</span>(<span class="keyword">x</span>) + <span class="keyword">f</span>(<span class="keyword">y</span>)</div><div class="line"> </div><div class="line"> </div><div class="line"><span class="keyword">res</span> = <span class="built_in">add</span>(<span class="number">3</span>,-<span class="number">6</span>,<span class="built_in">abs</span>)</div><div class="line"><span class="keyword">print</span>(<span class="keyword">res</span>)</div></pre></td></tr></table></figure></p>
+<h2 id="内置参数"><a href="#内置参数" class="headerlink" title="内置参数"></a>内置参数</h2><p><img src="http://ondlsj2sn.bkt.clouddn.com/FoVID96Zc78HEbXOBomVPQ1yTYGN.png" alt=""><br>内置参数详解：<a href="https://docs.python.org/3/library/functions.html?highlight=built#ascii" target="_blank" rel="external">https://docs.python.org/3/library/functions.html?highlight=built#ascii </a></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#compile</span></div><div class="line">f = <span class="built_in">open</span>(<span class="string">"函数递归.py"</span>)</div><div class="line">data =compile(f.<span class="built_in">read</span>(),<span class="string">''</span>,<span class="string">'exec'</span>)</div><div class="line">exec(data)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#print</span></div><div class="line">msg = <span class="string">"又回到最初的起点"</span></div><div class="line">f = <span class="built_in">open</span>(<span class="string">"tofile"</span>,<span class="string">"w"</span>)</div><div class="line">print(msg,<span class="string">"记忆中你青涩的脸"</span>,sep=<span class="string">"|"</span>,<span class="keyword">end</span>=<span class="string">""</span>,<span class="built_in">file</span>=f)</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># #slice</span></div><div class="line"><span class="comment"># a = range(20)</span></div><div class="line"><span class="comment"># pattern = slice(3,8,2)</span></div><div class="line"><span class="comment"># for i in a[pattern]: #等于a[3:8:2]</span></div><div class="line"><span class="comment">#     print(i)</span></div><div class="line"><span class="comment">#</span></div><div class="line"><span class="comment">#</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#memoryview</span></div><div class="line"><span class="comment">#usage:</span></div><div class="line"><span class="comment">#&gt;&gt;&gt; memoryview(b'abcd')</span></div><div class="line"><span class="comment">#&lt;memory at 0x104069648&gt;</span></div><div class="line"><span class="comment">#在进行切片并赋值数据时，不需要重新copy原列表数据，可以直接映射原数据内存，</span></div><div class="line">import <span class="built_in">time</span></div><div class="line"><span class="keyword">for</span> n <span class="keyword">in</span> (<span class="number">100000</span>, <span class="number">200000</span>, <span class="number">300000</span>, <span class="number">400000</span>):</div><div class="line">    data = b<span class="string">'x'</span>*n</div><div class="line">    <span class="built_in">start</span> = <span class="built_in">time</span>.<span class="built_in">time</span>()</div><div class="line">    b = data</div><div class="line">    <span class="keyword">while</span> b:</div><div class="line">        b = b[<span class="number">1</span>:]</div><div class="line">    print(<span class="string">'bytes'</span>, n, <span class="built_in">time</span>.<span class="built_in">time</span>()-<span class="built_in">start</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> n <span class="keyword">in</span> (<span class="number">100000</span>, <span class="number">200000</span>, <span class="number">300000</span>, <span class="number">400000</span>):</div><div class="line">    data = b<span class="string">'x'</span>*n</div><div class="line">    <span class="built_in">start</span> = <span class="built_in">time</span>.<span class="built_in">time</span>()</div><div class="line">    b = memoryview(data)</div><div class="line">    <span class="keyword">while</span> b:</div><div class="line">        b = b[<span class="number">1</span>:]</div><div class="line">    print(<span class="string">'memoryview'</span>, n, <span class="built_in">time</span>.<span class="built_in">time</span>()-<span class="built_in">start</span>)</div><div class="line"></div><div class="line">几个内置方法用法提醒</div></pre></td></tr></table></figure>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=1559072&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/24/17-05-24/" title="http://dinson.win/2017/05/24/17-05-24/" target="_blank">http://dinson.win/2017/05/24/17-05-24/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数基本语法及特性"><span class="toc-text">函数基本语法及特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数与局部变量"><span class="toc-text">函数参数与局部变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#默认参数"><span class="toc-text">默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关键参数"><span class="toc-text">关键参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非固定参数"><span class="toc-text">非固定参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部变量"><span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局与局部变量"><span class="toc-text">全局与局部变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#返回值"><span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套函数-函数套函数"><span class="toc-text">嵌套函数(函数套函数)　</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数"><span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数式编程介绍"><span class="toc-text">函数式编程介绍　　</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-text">定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高阶函数"><span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置参数"><span class="toc-text">内置参数</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>
