@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,共享元素,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android共享元素场景切换动画的实现</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/04/16/17-04-16/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android共享元素场景切换动画的实现</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>我们知道安卓5.0系统引入了共享元素，能做出非常炫酷的场景切换效果，这让人非常兴奋同时非常蛋疼，因为低版本没法使用啊，所以今天就跟大家分享一下自己写的一个库，其实只有2个文件而已，还是叫它工具比较合适吧……非常轻量级，简直是人畜无害，兼容安卓5.0以下的版本。</p>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<p>先看看效果：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FuAsXRvr0p3XH756f5X0YoVWzwid.gif" alt=""><br>效果图涉及了Activity中的元素（顶部bar）和ListView中的元素（icon和name），事实上无论哪个位置的元素都能轻松实现。</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>使用这个工具非常简单，假设有ActivityA（简称A）和ActivityB（简称B），在A中启动B，再从B回退到A，首先需要在A和B中，各自定义id相同的两个View，这里可以是ListView的item布局中的View，只要获取到View即可，然后：</p>
+<p><strong>·A启动B：</strong><br><img src="http://ondlsj2sn.bkt.clouddn.com/FsQNPZ4ay7W6EjnqWp5lM3gbMX7o.png" alt=""><br><strong>·B回退到A：</strong><br><img src="http://ondlsj2sn.bkt.clouddn.com/FqJBAMpZBWsFUi_ob4YzPEOMzrjO.png" alt=""></p>
+<p>用法非常简单，当然以上只是最少参数的基本用法，除此之外可以设置的参数还有时间、加减速以及动画监听，其中动画监听可以方便在动画开始前做一些初始化操作，以及动画结束后做一些显示操作，下面就来讲一下实现的原理。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>从A启动B时，首先需要构造一个EasyTransitionOptions对象，直接通过EasyTransitionOptions.makeTransitionOptions方法进行构造，传入的参数为ActivityA以及需要共享的元素View，我们看一下EasyTransitionOptions有啥：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FoHI7ZVr4oe5ArnzcvyA_QoGliAj.png" alt=""><br>可以看到前两个即为构造时传入的参数，第三个attrs接下来会用到。</p>
+<p>接着我们跟往常一样，构造一个Intent对象，然后调用EasyTransition.startActivity方法，传入了该Intent以及前面构造好的options，我们看看EasyTransition.startActivity做了什么：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FhV13pgqrzTBaPTQa7a2qQ6S0OVn.png" alt=""><br>首先调用了options.update方法，接着又获取了options的attrs并放到intent中，看看update方法：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fp6PhrgxeEOwz62IAv7qlv3hupXW.png" alt=""><br>就是这里，options使用传入的View填充了之前看到的那个ViewAttrs集合attrs，attrs存储了View的一些属性，分别为：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FuhInkYnHM0VHscuPaK8rJY6QqxX.png" alt=""><br>id用于获取B中的对应的View，接下来会讲到。startX和startY分别为View在A中的x、y坐标，这里通过View的getLocationOnScreen方法获取View在屏幕中的坐标，可以看到该方法的参数为int[] outLocation，以out开头的参数，意思即为执行方法后将填充该参数。width和height分别为View在A中的宽和高。</p>
+<p>接下来通过options获取Activity并调用真正的startActivity方法，然后再调用overridePendingTransition(0, 0)将系统的转场动画覆盖，0表示没有转场动画。</p>
+<p>然后进入到B，我们在B的onCreate方法中，只调用了一个方法EasyTransition.enter，看看这个方法做了什么：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FjU_eSsjyaj2Fhm93Fl7Zl-PLn1C.png" alt=""><br>这个方法有很多个重载，最简单的只需要传入一个Activity参数即可。参数都很简单，分别为ActivityB，动画时间，动画的差值器以及动画监听。</p>
+<p>首先通过Activity获取到Intent并拿到从A传入的ViewAttrs集合，接着执行了runEnterAnimation方法，到这里就要开始执行动画了，看看runEnterAnimation方法：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fq1k7n-d1dXjqVYHGT-JZHRDk8T3.png" alt=""><br>看似挺长的，其实只做了一件事，<strong>即根据ViewAttrs集合attrs，给B中的View先设置属性，再执行一段动画。</strong></p>
+<p>首先遍历attrs，通过id找到B中对应的View；然后在ViewTreeObserver.OnPreDrawListener中设置View的属性，其中scale属性设置为A中View的宽高与B中View的宽高的比，transition属性设置为A中View的坐标相对于B中View的坐标的偏移量，之所以使用屏幕坐标就是为了准确地算出坐标的偏移量，而不受状态栏等其他因素的影响。</p>
+<p>设置完成后，再调用View.animate方法，将动画结束状态设置为View在B中的初始状态，再传入时间、动画差值器以及监听器，就这样简单地完成了转场动画。</p>
+<p>接着我们需要从B回退到A，在回退的操作中，调用了EasyTransition.exit方法，看看它做了什么：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FgMNcEbDy1bKlJxuezkHk_nS4xuM.png" alt=""><br>看起来跟enter方法差不多，通过Activity获取到Intent，再拿到ViewAttrs集合，是的它又派上用场了，接着执行了runExitAnimation方法，可以看到也是挺眼熟的：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FlQzDy1wE3dBBJ1w0qiBSyyzopdQ.png" alt=""><br>也是遍历attrs，找到B中对应id的View，只不过这次动画是从View在B中的初始状态开始，变到View在A中的状态，属性还是那些属性，没有啥其他的。不一样的是，在执行动画后需要关闭B，所以调用了View.postDelayed方法，然后finish掉当前的Activity，依旧是覆盖一下系统的转场动画overridePendingTransition(0, 0)。</p>
+<p>就这样简单的实现了共享元素炫酷的转场动画，最初纠结于如何实现比较优雅，然后开始看5.0共享元素有关的那部分源码（也只是粗略看了一下），再看了看网上一些其他人的做法，最终提炼出了这个工具，非常轻量，用起来也挺舒服的。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=27571329&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/04/16/17-04-16/" title="http://dinson.win/2017/04/16/17-04-16/" target="_blank">http://dinson.win/2017/04/16/17-04-16/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用法"><span class="toc-text">用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

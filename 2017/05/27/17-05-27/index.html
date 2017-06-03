@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Python,基础,教学,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Python从入门到放弃（7）-- 面向对象编程进阶</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/05/27/17-05-27/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Python从入门到放弃（7）-- 面向对象编程进阶</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Python从入门到放弃/" class="post-categories">Python从入门到放弃</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<ul>
+<li>面向对象高级语法部分<br>　- 经典类vs新式类　　<br>　- 静态方法、类方法、属性方法<br>　- 类的特殊方法<br>　- 反射</li>
+<li>异常处理</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="经典类vs新式类"><a href="#经典类vs新式类" class="headerlink" title="经典类vs新式类"></a>经典类vs新式类</h2><p>把下面代码用python2 和python3都执行一下<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.n = <span class="string">'A'</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="title">A</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.n = <span class="string">'B'</span></div><div class="line">    pass</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>(<span class="title">A</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.n = <span class="string">'C'</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span>(<span class="title">B</span>,<span class="title">C</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        <span class="keyword">self</span>.n = <span class="string">'D'</span></div><div class="line">    pass</div><div class="line"> </div><div class="line">obj = D()</div><div class="line"> </div><div class="line">print(obj.n)</div></pre></td></tr></table></figure></p>
+<p>小结:<br>经典类：深度优先<br>新式类：广度优先<br>super()用法</p>
+<h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p>通过<strong>@staticmethod</strong>装饰器即可把其装饰的方法变为一个静态方法，什么是静态方法呢？其实不难理解，普通的方法，可以在实例化后直接调用，并且在方法里可以通过self.调用实例变量或类变量，但静态方法是不可以访问实例变量或类变量的，一个不能访问实例变量和类变量的方法，其实相当于跟类本身已经没什么关系了，它与类唯一的关联就是需要通过类名来调用这个方法<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="title">object</span>):</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"> </div><div class="line">    @staticmethod <span class="comment">#把eat方法变为静态方法</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">"%s is eating"</span> % <span class="keyword">self</span>.name)</div><div class="line"> </div><div class="line">d = Dog(<span class="string">"ChenRonghua"</span>)</div><div class="line">d.eat()</div></pre></td></tr></table></figure></p>
+<p>上面的调用会出以下错误，说是eat需要一个self参数，但调用时却没有传递，没错，当eat变成静态方法后，再通过实例调用时就不会自动把实例本身当作一个参数传给self了。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">TypeError:</span> eat() missing <span class="number">1</span> required positional <span class="string">argument:</span> <span class="string">'self'</span></div></pre></td></tr></table></figure></p>
+<p>想让上面的代码可以正常工作有两种办法</p>
+<ol>
+<li>调用时主动传递实例本身给eat方法，即d.eat(d) </li>
+<li>在eat方法中去掉self参数，但这也意味着，在eat中不能通过self.调用实例中的其它变量了<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="title">object</span>):</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"></div><div class="line">    @staticmethod</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">()</span></span>:</div><div class="line">        print(<span class="string">" is eating"</span>)</div><div class="line"></div><div class="line">d = Dog(<span class="string">"ChenRonghua"</span>)</div><div class="line">d.eat()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法　"></a>类方法　</h2><p>类方法通过<strong>@classmethod</strong>装饰器实现，类方法和普通方法的区别是， 类方法只能访问类变量，不能访问实例变量<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"> </div><div class="line">    @classmethod</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">"%s is eating"</span> % <span class="keyword">self</span>.name)</div><div class="line"> </div><div class="line">d = Dog(<span class="string">"ChenRonghua"</span>)</div><div class="line">d.eat()</div></pre></td></tr></table></figure></p>
+<p>执行报错如下，说Dog没有name属性，因为name是个实例变量，类方法是不能访问实例变量的<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AttributeError: <span class="built_in">type</span> object <span class="string">'Dog'</span> <span class="built_in">has</span> <span class="keyword">no</span> attribute <span class="string">'name'</span></div></pre></td></tr></table></figure></p>
+<p>此时可以定义一个类变量，也叫name,看下执行效果<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="title">object</span>):</span></div><div class="line">    name = <span class="string">"我是类变量"</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"> </div><div class="line">    @classmethod</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">"%s is eating"</span> % <span class="keyword">self</span>.name)</div><div class="line"> </div><div class="line">d = Dog(<span class="string">"ChenRonghua"</span>)</div><div class="line">d.eat()</div><div class="line"> </div><div class="line"><span class="comment">#执行结果</span></div><div class="line"> </div><div class="line">我是类变量 is eating</div></pre></td></tr></table></figure></p>
+<h2 id="属性方法"><a href="#属性方法" class="headerlink" title="属性方法　　"></a>属性方法　　</h2><p>属性方法的作用就是通过<strong>@property</strong>把一个方法变成一个静态属性<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>(<span class="title">object</span>):</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.name = name</div><div class="line"> </div><div class="line">    @property</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">" %s is eating"</span> %<span class="keyword">self</span>.name)</div><div class="line"> </div><div class="line">d = Dog(<span class="string">"ChenRonghua"</span>)</div><div class="line">d.eat()</div></pre></td></tr></table></figure></p>
+<p>调用会出以下错误， 说NoneType is not callable, 因为eat此时已经变成一个静态属性了， 不是方法了， 想调用已经不需要加()号了，直接d.eat就可以了<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TypeError: <span class="string">'NoneType'</span> <span class="keyword">object</span> <span class="keyword">is</span> <span class="keyword">not</span> callable</div></pre></td></tr></table></figure></p>
+<p>正常调用如下<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">d = Dog(<span class="string">"nick"</span>)</div><div class="line">d.eat</div><div class="line"> </div><div class="line">输出</div><div class="line">nick is eating</div></pre></td></tr></table></figure></p>
+<p>好吧，把一个方法变成静态属性有什么卵用呢？既然想要静态变量，那直接定义成一个静态变量不就得了么？well, 以后你会需到很多场景是不能简单通过 定义 静态属性来实现的， 比如 ，你想知道一个航班当前的状态，是到达了、延迟了、取消了、还是已经飞走了， 想知道这种状态你必须经历以下几步:</p>
+<ol>
+<li>连接航空公司API查询</li>
+<li>对查询结果进行解析 </li>
+<li>返回结果给你的用户</li>
+</ol>
+<p>因此这个status属性的值是一系列动作后才得到的结果，所以你每次调用时，其实它都要经过一系列的动作才返回你结果，但这些动作过程不需要用户关心， 用户只需要调用这个属性就可以，明白了么？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flight</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></div><div class="line">        self.flight_name = name</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checking_status</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">"checking flight %s status "</span> % self.flight_name)</div><div class="line">        <span class="keyword">return</span>  <span class="number">1</span></div><div class="line"></div><div class="line"><span class="meta">    @property</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flight_status</span><span class="params">(self)</span>:</span></div><div class="line">        status = self.checking_status()</div><div class="line">        <span class="keyword">if</span> status == <span class="number">0</span> :</div><div class="line">            print(<span class="string">"flight got canceled..."</span>)</div><div class="line">        <span class="keyword">elif</span> status == <span class="number">1</span> :</div><div class="line">            print(<span class="string">"flight is arrived..."</span>)</div><div class="line">        <span class="keyword">elif</span> status == <span class="number">2</span>:</div><div class="line">            print(<span class="string">"flight has departured already..."</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            print(<span class="string">"cannot confirm the flight status...,please check later"</span>)</div><div class="line"></div><div class="line">f = Flight(<span class="string">"CA980"</span>)</div><div class="line">f.flight_status</div></pre></td></tr></table></figure></p>
+<p>cool , 那现在我只能查询航班状态， 既然这个flight_status已经是个属性了， 那我能否给它赋值呢？试试吧<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = Flight(<span class="string">"CA980"</span>)</div><div class="line">f<span class="selector-class">.flight_status</span></div><div class="line">f<span class="selector-class">.flight_status</span> = <span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>输出， 说不能更改这个属性，我擦。。。。，怎么办怎么办。。。 </p>
+<p>当然可以改， 不过需要通过@proerty.setter装饰器再装饰一下，此时 你需要写一个新方法， 对这个flight_status进行更改。<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Flight</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name)</span></span>:</div><div class="line">        <span class="keyword">self</span>.flight_name = name</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checking_status</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">"checking flight %s status "</span> % <span class="keyword">self</span>.flight_name)</div><div class="line">        <span class="keyword">return</span>  <span class="number">1</span></div><div class="line"></div><div class="line">    @property</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flight_status</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        status = <span class="keyword">self</span>.checking_status()</div><div class="line">        <span class="keyword">if</span> status == <span class="number">0</span> :</div><div class="line">            print(<span class="string">"flight got canceled..."</span>)</div><div class="line">        elif status == <span class="number">1</span> :</div><div class="line">            print(<span class="string">"flight is arrived..."</span>)</div><div class="line">        elif status == <span class="number">2</span>:</div><div class="line">            print(<span class="string">"flight has departured already..."</span>)</div><div class="line">        <span class="symbol">else:</span></div><div class="line">            print(<span class="string">"cannot confirm the flight status...,please check later"</span>)</div><div class="line">    </div><div class="line">    @flight_status.setter <span class="comment">#修改</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flight_status</span><span class="params">(<span class="keyword">self</span>,status)</span></span>:</div><div class="line">        status_dic = &#123;</div><div class="line">            <span class="number">0</span> : <span class="string">"canceled"</span>,</div><div class="line">            <span class="number">1</span> <span class="symbol">:<span class="string">"arrived"</span></span>,</div><div class="line">            <span class="number">2</span> : <span class="string">"departured"</span></div><div class="line">        &#125;</div><div class="line">        print(<span class="string">"\033[31;1mHas changed the flight status to \033[0m"</span>,status_dic.get(status) )</div><div class="line"></div><div class="line">    @flight_status.deleter  <span class="comment">#删除</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">flight_status</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">        print(<span class="string">"status got removed..."</span>)</div><div class="line"></div><div class="line">f = Flight(<span class="string">"CA980"</span>)</div><div class="line">f.flight_status</div><div class="line">f.flight_status =  <span class="number">2</span> <span class="comment">#触发<span class="doctag">@flight</span>_status.setter </span></div><div class="line">del f.flight_status <span class="comment">#触发<span class="doctag">@flight</span>_status.deleter</span></div></pre></td></tr></table></figure></p>
+<p>注意以上代码里还写了一个@flight_status.deleter, 是允许可以将这个属性删除 </p>
+<h2 id="类的特殊成员方法"><a href="#类的特殊成员方法" class="headerlink" title="类的特殊成员方法"></a>类的特殊成员方法</h2><ul>
+<li><p><strong>doc</strong>　　表示类的描述信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></div><div class="line">    <span class="string">""" 描述类信息，这是用于看片的神奇 """</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line"> </div><div class="line"><span class="keyword">print</span> Foo.__doc__</div><div class="line"><span class="comment">#输出：描述类信息，这是用于看片的神奇</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>__module__</code>    表示当前操作的对象在那个模块</p>
+</li>
+<li><code>__class__</code>     表示当前操作的对象的类是什么</li>
+<li><code>__init__</code>        构造方法，通过类创建对象时，自动触发执行。</li>
+<li><code>__del__</code>        析构方法，当对象在内存中被释放时，自动触发执行。<br>注：此方法一般无须定义，因为Python是一门高级语言，程序员在使用时无需关心内存的分配和释放，因为此工作都是交给Python解释器来执行，所以，析构函数的调用是由解释器在进行垃圾回收时自动触发执行的</li>
+<li><code>__call__</code> 对象后面加括号，触发执行。<br>注：构造方法的执行是由创建对象触发的，即：对象 = 类名() ；而对于 <strong>call</strong> 方法的执行是由对象后加括号触发的，即：对象() 或者 类()()</li>
+<li><code>__dict__</code> 查看类或对象中的所有成员</li>
+<li><code>__str__</code> 如果一个类中定义了<strong>str</strong>方法，那么在打印 对象 时，默认输出该方法的返回值。</li>
+<li><code>__getitem__</code>、<code>__setitem__</code>、<code>__delitem__</code>    用于索引操作，如字典。以上分别表示获取、设置、删除数据</li>
+<li><code>__new__</code> \ <code>__metaclass__</code><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="title">class</span> <span class="type">Foo</span>(object):</div><div class="line"> </div><div class="line">    def __init__(self,name):</div><div class="line">        self.name = name</div><div class="line"> </div><div class="line"><span class="title">f</span> = <span class="type">Foo</span>(<span class="string">"alex"</span>)</div><div class="line"></div><div class="line"><span class="title">print</span> <span class="keyword">type</span>(f) # 输出：&lt;class '__main__.<span class="type">Foo'</span>&gt;     表示，obj 对象由<span class="type">Foo</span>类创建</div><div class="line"><span class="title">print</span> <span class="keyword">type</span>(<span class="type">Foo</span>) # 输出：&lt;<span class="keyword">type</span> '<span class="keyword">type</span>'&gt;              表示，<span class="type">Foo</span>类对象由 <span class="keyword">type</span> 类创建</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>　　上述代码中，obj 是通过 Foo 类实例化的对象，其实，不仅 obj 是一个对象，Foo类本身也是一个对象，因为在Python中一切事物都是对象。</p>
+<p>　　如果按照一切事物都是对象的理论：obj对象是通过执行Foo类的构造方法创建，那么Foo类对象应该也是通过执行某个类的 构造方法 创建。</p>
+<p>　　所以，<strong>f对象是Foo类的一个实例，Foo类对象是 type 类的一个实例</strong>，即：Foo类对象 是通过type类的构造方法创建。<br>　　那么，创建类就可以有两种方式：</p>
+<ul>
+<li><p>普通方式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'hello dinson'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>特殊方式</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def <span class="function"><span class="keyword">func</span><span class="params">(self)</span>:</span></div><div class="line">    print <span class="string">'hello dinson'</span></div><div class="line">  </div><div class="line">Foo = type(<span class="string">'Foo'</span>,(object,), &#123;<span class="string">'func'</span>: <span class="function"><span class="keyword">func</span> &#125;)</span></div><div class="line"><span class="meta">#type第一个参数：类名</span></div><div class="line"><span class="meta">#type第二个参数：当前类的基类</span></div><div class="line"><span class="meta">#type第三个参数：类的成员</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>加上构造方法</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(<span class="keyword">self</span>)</span></span>:</div><div class="line">    print(<span class="string">"hello %s"</span>%<span class="keyword">self</span>.name)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>,name,age)</span></span>:</div><div class="line">    <span class="keyword">self</span>.name = name</div><div class="line">    <span class="keyword">self</span>.age = age</div><div class="line">Foo = type(<span class="string">'Foo'</span>,(object,),&#123;<span class="string">'func'</span><span class="symbol">:func</span>,<span class="string">'__init__'</span><span class="symbol">:__init__</span>&#125;)</div><div class="line"></div><div class="line">f = Foo(<span class="string">"jack"</span>,<span class="number">22</span>)</div><div class="line">f.func()</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>So记住，类是由 type 类实例化产生</p>
+<p>那么问题来了，类默认是由 type 类实例化产生，type类中如何实现的创建类？类又是如何创建对象？</p>
+<p>答：类中有一个属性 <strong>metaclass</strong>，其用来表示该类由 谁 来实例化创建，所以，我们可以为 <strong>metaclass</strong> 设置一个type类的派生类，从而查看 类 创建的过程。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnZLN1spIQxHZFs_1qzkIXwmpw7w.png" alt=""></p>
+<p>类的生成 调用 顺序依次是 <strong>new</strong> –&gt; <strong>init</strong> –&gt; <strong>call</strong></p>
+<p>metaclass 详解文章：<a href="http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python" target="_blank" rel="external">http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python</a> 得票最高那个答案写的非常好</p>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><p>通过字符串映射或修改程序运行时的状态、属性、方法, 有以下4个方法</p>
+<ul>
+<li>getattr(object, name, default=None)</li>
+<li>hasattr(object,name)</li>
+<li>setattr(x, y, v)</li>
+<li>delattr(x, y)</li>
+</ul>
+<p>反射代码示例<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Foo(object):</div><div class="line"> </div><div class="line">    def __init__(self):</div><div class="line">        self.name = <span class="string">'wupeiqi'</span></div><div class="line"> </div><div class="line">    def func(self):</div><div class="line">        return <span class="string">'func'</span></div><div class="line"> </div><div class="line">obj = Foo()</div><div class="line"> </div><div class="line"># #### 检查是否含有成员 ####</div><div class="line">hasattr(obj, <span class="string">'name'</span>)</div><div class="line">hasattr(obj, <span class="string">'func'</span>)</div><div class="line"> </div><div class="line"># #### 获取成员 ####</div><div class="line">getattr(obj, <span class="string">'name'</span>)</div><div class="line">getattr(obj, <span class="string">'func'</span>)</div><div class="line"> </div><div class="line"># #### 设置成员 ####</div><div class="line">setattr(obj, <span class="string">'age'</span>, <span class="number">18</span>)</div><div class="line">setattr(obj, <span class="string">'show'</span>, lambda num: num + <span class="number">1</span>)</div><div class="line"> </div><div class="line"># #### 删除成员 ####</div><div class="line">delattr(obj, <span class="string">'name'</span>)</div><div class="line">delattr(obj, <span class="string">'func'</span>)</div></pre></td></tr></table></figure></p>
+<p>动态导入模块<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> importlib</div><div class="line"> </div><div class="line">__import__(<span class="string">'import_lib.metaclass'</span>) #这是解释器自己内部用的</div><div class="line">#importlib.import_module(<span class="string">'import_lib.metaclass'</span>) #与上面这句效果一样，官方建议用这个</div></pre></td></tr></table></figure></p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><h3 id="常用异常"><a href="#常用异常" class="headerlink" title="常用异常"></a>常用异常</h3><figure class="highlight llvm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">AttributeError 试图访问一个对象没有的树形，比如foo.<span class="keyword">x</span>，但是foo没有属性<span class="keyword">x</span></div><div class="line">IOError 输入/输出异常；基本上是无法打开文件</div><div class="line">ImportError 无法引入模块或包；基本上是路径问题或名称错误</div><div class="line">IndentationError 语法错误（的子类） ；代码没有正确对齐</div><div class="line">IndexError 下标索引超出序列边界，比如当<span class="keyword">x</span>只有三个元素，却试图访问<span class="keyword">x</span>[<span class="number">5</span>]</div><div class="line">KeyError 试图访问字典里不存在的键</div><div class="line">KeyboardInterrupt Ctrl+C被按下</div><div class="line">NameError 使用一个还未被赋予对象的变量</div><div class="line">SyntaxError Python代码非法，代码不能编译(个人认为这是语法错误，写错了）</div><div class="line">TypeError 传入对象类型与要求的不符合</div><div class="line">UnboundLocalError 试图访问一个还未被设置的局部变量，基本上是由于另有一个同名的全局变量，</div><div class="line">导致你以为正在访问它</div><div class="line">ValueError 传入一个调用者不期望的值，即使值的类型是正确的</div></pre></td></tr></table></figure>
+<h3 id="更多异常"><a href="#更多异常" class="headerlink" title="更多异常"></a>更多异常</h3><figure class="highlight julia"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">ArithmeticError</div><div class="line"><span class="built_in">AssertionError</span></div><div class="line">AttributeError</div><div class="line">BaseException</div><div class="line">BufferError</div><div class="line">BytesWarning</div><div class="line">DeprecationWarning</div><div class="line">EnvironmentError</div><div class="line"><span class="built_in">EOFError</span></div><div class="line"><span class="built_in">Exception</span></div><div class="line">FloatingPointError</div><div class="line">FutureWarning</div><div class="line">GeneratorExit</div><div class="line">ImportError</div><div class="line">ImportWarning</div><div class="line">IndentationError</div><div class="line">IndexError</div><div class="line">IOError</div><div class="line">KeyboardInterrupt</div><div class="line"><span class="built_in">KeyError</span></div><div class="line">LookupError</div><div class="line"><span class="built_in">MemoryError</span></div><div class="line">NameError</div><div class="line">NotImplementedError</div><div class="line">OSError</div><div class="line"><span class="built_in">OverflowError</span></div><div class="line">PendingDeprecationWarning</div><div class="line">ReferenceError</div><div class="line">RuntimeError</div><div class="line">RuntimeWarning</div><div class="line">StandardError</div><div class="line">StopIteration</div><div class="line">SyntaxError</div><div class="line">SyntaxWarning</div><div class="line"><span class="built_in">SystemError</span></div><div class="line">SystemExit</div><div class="line">TabError</div><div class="line"><span class="built_in">TypeError</span></div><div class="line">UnboundLocalError</div><div class="line">UnicodeDecodeError</div><div class="line">UnicodeEncodeError</div><div class="line"><span class="built_in">UnicodeError</span></div><div class="line">UnicodeTranslateError</div><div class="line">UnicodeWarning</div><div class="line">UserWarning</div><div class="line">ValueError</div><div class="line">Warning</div><div class="line">ZeroDivisionError</div></pre></td></tr></table></figure>
+<h3 id="异常其他结构"><a href="#异常其他结构" class="headerlink" title="异常其他结构"></a>异常其他结构</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="comment"># 主代码块</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="keyword">except</span> KeyError,e:</div><div class="line">    <span class="comment"># 异常时，执行该块</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="keyword">else</span>:</div><div class="line">    <span class="comment"># 主代码块执行完，执行该块</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"><span class="keyword">finally</span>:</div><div class="line">    <span class="comment"># 无论异常与否，最终执行该块</span></div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure>
+<h3 id="主动触发异常"><a href="#主动触发异常" class="headerlink" title="主动触发异常"></a>主动触发异常</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    raise <span class="keyword">Exception</span>(<span class="string">'错误了。。。'</span>)</div><div class="line">except <span class="keyword">Exception</span>,e:</div><div class="line">    <span class="keyword">print</span> e</div></pre></td></tr></table></figure>
+<h3 id="自定义异常"><a href="#自定义异常" class="headerlink" title="自定义异常"></a>自定义异常</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">WupeiqiException</span><span class="params">(Exception)</span>:</span></div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, msg)</span>:</span></div><div class="line">        self.message = msg</div><div class="line"> </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self.message</div><div class="line"> </div><div class="line"><span class="keyword">try</span>:</div><div class="line">    <span class="keyword">raise</span> WupeiqiException(<span class="string">'我的异常'</span>)</div><div class="line"><span class="keyword">except</span> WupeiqiException,e:</div><div class="line">    <span class="keyword">print</span> e</div></pre></td></tr></table></figure>
+<h3 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># <span class="built_in">assert</span> 条件</div><div class="line"><span class="built_in">assert</span> <span class="number">1</span> == <span class="number">1</span></div></pre></td></tr></table></figure>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=26402531&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/27/17-05-27/" title="http://dinson.win/2017/05/27/17-05-27/" target="_blank">http://dinson.win/2017/05/27/17-05-27/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经典类vs新式类"><span class="toc-text">经典类vs新式类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态方法"><span class="toc-text">静态方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类方法"><span class="toc-text">类方法　</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性方法"><span class="toc-text">属性方法　　</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类的特殊成员方法"><span class="toc-text">类的特殊成员方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射"><span class="toc-text">反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用异常"><span class="toc-text">常用异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更多异常"><span class="toc-text">更多异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常其他结构"><span class="toc-text">异常其他结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主动触发异常"><span class="toc-text">主动触发异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义异常"><span class="toc-text">自定义异常</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#断言"><span class="toc-text">断言</span></a></li></ol></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

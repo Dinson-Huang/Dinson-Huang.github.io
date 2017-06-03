@@ -25,7 +25,7 @@
   <link rel="canonical" href="http://dinson.win/2017/05/18/17-05-18/index.html">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
 </head>
 
 
@@ -47,15 +47,19 @@
         
       
         
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
         <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
         
       
         
         <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
         
       
     </ul>
@@ -117,7 +121,7 @@
     
     <h1 class="post-title">Kotlin基本语法</h1>
     <p class="post-meta">
-      <span class="post-time">2017-05-18</span>
+      </span>
       
       <a href="/categories/Kotlin从放弃到入门/" class="post-categories">Kotlin从放弃到入门</a>
       
@@ -137,7 +141,7 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="类和函数"><a href="#类和函数" class="headerlink" title="类和函数"></a>类和函数</h2><p>Kotlin中的类遵循一个简单的结构。尽管与Java有一点细微的差别。你可以使用<a href="https://try.kotlinlang.org/" target="_blank" rel="external">try.kotlinlang.org</a>在不需要一个真正的项目和不需要部署到机器的前提下来测试一些简单的代码范例。</p>
-<h2 id="怎么定义一个类"><a href="#怎么定义一个类" class="headerlink" title="怎么定义一个类"></a>怎么定义一个类</h2><p>如果你想定义一个类，你只需要使用class关键字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="怎么定义一个类"><a href="#怎么定义一个类" class="headerlink" title="怎么定义一个类"></a>怎么定义一个类</h2><p>如果你想定义一个类，你只需要使用class关键字。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span></span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>它有一个默认唯一的构造器。我们会在以后的课程中学习在特殊的情况下创建其它额外的构造器，但是请记住大部分情况下你只需要这个默认的构造器。你只需要在类名后面写上它的参数。如果这个类没有任何内容可以省略大括号：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Person(<span class="keyword">name</span>: <span class="keyword">String</span>, surname: <span class="keyword">String</span>)</div></pre></td></tr></table></figure></p>
 <p>那么构造函数的函数体在哪呢？你可以写在init块中：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Person(<span class="keyword">name</span>: <span class="keyword">String</span>, surname: <span class="keyword">String</span>) <span class="comment">&#123;</span></div><div class="line">    init&#123;</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h2 id="类继承"><a href="#类继承" class="headerlink" title="类继承"></a>类继承</h2><p>默认任何类都是基础继承自Any（与java中的Object类似），但是我们可以继承其它类。所有的类默认都是不可继承的（final），所以我们只能继承那些明确声明open或者abstract的类：<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">open <span class="keyword">class</span> Animal(<span class="keyword">name</span>: <span class="keyword">String</span>)</div><div class="line"><span class="keyword">class</span> Person(<span class="keyword">name</span>: <span class="keyword">String</span>, surname: <span class="keyword">String</span>) : Animal(<span class="keyword">name</span>)</div></pre></td></tr></table></figure></p>
@@ -160,6 +164,21 @@
 </blockquote>
 <h2 id="Layout的编写"><a href="#Layout的编写" class="headerlink" title="Layout的编写"></a>Layout的编写</h2><blockquote>
 <p>以天气预报应用为例</p>
+</blockquote>
+<p>显示天气预报的列表我们使用<strong>RecyclerView</strong>，所以你需要在<strong>build.gradle</strong>中增加一个新的依赖：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">compile</span> <span class="keyword">fileTree</span>(dir: <span class="string">'libs'</span>, <span class="keyword">include</span>: [<span class="string">'*.jar'</span>])</div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:appcompat-v7:$support_version"</span> </div><div class="line">    <span class="keyword">compile</span> <span class="string">"com.android.support:recyclerview-v7:$support_version"</span> ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后，activity_main.xml如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;FrameLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">             android:layout_width=<span class="string">"match_parent"</span></div><div class="line">             android:layout_height=<span class="string">"match_parent"</span>&gt;</div><div class="line">    &lt;android<span class="selector-class">.support</span><span class="selector-class">.v7</span><span class="selector-class">.widget</span><span class="selector-class">.RecyclerView</span></div><div class="line">        android:id=<span class="string">"@+id/forecast_list"</span></div><div class="line">        android:layout_width=<span class="string">"match_parent"</span></div><div class="line">        android:layout_height=<span class="string">"match_parent"</span>/&gt;</div><div class="line">&lt;/FrameLayout&gt;</div></pre></td></tr></table></figure></p>
+<p>在<strong>Mainactivity.kt</strong>中删除掉之前用来测试的能正常运行的所有代码（现在应该会提示错误）。暂且我们使用老的<strong>findViewByid()</strong>的方式：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val forecastList = findViewById(R<span class="selector-class">.id</span><span class="selector-class">.forecast_list</span>) as RecyclerView</div><div class="line">forecastList<span class="selector-class">.layoutManager</span> = LinearLayoutManager(this)</div></pre></td></tr></table></figure></p>
+<p>如你所见，我们定义类一个变量并转型为RecyclerView。这里与Java有点不同，我们会在下一章分析这些不同之处。LayoutManager会通过属性的方式被设置，而不是通过setter，这个layout已经足够显示一个列表了。</p>
+<blockquote>
+<p><strong>对象实例化</strong></p>
+<p>对象实例化也是与Java中有些不同。如你所见，我们去掉了new关键字。这时构造函数仍然会被调用，但是我们省略了宝贵的四个字符。LinearLayoutManager(this)创建了一个对象的实例。</p>
+</blockquote>
+<p>我们同样需要一个RecyclerView的<strong>Adapter</strong>。RecyclerView中所使用到的布局现在只需要一个TextView，我会手动去创建这个简单的文本列表。增加一个名为ForecastListAdapter.kt的Kotlin文件，包括如下代码：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ForecastListAdapter</span></span>(<span class="keyword">val</span> items: List&lt;String&gt;) :</div><div class="line">        RecyclerView.Adapter&lt;ForecastListAdapter.ViewHolder&gt;() &#123;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateViewHolder</span><span class="params">(parent: <span class="type">ViewGroup</span>, viewType: <span class="type">Int</span>)</span></span>: ViewHolder &#123;</div><div class="line">        <span class="keyword">return</span> ViewHolder(TextView(parent.context))</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBindViewHolder</span><span class="params">(holder: <span class="type">ViewHolder</span>, position: <span class="type">Int</span>)</span></span> &#123;</div><div class="line">        holder.textView.text = items.[position]</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getItemCount</span><span class="params">()</span></span>: <span class="built_in">Int</span> = items.size</div><div class="line"></div><div class="line">    <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span></span>(<span class="keyword">val</span> textView: TextView) : RecyclerView.ViewHolder(textView)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>又是如此，我们可以像访问属性一样访问context和text。你可以保持以往那样操作（使用getters和setters）,但是你会得到一个编译器的警告。如果你还是倾向于Java中的使用方式，这个检查可以被关闭。但是一旦你使用上了这种属性调用的方式你就会爱上它，而且它也节省了额外的字符总量。</p>
+<p>回到<strong>MainActivity</strong>，现在简单地创建一系列的String放入List中，然后使用创建分配Adapter实例。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">val</span> items = listOf(</div><div class="line">    <span class="string">"Mon 6/23 - Sunny - 31/17"</span>,</div><div class="line">    <span class="string">"Tue 6/24 - Foggy - 21/8"</span>,</div><div class="line">    <span class="string">"Wed 6/25 - Cloudy - 22/17"</span>,</div><div class="line">    <span class="string">"Thurs 6/26 - Rainy - 18/11"</span>,</div><div class="line">    <span class="string">"Fri 6/27 - Foggy - 21/10"</span>,</div><div class="line">    <span class="string">"Sat 6/28 - TRAPPED IN WEATHERSTATION - 23/18"</span>,</div><div class="line">    <span class="string">"Sun 6/29 - Sunny - 20/7"</span></div><div class="line">    )</div><div class="line"></div><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> &#123;</div><div class="line">    ...</div><div class="line">    <span class="keyword">val</span> forecastList = findViewById(R.id.forecast_list) <span class="keyword">as</span> RecyclerView</div><div class="line">    forecastList.layoutManager = LinearLayoutManager(<span class="keyword">this</span>) </div><div class="line">    forecastList.adapter = ForecastListAdapter(items)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>List的创建</p>
+<p>尽管我会在后面来对Collection进行讲解，但是我现在仅仅简单地解释你可以通过使用一个函数listOf创建一个常量的List（很快我们就会讲到的immutable）。它接收一个任何类型的vararg（可变长的参数），它会自动推断出结果的类型。还有很多其它的函数可以选择，比如setOf，arrayListOf或者hashSetOf。</p>
 </blockquote>
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
     

@@ -25,7 +25,7 @@
   <link rel="canonical" href="http://dinson.win/page/3/index.html">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_6u0jghgd9pco9a4i.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
 </head>
 
 
@@ -47,15 +47,19 @@
         
       
         
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
         <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
         
       
         
         <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
-        
-      
-        
-        <li class="aside-item"><i class="aside-menu-icon iconfont icon-pikaqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
         
       
     </ul>
@@ -114,13 +118,102 @@
       <article class="posts min-height">
   
 	<section class="post">
+    <h3 class="post-title"><a href="/2017/04/18/17-04-18/" class="post-title-link">Android Studio 打包时Signature Version V1 V2</a></h3>
+    <div class="post-excerpt"><p>前几天更新了一下Android Studio ,今天在打正式包的时候发现多了个签名版本选择：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnDLFoLyOmCbSA460u26Q0cvUlnl.png" alt=""></p>
+<p>从图中可以看到多了签名版本的选择，因为刚开始默认勾选的v2(Full APK Signature)，没多想一路下一步下去，<br>结果在测试机上（5.0.1）一直都安装失败，想着和那个选择签名版本有关系，那就查查吧。<br></div>
+    <a href="/2017/04/18/17-04-18/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2017-04</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
+      
+      <a href="/tags/签名/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>签名</a>
+      
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2017/04/17/17-04-17/" class="post-title-link">Minimum supported Gradle version is 3.3. Current version is 2.14.1</a></h3>
+    <div class="post-excerpt"><blockquote>
+<p>最近gradle更新到了3.3，studio 每次重新进入项目都会提醒更新，于是手贱便点击了update。点击更新后发现我的项目就瘫痪了，但是打开其他的项目发现并没有出现什么问题。结果就是自己挖的坑把自己埋了一天半，在这记录一下</p>
+</blockquote>
+<p>首先要搞懂两个概念，<strong>gradle版本</strong>和<strong>gradle插件版本</strong>，比如我现在as升级到了2.3，那么2.3就是gradle版本，2.14.1就是gradle插件版本，这两个概念的一一对应的，而之所以出现这个报错信息，就是因为当前项目的gradle插件版本是2.14.1，而gradle2.3对应的插件版本就是3.3，所以导致了报错。（gradle2.2.3对应的插件版本是2.14.1）<br>那应该怎么解决呢？</p></div>
+    <a href="/2017/04/17/17-04-17/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2017-04</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
+      
+      <a href="/tags/Gradle/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Gradle</a>
+      
+      <a href="/tags/异常/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>异常</a>
+      
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2017/04/16/17-04-16/" class="post-title-link">Android共享元素场景切换动画的实现</a></h3>
+    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>我们知道安卓5.0系统引入了共享元素，能做出非常炫酷的场景切换效果，这让人非常兴奋同时非常蛋疼，因为低版本没法使用啊，所以今天就跟大家分享一下自己写的一个库，其实只有2个文件而已，还是叫它工具比较合适吧……非常轻量级，简直是人畜无害，兼容安卓5.0以下的版本。</p>
+</blockquote></div>
+    <a href="/2017/04/16/17-04-16/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2017-04</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2016/07/25/16-07-25/" class="post-title-link">查看Android应用包名、Activity的几个方法</a></h3>
+    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>使用自动化测试工具monkeyrunner启动应用时，需要填写被测程序的包名和启动的Activity，以下有两种查看应用包名package和入口activity名称的方法：</p>
+</blockquote></div>
+    <a href="/2016/07/25/16-07-25/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2016-07</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/应用包名/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>应用包名</a>
+      
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2016/07/21/16-07-21/" class="post-title-link">Android keycode</a></h3>
+    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Android 常用按键大全</p>
+</blockquote></div>
+    <a href="/2016/07/21/16-07-21/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2016-07</span>
+      
+      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
+      
+      
+      <a href="/tags/安卓按键/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>安卓按键</a>
+      
+    </p>
+  </section>
+  
+	<section class="post">
     <h3 class="post-title"><a href="/2016/07/20/16-07-20/" class="post-title-link">Android自动测试之Monkey工具</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在开发的应用程序进行压力测试，可以根据获取的log信息进行修复。</p>
 </blockquote></div>
     <a href="/2016/07/20/16-07-20/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07-20</span>
+	  <span class="post-time">2016-07</span>
       
       <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
       
@@ -151,7 +244,7 @@
 </ol></div>
     <a href="/2016/07/17/16-07-17/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07-17</span>
+	  <span class="post-time">2016-07</span>
       
       <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
       
@@ -169,7 +262,7 @@
 </blockquote></div>
     <a href="/2016/07/15/16-07-15/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07-15</span>
+	  <span class="post-time">2016-07</span>
       
       <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
       
@@ -191,7 +284,7 @@
 <p>其实这个框架是可以拿来直接来用的，直接几行代码基本上就可以解决Android的主题换肤，但是作为一个程序员怎么可以只是简单的知道怎么用就行了吗？如果真是这样就真的太low了。遇到一个好的开源项目我们至少需要把他的源码大致看一下，走一下基本的流程，了解一下他的基本原理，这样我们在技术上才会有所提升。</p></div>
     <a href="/2016/07/11/16-07-11/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07-11</span>
+	  <span class="post-time">2016-07</span>
       
       <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
@@ -214,106 +307,12 @@
 </blockquote></div>
     <a href="/2016/07/08/16-07-08/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07-08</span>
+	  <span class="post-time">2016-07</span>
       
       <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
       <a href="/tags/主题换肤/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>主题换肤</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/15/16-06-15/" class="post-title-link">Fragment实现懒加载，让应用更优化</a></h3>
-    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>玩过微信的都知道，微信用的是懒加载的模式，之所以使用懒加载是因为：当使用viewpager+adapter作为应用大的布局时，viewpager会通过setOffscreenPageLimit来设置预加载的项目，不设置setOffscreenPageLimit，则默认为1（设置0无效，可以查看该方法源码知道），也就是当我们打开应用看到的时候fragmentOne时，实际上其他fragment（例如fragmentSecond）也进行了加载，只不过没有显示出来罢了，但是这样就造成了不必要的资源浪费（例如，fragmentSecond没有显示，但是却进行了大量的网络加载操作）。</p>
-</blockquote>
-<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fs5tcZ4YtAWiiQSTd3C-Sd2GtEei.png" alt=""> </p>
-<p>基于上述情况，就有了懒加载方式的诞生（即只加载当前显示页面且只加载一次，滑动到其他页面时才加载其他页面数据，当再滑动到已加载过数据的页面时不再进行数据加载操作，若想要刷新数据，再调用相应的加载数据方法就好了）</p></div>
-    <a href="/2016/06/15/16-06-15/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06-15</span>
-      
-      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
-      
-      
-      <a href="/tags/Fragment/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Fragment</a>
-      
-      <a href="/tags/懒加载/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>懒加载</a>
-      
-      <a href="/tags/优化/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>优化</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/14/16-06-14/" class="post-title-link">MarkdownPad2在Win10下HTML渲染错误解决办法及注册码</a></h3>
-    <div class="post-excerpt"><h3 id="HTML渲染错误解决办法"><a href="#HTML渲染错误解决办法" class="headerlink" title="HTML渲染错误解决办法"></a>HTML渲染错误解决办法</h3><p>在win10上安装MarkdownPad2 时，出现如下的错误信息：HTML渲染组出错，这个问题可以通过安装某个缺失组件来解决，是否想要了解详细信息？</p>
-<p><img src="http://ondlsj2sn.bkt.clouddn.com/9703407c1a94f6b0c1c73b162e25782d-thumb.png" alt=""></p></div>
-    <a href="/2016/06/14/16-06-14/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06-14</span>
-      
-      <a href="/categories/软件破解/" class="post-categories">软件破解</a>
-      
-      
-      <a href="/tags/破解/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>破解</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/10/16-06-10/" class="post-title-link">Android Studio插件整理</a></h3>
-    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>在现如今这个极度推崇敏捷开发的年代，开发时间的节省将会直接压缩开发成本，在这其中，一些开发工具的合理利用讲会极大简化开发工作并增强开发效率。本文将介绍笔者自己在平时开发中经常用到的一些插件，我只能说它们都很实用，当然都是适用于Android Studio的啦。<br></div>
-    <a href="/2016/06/10/16-06-10/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06-10</span>
-      
-      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
-      
-      
-      <a href="/tags/插件/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>插件</a>
-      
-      <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/08/16-06-08/" class="post-title-link">安卓反编译</a></h3>
-    <div class="post-excerpt"><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>apktool:资源文件获取，可以提取出图片文件和布局文件进行使用查看 </li>
-<li>dex2jar:将apk反编译成Java源码（classes.dex转化成jar文件）</li>
-<li>jd-gui:查看APK中classes.dex转化成出的jar文件，即源码文件</li>
-</ul>
-<blockquote>
-<p>网盘： <a href="http://pan.baidu.com/s/1eSkSctc" target="_blank" rel="external">http://pan.baidu.com/s/1eSkSctc</a> &emsp; 密码：low6<br></div>
-    <a href="/2016/06/08/16-06-08/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06-08</span>
-      
-      <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
-      
-      
-      <a href="/tags/反编译/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>反编译</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/07/16-06-07/" class="post-title-link">常用配置</a></h3>
-    <div class="post-excerpt"><h2 id="Java环境变量"><a href="#Java环境变量" class="headerlink" title="Java环境变量"></a>Java环境变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">新建：值为JDK安装目录</div><div class="line">JAVA_Home</div><div class="line"></div><div class="line">Path中添加</div><div class="line">%JAVA_HOME%\bin</div><div class="line">%JAVA_HOME%\jre\bin</div></pre></td></tr></table></figure>
-<h2 id="Android环境变量"><a href="#Android环境变量" class="headerlink" title="Android环境变量"></a>Android环境变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">新建：值为SDK安装目录	</div><div class="line">Android_Home</div><div class="line"></div><div class="line">Path中添加</div><div class="line">%Android_Home%\tools</div><div class="line">%Android_Home%\platform-tools</div></pre></td></tr></table></figure></div>
-    <a href="/2016/06/07/16-06-07/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06-07</span>
-      
-      <a href="/categories/系统配置/" class="post-categories">系统配置</a>
-      
-      
-      <a href="/tags/系统配置/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>系统配置</a>
       
     </p>
   </section>
