@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android自定义View IndicatorView,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>ViewPager系列--实现一个多功能的IndicatorView（待补图）</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/06/02/17-06-02/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">ViewPager系列--实现一个多功能的IndicatorView（待补图）</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/ViewPager系列/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ViewPager系列</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>&gt;</p>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<blockquote>
+<p>Indicator (指示器) 可能大家都见的比较多了，在一个APP中，有很多场景都会用到Indicator，比如第一次安装APP 时的引导页，首页上面的广告Banner ，又或者是Tab下面的Indicator。Indicator 一般配合ViewPager 使用，它能很直观的反应出ViewPager 中一共有多少页，当前选中的是哪一页，用户能够很容易的看出是否还可以滑动，用户体验较好。那么本篇文章就讲一下如何通过自定义View来实现一个漂亮简洁的IndicatorView。</p>
+</blockquote>
+<p>Indicator的展示形式</p>
+<p>我们使用Indicator时,常见的有三种形式，第一种是根据ViewPager 的总页数展示一排小圆点，选中和未选中分别标为不同的颜色。这也是普遍的使用Indicator的效果，效果如下：</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FqkeU8jK8cJlXCZ0XDU4nxFafKBE.png" alt=""></p>
+<p>第二种形式是根据ViewPager 的总页数展示一排圆点，并且用数字标出其顺序（1，2，3，4 …），大概效果如下：</p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FrrcSoSWlXMrD2FZCbB7WTt51bjS.png" alt=""></p>
+<p>image.png<br>第三种形式和第二种形式差不多，同样根据ViewPager总页数展示一片圆点，但是用字母标出顺序(A,B,C,D ….), 比如 ：魅族手机屏幕的切换的Indicator。效果如下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FlpGT6-Tt0Piq7rZ2nPmbnCuAt1d.png" alt=""><br>本篇文章就通过自定义View来实现这三种IndicatorView。</p>
+<h2 id="通过自定义View-实现多功能的CircleIndicatorView"><a href="#通过自定义View-实现多功能的CircleIndicatorView" class="headerlink" title="通过自定义View 实现多功能的CircleIndicatorView"></a>通过自定义View 实现多功能的CircleIndicatorView</h2><p>首先整理一下思路，CircleIndicatorView ,它是由一组圆 组成的，只不过圆有多种状态，选中、未选中、显示字母、显示数字等等。看着有这么多中状态，感觉挺复杂，但是其实不复杂，只是用不同的变量来控制不同的状态即可。其他的先不考虑，我们只要先把这一排圆画出来，剩下的就比较容易了。<strong>要确定一个圆的，需要知道圆的半径和圆心，半径是我们可以配置的,那么，其实核心就是计算这一排的圆点的圆心位置。圆心 y 的位置是固定的（View 高的一般），因此我们只需要计算每个圆的圆心x的位置，看下图，其实很容易就能找到规律，规律如下： 第一个圆的x 就等于圆的半径，从第二个圆开始，当前圆的圆心x 坐标为 上一个圆的x 坐标 + (radius * 2 + mSpace)。</strong> 其中mSpace 是圆之间的间距。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvsVDtj-3Ylb6cE8_4aiVzHDdDVD.png" alt=""></p>
+<p>有了上面的规律，我们只需要一个循环就能找出所有圆的圆心位置。代码如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 测量每个圆点的位置</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">measureIndicator</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    mIndicators.clear();</div><div class="line">    <span class="keyword">float</span> cx = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mCount;i++)&#123;</div><div class="line">        Indicator indicator = <span class="keyword">new</span> Indicator();</div><div class="line">        <span class="keyword">if</span>( i== <span class="number">0</span>)&#123;</div><div class="line">            cx = mRadius + mStrokeWidth;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            cx += (mRadius + mStrokeWidth) * <span class="number">2</span> +mSpace;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        indicator.cx = cx;</div><div class="line">        indicator.cy = getMeasuredHeight() / <span class="number">2</span>;</div><div class="line"></div><div class="line">        mIndicators.<span class="keyword">add</span>(indicator);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们用Indicator类记录了每个圆的圆心位置，并且保存在一个列表里面，现在有了所有圆的数据，我们就可以绘制了。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line"><span class="keyword">protected</span> <span class="keyword">void</span> onDraw(Canvas canvas) &#123;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;mIndicators.<span class="built_in">size</span>();i++)&#123;</div><div class="line"></div><div class="line">        Indicator indicator = mIndicators.<span class="built_in">get</span>(i);</div><div class="line">        <span class="built_in">float</span> x = indicator.cx;</div><div class="line"></div><div class="line">        <span class="built_in">float</span> y = indicator.cy;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(mSelectPosition == i)&#123;</div><div class="line">            mCirclePaint.setStyle(Paint.Style.FILL);</div><div class="line">            mCirclePaint.setColor(mSelectColor);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            mCirclePaint.setColor(mDotNormalColor);</div><div class="line">            <span class="keyword">if</span>(mFillMode != FillMode.NONE)&#123;</div><div class="line">                mCirclePaint.setStyle(Paint.Style.STROKE);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                mCirclePaint.setStyle(Paint.Style.FILL);</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        canvas.drawCircle(x,y, mRadius, mCirclePaint);</div><div class="line"></div><div class="line">        <span class="comment">// 绘制小圆点中的内容</span></div><div class="line">        <span class="keyword">if</span>(mFillMode != FillMode.NONE)&#123;</div><div class="line">            <span class="keyword">String</span> <span class="built_in">text</span> = <span class="string">""</span>;</div><div class="line">            <span class="keyword">if</span>(mFillMode == FillMode.LETTER)&#123;</div><div class="line">                <span class="keyword">if</span>(i &gt;= <span class="number">0</span> &amp;&amp; i&lt;LETTER.length)&#123;</div><div class="line">                    <span class="built_in">text</span> = LETTER[i];</div><div class="line">                &#125;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="built_in">text</span> = <span class="keyword">String</span>.valueOf(i+<span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">            Rect bound = <span class="keyword">new</span> Rect();</div><div class="line">            mTextPaint.getTextBounds(<span class="built_in">text</span>,<span class="number">0</span>,<span class="built_in">text</span>.length(),bound);</div><div class="line">            <span class="built_in">int</span> <span class="built_in">textWidth</span> = bound.<span class="built_in">width</span>();</div><div class="line">            <span class="built_in">int</span> textHeight = bound.<span class="built_in">height</span>();</div><div class="line"></div><div class="line">            <span class="built_in">float</span> textStartX = x - <span class="built_in">textWidth</span> / <span class="number">2</span>;</div><div class="line">            <span class="built_in">float</span> textStartY = y + textHeight / <span class="number">2</span>;</div><div class="line">            canvas.drawText(<span class="built_in">text</span>,textStartX,textStartY, mTextPaint);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>绘制的代码很简单，无非就是循环我们保存的列表，拿出每一个Indicator，然后绘制圆就行了，除此之外就是一些状态的判断，比如，是否绘制数字、字母和选中状态等等 。</p>
+<p>到此，我们的CircleIndicatorView 的绘制工作算是完成了，并且也能够显示在界面上了，但是它现在还是一个单独的View。我们前面说过，IndicatorView 一般是配合ViewPager使用的，它是随着Viewpager的切换而改变的，因此我们需要将IndicatorView 与ViewPager 进行关联。</p>
+<p>要让CircleIndicatorView 与ViewPager 关联，首先需要 CircleIndicatorView 实现<code>ViewPager.OnPageChangeListener</code>接口。然后在<code>onPageSelected</code>方法中记录当前页的位置。代码如下：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPageScrolled</span><span class="params">(<span class="keyword">int</span> position, <span class="keyword">float</span> positionOffset, <span class="keyword">int</span> positionOffsetPixels)</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPageSelected</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">    mSelectPosition = position;</div><div class="line">    invalidate();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPageScrollStateChanged</span><span class="params">(<span class="keyword">int</span> state)</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>第二步，向外提供一个API ,设置CircleIndicatorView 与 ViewPager 关联。<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> *  与ViewPager 关联</div><div class="line"> * @param viewPager</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> setUpWithViewPager(ViewPager viewPager)&#123;</div><div class="line">    releaseViewPager();</div><div class="line">    <span class="keyword">if</span>(viewPager == <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    mViewPager = viewPager;</div><div class="line">    mViewPager.addOnPageChangeListener(<span class="keyword">this</span>);</div><div class="line">    <span class="keyword">int</span> <span class="keyword">count</span> = mViewPager.getAdapter().getCount();</div><div class="line">    setCount(<span class="keyword">count</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过如上两步，就建立了CircleIndicatorView 与ViewPager的关联，只需要调用方法<code>setUpWithViewPager</code>就OK。</p>
+<p>到此就完了吗？当然还没有完，<strong>其实还有一个小细节，那就是IndicatorView 因该是可以点击的，点击Indicator小圆点就能切换ViewPager 到对应的页面（如 Iphone 和 魅族手机的 屏幕切换，点击indicator小圆点就可以切换 ,以前没有注意的现在可以去试一下 ），那么我们也来实现这样一个功能，其实很简单,重写onTouchEvent方法 ，监听ACTION_DOWN 事件，然后获取点击屏幕的坐标，与所绘制的圆位置比较,如果点击区域在圆的范围内，就点击了该Indicator。点击之后，切换Viewpager到对应页面。</strong>代码如下：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">@<span class="function">Override</span></div><div class="line"><span class="keyword">public</span> boolean <span class="title">onTouchEvent</span>(<span class="params">MotionEvent <span class="keyword">event</span></span>) &#123;</div><div class="line">    <span class="keyword">float</span> xPoint = <span class="number">0</span>;</div><div class="line">    <span class="keyword">float</span> yPoint = <span class="number">0</span>;</div><div class="line">    <span class="keyword">switch</span> (<span class="keyword">event</span>.getAction())&#123;</div><div class="line">        <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</div><div class="line">            xPoint = <span class="keyword">event</span>.getX();</div><div class="line">            yPoint = <span class="keyword">event</span>.getY();</div><div class="line">            handleActionDown(xPoint,yPoint);</div><div class="line">            <span class="keyword">break</span>;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> super.onTouchEvent(<span class="keyword">event</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">handleActionDown</span>(<span class="params"><span class="keyword">float</span> xDis,<span class="keyword">float</span> yDis</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mIndicators.size();i++)&#123;</div><div class="line">        Indicator indicator = mIndicators.<span class="keyword">get</span>(i);</div><div class="line">        <span class="keyword">if</span>(xDis &lt; (indicator.cx + mRadius+mStrokeWidth)</div><div class="line">                &amp;&amp; xDis &gt;=(indicator.cx - (mRadius + mStrokeWidth))</div><div class="line">                &amp;&amp; yDis &gt;= (yDis - (indicator.cy+mStrokeWidth))</div><div class="line">                &amp;&amp; yDis &lt;(indicator.cy+mRadius+mStrokeWidth))&#123;</div><div class="line">             <span class="comment">// 找到了点击的Indicator</span></div><div class="line">            <span class="comment">// 切换ViewPager</span></div><div class="line">             mViewPager.setCurrentItem(i,<span class="literal">false</span>);</div><div class="line">             <span class="comment">// 回调</span></div><div class="line">            <span class="keyword">if</span>(mOnIndicatorClickListener!=<span class="literal">null</span>)&#123;</div><div class="line">                mOnIndicatorClickListener.onSelected(i);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>到此，我们自定义IndicatorView 的工作就差不多完成了，但是现在的IndicatorView 还不是很灵活，我们要让它的可配置性更强，就应该提供更多的API 来让IndicatorView 使用更加灵活方便，因此，最后一步，加上一些自定义属性来提高它的灵活性。自定义了如下一些属性：</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性意义</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>indicatorRadius</td>
+<td>设置指示器圆点的半径</td>
+<td>单位为 dp 的值</td>
+</tr>
+<tr>
+<td>indicatorBorderWidth</td>
+<td>设置指示器的border</td>
+<td>单位为 dp 的值</td>
+</tr>
+<tr>
+<td>indicatorSpace</td>
+<td>设置指示器之间的距离</td>
+<td>单位为 dp 的值</td>
+</tr>
+<tr>
+<td>indicatorTextColor</td>
+<td>设置指示器中间的文字颜色</td>
+<td>颜色值，如：＃FFFFFF</td>
+</tr>
+<tr>
+<td>indicatorColor</td>
+<td>设置指示器圆点的颜色</td>
+<td>颜色值</td>
+</tr>
+<tr>
+<td>indicatorSelectColor</td>
+<td>设置指示器选中的颜色</td>
+<td>颜色值</td>
+</tr>
+<tr>
+<td>fill_mode</td>
+<td>设置指示器的模式</td>
+<td>枚举值：有三种，分别是letter,number和none</td>
+</tr>
+</tbody>
+</table>
+<p>自定义属性文件如下：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;declare-styleable <span class="built_in">name</span>=<span class="string">"CircleIndicatorView"</span>&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorRadius"</span> <span class="built_in">format</span>=<span class="string">"dimension"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorBorderWidth"</span> <span class="built_in">format</span>=<span class="string">"dimension"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorSpace"</span> <span class="built_in">format</span>=<span class="string">"dimension"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorTextColor"</span> <span class="built_in">format</span>=<span class="string">"color"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorColor"</span> <span class="built_in">format</span>=<span class="string">"color"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"indicatorSelectColor"</span> <span class="built_in">format</span>=<span class="string">"color"</span>/&gt;</div><div class="line">    &lt;attr <span class="built_in">name</span>=<span class="string">"fill_mode"</span>&gt;</div><div class="line">        &lt;enum <span class="built_in">name</span>=<span class="string">"letter"</span> value=<span class="string">"0"</span>/&gt;</div><div class="line">        &lt;enum <span class="built_in">name</span>=<span class="string">"number"</span> value=<span class="string">"1"</span>/&gt;</div><div class="line">        &lt;enum <span class="built_in">name</span>=<span class="string">"none"</span> value=<span class="string">"2"</span>/&gt;</div><div class="line">    &lt;/attr&gt;</div><div class="line">&lt;/declare-styleable&gt;</div></pre></td></tr></table></figure></p>
+<p>通过上面这些属性，我们就可以很好的定制IndicaotorView 了，比如，自定义圆的大小，颜色，border，文字的颜色，选中的颜色和展示的模式等等。</p>
+<p>最终的效果如下：</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=26069686&auto=1&height=66"></iframe></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/06/02/17-06-02/" title="http://dinson.win/2017/06/02/17-06-02/" target="_blank">http://dinson.win/2017/06/02/17-06-02/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过自定义View-实现多功能的CircleIndicatorView"><span class="toc-text">通过自定义View 实现多功能的CircleIndicatorView</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

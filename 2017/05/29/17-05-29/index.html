@@ -18,11 +18,11 @@
 
 
   
-  <title>CoordinatorLayout 自定义Behavior并不难，由简到难手把手带你飞</title>
+  <title>CoordinatorLayout 自定义Behavior并不难，由简到难手把手带你飞 (未完...)</title>
   
 
   <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
-  <link rel="canonical" href="http://dinson.win/2017/05/29/17-05-31/index.html">
+  <link rel="canonical" href="http://dinson.win/2017/05/29/17-05-29/index.html">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
@@ -119,7 +119,7 @@
   
   <header class="post-header">
     
-    <h1 class="post-title">CoordinatorLayout 自定义Behavior并不难，由简到难手把手带你飞</h1>
+    <h1 class="post-title">CoordinatorLayout 自定义Behavior并不难，由简到难手把手带你飞 (未完...)</h1>
     <p class="post-meta">
       </span>
       
@@ -158,53 +158,11 @@
 <p>有一点值得注意的是，app:layout_anchor=”@id/frameLayout”这个属性，是附着的意思，这里我用作给了toolbar，代表toolbar附着在了frameLayout之上。会跟随frameLayout的scroll而变化Y的值。</p>
 <p><strong>思路分析</strong><br>如何实现折叠呢，下半部分不用管了，AppBarLayout已经帮我们做好了，我们只要标注相应的scrollflags即可，所以，如上的布局，不做任何处理的话，作为标题的TextView是一直显示的，于是只要让TextView跟随Toolbar变化而变化就可以了。 接下来就创建一个Behavior类！<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrawerBehavior</span> <span class="keyword">extends</span> <span class="title">CoordinatorLayout</span>.<span class="title">Behavior</span>&lt;<span class="title">TextView</span>&gt; </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mFrameMaxHeight = <span class="number">100</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mStartY;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">layoutDependsOn</span><span class="params">(CoordinatorLayout parent, TextView child, View dependency)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> dependency <span class="keyword">instanceof</span> Toolbar;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DrawerBehavior</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onDependentViewChanged</span><span class="params">(CoordinatorLayout parent, TextView child, View dependency)</span> </span>&#123;</div><div class="line">        <span class="comment">//记录开始的Y坐标  也就是toolbar起始Y坐标</span></div><div class="line">        <span class="keyword">if</span>(mStartY == <span class="number">0</span>) &#123;</div><div class="line">            mStartY = (<span class="keyword">int</span>) dependency.getY();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">//计算toolbar从开始移动到最后的百分比</span></div><div class="line">        <span class="keyword">float</span> percent = dependency.getY()/mStartY;</div><div class="line"></div><div class="line">        <span class="comment">//改变child的坐标(从消失，到可见)</span></div><div class="line">        child.setY(child.getHeight()*(<span class="number">1</span>-percent) - child.getHeight());</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>里面监听了Toolbar的Y坐标变化，然后让TextView的Y坐标也跟着变化。达到如预览图效果。</p>
-<embed width="500" height="500" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://wscdn.miaopai.com/splayer2.2.0.swf?scid=8drUvBxbTYnCNWzCjBYAZ9K-zaHH75P7&amp;token=&amp;autopause=true&amp;fromweibo=false" type="application/x-shockwave-flash" style="height: 500px;" allowscriptaccess="always" wmode="transparent" allowfullscreen="true" quality="high" autostart="false">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+<p>22418581</p>
+<p><a href="http://music.163.com/#/m/song?id=&amp;userid=472025302" target="_blank" rel="external">http://music.163.com/#/m/song?id=&amp;userid=472025302</a></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=18949977&auto=1&height=66"></iframe></div>
     
-      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/29/17-05-31/" title="http://dinson.win/2017/05/29/17-05-31/" target="_blank">http://dinson.win/2017/05/29/17-05-31/</a></p>
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/05/29/17-05-29/" title="http://dinson.win/2017/05/29/17-05-29/" target="_blank">http://dinson.win/2017/05/29/17-05-29/</a></p>
 
       
       <div class="toc-wrapper">

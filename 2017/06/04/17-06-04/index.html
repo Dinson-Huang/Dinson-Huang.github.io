@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android自定义View BannerView,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>ViewPager系列--仿魅族应用的广告BannerView</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/06/04/17-06-04/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">ViewPager系列--仿魅族应用的广告BannerView</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/ViewPager系列/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ViewPager系列</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Banner广告位是APP 中的一个非常重要的位置，为什么呢？因为它能带来money。是一个公司很重要的一个营收点。像那种用户数基数特别大的产品，如facebook、twitter、QQ、微信等等。Banner广告位日营收估计得上千万美刀（猜的,不知道具体数据）。一个漂亮的Banner往往能够吸引用户的眼球，引导用户点击，从而提高转化率。遗憾的是现在的大多数产品的Banner都是千篇一律的，没有什么亮点可言。但是前几天在魅族手机上发现了一个效果不错的Banner，魅族所有自家的APP所用的Banner 引起了我的注意。效果是这样子的：</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fttnl93cLxhrr5tGpwIB0UCkAQd7.png" alt=""></p>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<p>看到这个Banner 第一眼就吸引了我，随后就反复的体验了几次了，感觉这种Banner的效果还不错。最后想着高仿一个和这种效果差不多的BannerView 。那么本文就讲一下如何实现这样一个BannerView。最终实现的效果如下：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FuCyfbpuGyHRcvgxpo3gqUwb7rrL.png" alt=""></p>
+<h2 id="仿魅族Banner-效果"><a href="#仿魅族Banner-效果" class="headerlink" title="仿魅族Banner 效果"></a>仿魅族Banner 效果</h2><p>在开始实现魅族Banner效果之前，我们先来整理一下实现一个BannerView的思路，首先需要用ViewPager，其次让ViewPager无限轮播。其实BannerView就是一个无限轮播的ViewPager，然后做一些封装处理，让使用更加简单就ok。</p>
+<p>现在我们在来看一下魅族的这个Banner。他与普通的banner的区别是当前页显示了前一页和后一页的部分内容。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FueAFj7emV2N7kqhC6yYc7Bv5dYa.png" alt=""></p>
+<p>抛开切换时的动画先不说，要实现这个效果的第一步就是要让ViewPager在一个页面显示多页的内容（当前页＋前后页部分）。</p>
+<h2 id="ViewPager展示多页"><a href="#ViewPager展示多页" class="headerlink" title="ViewPager展示多页"></a>ViewPager展示多页</h2><p>要让ViewPager页面展示多页的内容，就要用到ViewGroup的一个强大的属性。这个属性虽然强大，但是也不常用，可能有些小伙伴不知道(之前我也没用过…)，那就是<code>clipChildren</code>属性。这个属性有什么作用呢，我们看一下它的文档介绍：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * By default, children are clipped <span class="keyword">to</span> their bounds <span class="keyword">before</span> drawing. This</div><div class="line"> * allows view groups <span class="keyword">to</span> override this behavior <span class="keyword">for</span> animations, etc.</div><div class="line"> *</div><div class="line"> * @param clipChildren <span class="literal">true</span> <span class="keyword">to</span> clip children <span class="keyword">to</span> their bounds,</div><div class="line"> *        <span class="literal">false</span> otherwise</div><div class="line"> * @attr <span class="keyword">ref</span> android.R.styleable<span class="comment">#ViewGroup_clipChildren</span></div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<p><strong>clipChildren: </strong>默认值为true, 子View 的大小只能在父View规定的范围之内，比如父View的高为50，子View的高为60 ,那么多处的部分就会被裁剪。如果我们设置这个值为false的话，那么多处的部分就不会被裁剪了。</p>
+<p>这里我们就可以利用这个属性来实现了这个效果了，我们设置ViewPager的父布局的clipChildren为false。然后设置ViewPager 左右一定的边距，那么左右就空出了一定的区域，利用<code>clipChildren</code>属性，就能让前后页面的部分显示在当前页了。布局如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></div><div class="line">    <span class="attr">android:clipChildren</span>=<span class="string">"false"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></div><div class="line">    &gt;</div><div class="line"></div><div class="line"></div><div class="line">   <span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span></span></div><div class="line">       <span class="attr">android:id</span>=<span class="string">"@+id/view_pager"</span></div><div class="line">       <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">       <span class="attr">android:layout_height</span>=<span class="string">"200dp"</span></div><div class="line">       <span class="attr">android:layout_marginLeft</span>=<span class="string">"30dp"</span></div><div class="line">       <span class="attr">android:layout_marginRight</span>=<span class="string">"30dp"</span></div><div class="line">       /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样就能实现ViewPager 展示前后页面的部分内容。</p>
+<h2 id="自定义ViewPager-PageTransformer动画"><a href="#自定义ViewPager-PageTransformer动画" class="headerlink" title="自定义ViewPager.PageTransformer动画"></a>自定义ViewPager.PageTransformer动画</h2><p>上面实现了ViewPager当前页面显示前后页的部分内容，但是从最开始魅族的Banner效果我们可以看出，滑动的时候是有 一个放大缩小的动画的。左右显示的部分有一定比例的缩小。这就要用到ViewPager.PageTransformer了。</p>
+<p>ViewPager.PageTransformer 干什么的呢？ViewPager.PageTransformer 是用来做ViewPager切换动画的，它是一个接口，里面只有一个方法<code>transformPage</code>。<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public interface PageTransformer &#123;</div><div class="line">    /**</div><div class="line">     * Apply a <span class="keyword">property</span> transformation <span class="keyword">to</span> <span class="keyword">the</span> <span class="keyword">given</span> page.</div><div class="line">     *</div><div class="line">     * @param page Apply <span class="keyword">the</span> transformation <span class="keyword">to</span> this page</div><div class="line">     * @param position Position <span class="keyword">of</span> page relative <span class="keyword">to</span> <span class="keyword">the</span> current <span class="keyword">front</span>-<span class="keyword">and</span>-center</div><div class="line">     *                 position <span class="keyword">of</span> <span class="keyword">the</span> pager. <span class="number">0</span> <span class="keyword">is</span> <span class="keyword">front</span> <span class="keyword">and</span> center. <span class="number">1</span> <span class="keyword">is</span> one full</div><div class="line">     *                 page position <span class="keyword">to</span> <span class="keyword">the</span> right, <span class="keyword">and</span> <span class="number">-1</span> <span class="keyword">is</span> one page position <span class="keyword">to</span> <span class="keyword">the</span> left.</div><div class="line">     */</div><div class="line">    void transformPage(View page, float position);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>虽然只有一个方法，但是它很强大，它能反映出在ViewPager滑动过程中，各个View的位置变化。我们拿到了这些位置变化，就能在这个过程中对View做各种各样的动画了。</p>
+<p>要自定义动画，我们就来需要知道positon这个值的变化区间。从官方给的ViewPager的两个示例我们知道，position的变换有三个区间［－Infinity，－1），［－1，1］，（1.Infinity）。</p>
+<ul>
+<li>［－Infinity，－1）：已经在屏幕之外，看不到了</li>
+<li>（1.Infinity）： 已经在屏幕之外，看不到了。</li>
+<li>［－1，1］： 这个区间是我门操作View动画的重点区间。</li>
+</ul>
+<p>我们来看一下官方对于position的解释：</p>
+<blockquote>
+<p><strong>官方的解释：</strong>The position parameter indicates where a given page is located relative to the center of the screen. It is a dynamic property that changes as the user scrolls through the pages. When a page fills the screen, its position value is 0. When a page is drawn just off the right side of the screen, its position value is 1. If the user scrolls halfway between pages one and two, page one has a position of -0.5 and page two has a position of 0.5.</p>
+</blockquote>
+<p><strong>根据解释，也就是说当前停留的页面的位置为 0，右边屏幕之外绘制的这个页面位置为 1。那么，A 页面滑到 B 页面有 2 种情况：第一种：左边划出屏幕，那么 A：0 －&gt; －1,B :1 -&gt; 0。第二种：右边划出屏幕，A：0-&gt;1, B :-1-&gt; 0</strong></p>
+<p>了解了这个方法的变化后，我们就来自定义我们的切换动画,这里很简单，我们只需要一个scale动画。代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomTransformer</span> <span class="keyword">implements</span> <span class="title">ViewPager</span>.<span class="title">PageTransformer</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> MIN_SCALE = <span class="number">0.9F</span>;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">transformPage</span><span class="params">(View page, <span class="keyword">float</span> position)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">if</span>(position &lt; -<span class="number">1</span>)&#123;</div><div class="line">            page.setScaleY(MIN_SCALE);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(position&lt;= <span class="number">1</span>)&#123;</div><div class="line">            <span class="comment">//</span></div><div class="line">            <span class="keyword">float</span> scale = Math.max(MIN_SCALE,<span class="number">1</span> - Math.abs(position));</div><div class="line">            page.setScaleY(scale);</div><div class="line">            <span class="comment">/*page.setScaleX(scale);</span></div><div class="line"></div><div class="line">            if(position&lt;0)&#123;</div><div class="line">                page.setTranslationX(width * (1 - scale) /2);</div><div class="line">            &#125;else&#123;</div><div class="line">                page.setTranslationX(-width * (1 - scale) /2);</div><div class="line">            &#125;*/</div><div class="line"></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            page.setScaleY(MIN_SCALE);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FkipOvMPS9j8n8KIul1r3Sao59CW.png" alt=""><br>到此，我们仿魅族Banner的静态效果就实现了。接下来我们就要让Banner动起来，实现无限轮播效果。</p>
+<h2 id="图片轮播"><a href="#图片轮播" class="headerlink" title="图片轮播"></a>图片轮播</h2><p>上面我们已经实现了Bannerd的静态展示和切换动画，那么我们现在就需要让Banner动起来，实现无限轮播。</p>
+<p>ViewPager实现Banner无效轮播效果有2种方案,第一种是：在列表的最前面插入最后一条数据，在列表末尾插入第一个数据，造成循环的假象。第二种方案是：采用getCount 返回 Integer.MAX_VALUE。结下来分别看一下这两种方案。</p>
+<ol>
+<li>在列表的最前面插入最后一条数据，在列表末尾插入第一个数据，造成循环的假象。<br>这种方法是怎么做的呢？，是这样的：假如我们的列表有3条数据，用三个页面展示，分别编号为1，2，3。我们再创建一个新的列表，长度为真实列表的长度＋2，也就是5。在最前面插入最后一条数据，然后在末尾插入第一条数据。新列表就变成了这样了，3－1－2－3－1。如果当前滑到的是0位置（页面3）,那就通过ViewPager的setCurrentItem(int item, boolean smoothScroll)方法神不知鬼不觉的切换到3位置（页面3），当滑到4的位置时(页面1),也用这个方法滑到1位置（页面1）。这样给我们的感觉就是无限轮播了。来一张图辅助理解一下。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fll56ELZOT9sVMQm6QO1cSp-vNRJ.png" alt=""></li>
+<li>采用getCount 返回 Integer.MAX_VALUE<br>让ViewPager 的Adapter getCount 方法返回一个很大的数（这里用Integer.MAX_VALUE），理论上可以无限滑动。当显示完一个真实列表的周期后，又从真实列表的0位置显示数据，造成无限循环轮播的假象。开始时调用 mViewPager.setCurrentItem(Integer.MAX_VALUE /2)设置选中中间位置，这样最开始就可以向左滑动。关键代码：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> currentItem = getStartSelectItem();</div><div class="line"></div><div class="line"><span class="comment">//设置当前选中的Item</span></div><div class="line"> mViewPager.setCurrentItem(currentItem);</div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getStartSelectItem</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">// 我们设置当前选中的位置为Integer.MAX_VALUE / 2,这样开始就能往左滑动</span></div><div class="line">        <span class="comment">// 但是要保证这个值与getRealPosition 的 余数为0，因为要从第一页开始显示</span></div><div class="line">        <span class="keyword">int</span> currentItem = Integer.MAX_VALUE / <span class="number">2</span>;</div><div class="line">        <span class="keyword">if</span>(currentItem % getRealCount()  ==<span class="number">0</span> )&#123;</div><div class="line">            <span class="keyword">return</span> currentItem;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 直到找到从0开始的位置</span></div><div class="line">        <span class="keyword">while</span> (currentItem % getRealCount()  != <span class="number">0</span>)&#123;</div><div class="line">            currentItem++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> currentItem;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>3 . 两种方案选哪一种？<br>两种方案我都试了一下，都可以实现轮播，但是第一种 方案在有切换动画的时候是有问题的，因为上面我们说了滑动到最后一页切换到第一页时，用的是ViewPager的setCurrentItem(int item, boolean smoothScroll)方法，smoothScroll 的值为false,这样界面就感觉不到我们偷偷的切换。但是这样切换就没有了动画。这样每次切换就会很生硬，因此就抛弃这种方法。选择第二种方案。<br>轮播我们采用Hanlder的postDelayed方法，关键代码如下：<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> Runnable mLoopRunnable = <span class="keyword">new</span> Runnable() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(mIsAutoPlay)&#123;</div><div class="line">            mCurrentItem = mViewPager.getCurrentItem();</div><div class="line">            mCurrentItem++;</div><div class="line">            <span class="keyword">if</span>(mCurrentItem == mAdapter.getCount() - <span class="number">1</span>)&#123;</div><div class="line">                mCurrentItem = <span class="number">0</span>;</div><div class="line">                mViewPager.setCurrentItem(mCurrentItem,<span class="keyword">false</span>);</div><div class="line">                mHandler.postDelayed(<span class="keyword">this</span>,mDelayedTime);</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                mViewPager.setCurrentItem(mCurrentItem);</div><div class="line">                mHandler.postDelayed(<span class="keyword">this</span>,mDelayedTime);</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            mHandler.postDelayed(<span class="keyword">this</span>,mDelayedTime);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>在Adapter instantiateItem(ViewGroup container, final int position) 中，现在的这个position是一个很大的数字，我们需要将它转换成一个真实的position，否则会越界报错。<br><figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="built_in">int</span> realPosition = <span class="keyword">position</span> % getRealCount();</div></pre></td></tr></table></figure></p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取真实的Count</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">int</span> <span class="title">getRealCount</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span>  mDatas==<span class="keyword">null</span> ? <span class="number">0</span>:mDatas.size();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过以上就实现了仿魅族的BannerView，但是这还没完，虽然功能实现了，要想在任何地方拿来就可以使用，简单方便，我们还需要进一步的封装。</p>
+<h2 id="封装轮子：MZBannerView"><a href="#封装轮子：MZBannerView" class="headerlink" title="封装轮子：MZBannerView"></a>封装轮子：MZBannerView</h2><p>通过上面几步就可以实现仿魅族的BannerView,但是为了使用方便，我们将它封装成一个库，前面一篇文章讲了，如何封装一个通用的ViewPager（文章地址：ViewPager系列之 打造一个通用的ViewPager）。既然要想Banner使用方便，我们也需要封装得通用，可扩展。因为我们的Banner也是用ViewPager 实现的，因此，我们可用上一篇文章的方法，封装一个通用的BannerView。</p>
+<p>MZBannerView 有以下功能：</p>
+<ol>
+<li>仿魅族BannerView 效果。</li>
+<li>当普通Banner 使用</li>
+<li>当普通ViewPager 使用。</li>
+<li>当普通ViewPager使用(有魅族Banner效果)</li>
+</ol>
+<h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性意义</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open_mz_mode</td>
+<td>是否开启魅族模式</td>
+<td>true 为魅族Banner效果，false 则普通Banner效果</td>
+</tr>
+<tr>
+<td>canLoop</td>
+<td>是否轮播</td>
+<td>true 轮播，false 则为普通ViewPager</td>
+</tr>
+<tr>
+<td>indicatorPaddingLeft</td>
+<td>设置指示器距离左侧的距离</td>
+<td>单位为 dp 的值</td>
+</tr>
+<tr>
+<td>indicatorPaddingRight</td>
+<td>设置指示器距离右侧的距离</td>
+<td>单位为 dp 的值</td>
+</tr>
+<tr>
+<td>indicatorAlign</td>
+<td>设置指示器的位置</td>
+<td>有三个取值：left 左边，center 剧中显示，right 右侧显示</td>
+</tr>
+</tbody>
+</table>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>xml 布局文件<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;com.example.dinson.MZBannerView</div><div class="line">      android:id=<span class="string">"@+id/banner"</span></div><div class="line">      android:layout_width=<span class="string">"match_parent"</span></div><div class="line">      android:layout_height=<span class="string">"200dp"</span></div><div class="line">      android:layout_marginTop=<span class="string">"10dp"</span></div><div class="line">      <span class="keyword">app</span>:open_mz_mode=<span class="string">"true"</span></div><div class="line">      <span class="keyword">app</span>:canLoop=<span class="string">"true"</span></div><div class="line">      <span class="keyword">app</span>:indicatorAlign=<span class="string">"center"</span></div><div class="line">      <span class="keyword">app</span>:indicatorPaddingLeft=<span class="string">"10dp"</span></div><div class="line">      /&gt;</div></pre></td></tr></table></figure></p>
+<p>activity中代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"> mMZBanner = (MZBannerView) view.findViewById(R.id.banner);</div><div class="line"> <span class="comment">// 设置页面点击事件</span></div><div class="line"> mMZBanner.setBannerPageClickListener(<span class="keyword">new</span> MZBannerView.BannerPageClickListener() &#123;</div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPageClick</span><span class="params">(View view, <span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">         Toast.makeText(getContext(),<span class="string">"click page:"</span>+position,Toast.LENGTH_LONG).show();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div><div class="line"></div><div class="line"> List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;RES.length;i++)&#123;</div><div class="line">     list.add(RES[i]);</div><div class="line"> &#125;</div><div class="line"><span class="comment">// 设置数据</span></div><div class="line"> mMZBanner.setPages(list, <span class="keyword">new</span> MZHolderCreator&lt;BannerViewHolder&gt;() &#123;</div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">public</span> BannerViewHolder <span class="title">createViewHolder</span><span class="params">()</span> </span>&#123;</div><div class="line">         <span class="keyword">return</span> <span class="keyword">new</span> BannerViewHolder();</div><div class="line">     &#125;</div><div class="line"> &#125;);</div><div class="line"></div><div class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">BannerViewHolder</span> <span class="keyword">implements</span> <span class="title">MZViewHolder</span>&lt;<span class="title">Integer</span>&gt; </span>&#123;</div><div class="line">     <span class="keyword">private</span> ImageView mImageView;</div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">public</span> View <span class="title">createView</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">         <span class="comment">// 返回页面布局文件</span></div><div class="line">         View view = LayoutInflater.from(context).inflate(R.layout.banner_item,<span class="keyword">null</span>);</div><div class="line">         mImageView = (ImageView) view.findViewById(R.id.banner_image);</div><div class="line">         <span class="keyword">return</span> view;</div><div class="line">     &#125;</div><div class="line">    </div><div class="line">     <span class="meta">@Override</span></div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBind</span><span class="params">(Context context, <span class="keyword">int</span> position, Integer data)</span> </span>&#123;</div><div class="line">         <span class="comment">// 数据绑定</span></div><div class="line">         mImageView.setImageResource(data);</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>如果是当Banner使用，注意在onResume 中调用start()方法，在onPause中调用 pause() 方法。如果当普通ViewPager使用，则不需要。<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPause</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onPause();</div><div class="line">    mMZBanner.pause();<span class="comment">//暂停轮播</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onResume</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onResume();</div><div class="line">    mMZBanner.start();<span class="comment">//开始轮播</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其他对外API<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment"><span class="markdown">/<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span>**/</span></span></div><div class="line"><span class="comment"><span class="markdown">/<span class="strong">**                             对外API                                                               **</span>/</span></span></div><div class="line"><span class="comment"><span class="markdown">/<span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span><span class="strong">*****</span>**/</span></span></div><div class="line"><span class="comment">//开始轮播</span></div><div class="line"> start()</div><div class="line"><span class="comment">//停止轮播</span></div><div class="line"> pause()</div><div class="line"></div><div class="line"><span class="comment">//设置BannerView 的切换时间间隔</span></div><div class="line"> setDelayedTime(<span class="built_in">int</span> delayedTime)</div><div class="line"><span class="comment">// 设置页面改变监听器</span></div><div class="line">addPageChangeLisnter(ViewPager.OnPageChangeListener onPageChangeListener)</div><div class="line"></div><div class="line"><span class="comment">//添加Page点击事件</span></div><div class="line"> setBannerPageClickListener(BannerPageClickListener bannerPageClickListener)</div><div class="line"><span class="comment">//设置是否显示Indicator</span></div><div class="line">setIndicatorVisible(boolean visible)</div><div class="line"><span class="comment">// 获取ViewPager</span></div><div class="line">ViewPager getViewPager()</div><div class="line"><span class="comment">// 设置 Indicator资源</span></div><div class="line">setIndicatorRes(<span class="built_in">int</span> unSelectRes,<span class="built_in">int</span> selectRes)</div><div class="line"><span class="comment">//设置页面数据</span></div><div class="line">setPages(<span class="built_in">List</span>&lt;T&gt; datas,MZHolderCreator mzHolderCreator)</div><div class="line"><span class="comment">//设置指示器显示位置</span></div><div class="line">setIndicatorAlign(IndicatorAlign indicatorAlign)</div><div class="line"><span class="comment">//设置ViewPager（Banner）切换速度</span></div><div class="line">setDuration(<span class="built_in">int</span> duration)</div></pre></td></tr></table></figure></p>
+<p>因为是对ViewPager的包装，所有要设置某些ViewPager的属性，可以通过getViewPager 获取到ViewPager再设置对应属性</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文讲了如何实现一个仿魅族Banner效果。其中讲了一些关键的点和关键代码。其实普通的BannerView 是一样的，只是少了动画而已。最后，将这些功能封装成了一个通用的BannerView 控件。这个控件既有仿魅族Banner的效果，又可以当普通Banner使用。而且还可以当作一个普通的ViewPager使用。</p>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/06/04/17-06-04/" title="http://dinson.win/2017/06/04/17-06-04/" target="_blank">http://dinson.win/2017/06/04/17-06-04/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#仿魅族Banner-效果"><span class="toc-text">仿魅族Banner 效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ViewPager展示多页"><span class="toc-text">ViewPager展示多页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义ViewPager-PageTransformer动画"><span class="toc-text">自定义ViewPager.PageTransformer动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片轮播"><span class="toc-text">图片轮播</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装轮子：MZBannerView"><span class="toc-text">封装轮子：MZBannerView</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义属性"><span class="toc-text">自定义属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>
