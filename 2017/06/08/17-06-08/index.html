@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="ImageSpan,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android ImageSpan的图文居中对齐</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/06/08/17-06-08/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android ImageSpan的图文居中对齐</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/ImageSpan/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ImageSpan</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>ImageSpan类为TextView提供了图文混排的形式，在ImageSpan的构造函数中提供了一个参数 int verticalAlignment，表示垂直对齐方式，有两个参数 ALIGN_BASELINE、ALIGN_BOTTOM 分别为顶部、底部对齐，但是没有居中对齐的参数（其实会找到这篇文章的人应该知道这点了。。）<br>下面说说我的实现思路及方法</p>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<ul>
+<li>根据构造函数verticalAlignment参数找到影响对齐方式的代码<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public ImageSpan(<span class="built_in">Context</span> <span class="built_in">context</span>, int resourceId, int verticalAlignment) &#123;  </div><div class="line">    super(verticalAlignment)<span class="comment">;  </span></div><div class="line">    mContext = <span class="built_in">context</span><span class="comment">;  </span></div><div class="line">    mResourceId = resourceId<span class="comment">;  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>查看源码可知对齐参数是在ImageSpan的父类DynamicDrawableSpan中设置的</p>
+<ul>
+<li>查看DynamicDrawableSpan类源码找出对齐方式的代码，在源码中能看到两个方法getSize与draw</li>
+<li><p>getSize方法，返回一个Int含义为图片的宽度，但是我们看源码发现里面干的事情不仅是返回宽度还设置了文字的ascent、descent的位置</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> getSize(Paint paint, CharSequence <span class="built_in">text</span>, <span class="keyword">int</span> start, <span class="keyword">int</span> <span class="built_in">end</span>, Paint.FontMetricsInt fm) &#123;  </div><div class="line">    Drawable d = getCachedDrawable();  </div><div class="line">    Rect <span class="built_in">rect</span> = d.getBounds();  </div><div class="line">  </div><div class="line">    <span class="built_in">if</span> (fm != null) &#123;  </div><div class="line"> fm.ascent = -<span class="built_in">rect</span>.bottom;   </div><div class="line">        fm.descent = <span class="number">0</span>;   </div><div class="line">  </div><div class="line">        fm.top = fm.ascent;  </div><div class="line">        fm.bottom = <span class="number">0</span>;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="built_in">return</span> <span class="built_in">rect</span>.right;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>draw方法，根据对齐参数绘制图片。所以第一步就是修改draw方法来实现居中</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span>(Canvas canvas, CharSequence <span class="built_in">text</span>, <span class="built_in">int</span> start, <span class="built_in">int</span> end, <span class="built_in">float</span> x, <span class="built_in">int</span> top, <span class="built_in">int</span> y, <span class="built_in">int</span> bottom, Paint paint) &#123;  </div><div class="line">    Drawable b = getCachedDrawable();  </div><div class="line">    canvas.<span class="built_in">save</span>();  </div><div class="line">      </div><div class="line">    <span class="built_in">int</span> transY = bottom - b.getBounds().bottom;  </div><div class="line">    <span class="keyword">if</span> (mVerticalAlignment == ALIGN_BASELINE) &#123;  </div><div class="line">        transY -= paint.getFontMetricsInt().descent;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    canvas.<span class="built_in">translate</span>(x, transY);  </div><div class="line">    b.<span class="title">draw</span>(canvas);  </div><div class="line">    canvas.restore();  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改draw方法</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span>(Canvas canvas, CharSequence <span class="built_in">text</span>, <span class="built_in">int</span> start, <span class="built_in">int</span> end,  </div><div class="line">        <span class="built_in">float</span> x, <span class="built_in">int</span> top, <span class="built_in">int</span> y, <span class="built_in">int</span> bottom, Paint paint) &#123;  </div><div class="line">       Drawable b = getDrawable();  </div><div class="line">       canvas.<span class="built_in">save</span>();  </div><div class="line">       <span class="built_in">int</span> transY = <span class="number">0</span>;  </div><div class="line">       <span class="comment">//获得将要显示的文本高度-图片高度除2等居中位置+top(换行情况)  </span></div><div class="line">       transY = ((bottom-top) - b.getBounds().bottom)/<span class="number">2</span>+top;  </div><div class="line">       <span class="comment">//偏移画布后开始绘制  </span></div><div class="line">       canvas.<span class="built_in">translate</span>(x, transY);  </div><div class="line">       b.<span class="title">draw</span>(canvas);  </div><div class="line">       canvas.restore();  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>这时候如果运行调试的话会发现完全没效果。。为啥呢，别急还有一个重要方法没修改，那就是getSize方法，我们还需要修过getSize方法中对文字ascent、descent等参数的设置才行</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">int</span> getSize(Paint paint, CharSequence <span class="built_in">text</span>, <span class="keyword">int</span> start, <span class="keyword">int</span> <span class="built_in">end</span>,  </div><div class="line">        FontMetricsInt fm) &#123;  </div><div class="line">       Drawable d = getDrawable();  </div><div class="line">       Rect <span class="built_in">rect</span> = d.getBounds();  </div><div class="line">       <span class="built_in">if</span> (fm != null) &#123;  </div><div class="line">        FontMetricsInt fmPaint=paint.getFontMetricsInt();  </div><div class="line">               <span class="comment">//获得文字、图片高度  </span></div><div class="line">        <span class="keyword">int</span> fontHeight = fmPaint.bottom - fmPaint.top;  </div><div class="line">        <span class="keyword">int</span> drHeight=<span class="built_in">rect</span>.bottom-<span class="built_in">rect</span>.top;  </div><div class="line">        <span class="comment">//对于这段算法LZ表示也不解，正常逻辑应该同draw中的计算一样但是显示的结果不居中，经过几次调试之后才发现这么算才会居中  </span></div><div class="line">        <span class="keyword">int</span> top= drHeight/<span class="number">2</span> - fontHeight/<span class="number">4</span>;  </div><div class="line">        <span class="keyword">int</span> bottom=drHeight/<span class="number">2</span> + fontHeight/<span class="number">4</span>;  </div><div class="line">          </div><div class="line">        fm.ascent=-bottom;  </div><div class="line">        fm.top=-bottom;  </div><div class="line">        fm.bottom=top;  </div><div class="line">        fm.descent=top;  </div><div class="line">       &#125;  </div><div class="line">       <span class="built_in">return</span> <span class="built_in">rect</span>.right;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>到这就完成了图文居中的功能，效果图<br><img src="http://ondlsj2sn.bkt.clouddn.com/FkstESEnsZgNDbNxPiT5-pPeoYYO.png" alt=""></p>
+</li>
+</ul>
+<h2 id="完整源码"><a href="#完整源码" class="headerlink" title="完整源码"></a>完整源码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;  </div><div class="line"><span class="keyword">import</span> android.graphics.Canvas;  </div><div class="line"><span class="keyword">import</span> android.graphics.Paint;  </div><div class="line"><span class="keyword">import</span> android.graphics.Paint.FontMetricsInt;  </div><div class="line"><span class="keyword">import</span> android.graphics.Rect;  </div><div class="line"><span class="keyword">import</span> android.graphics.drawable.Drawable;  </div><div class="line"><span class="keyword">import</span> android.os.Bundle;  </div><div class="line"><span class="keyword">import</span> android.support.v7.app.ActionBarActivity;  </div><div class="line"><span class="keyword">import</span> android.text.SpannableString;  </div><div class="line"><span class="keyword">import</span> android.text.Spanned;  </div><div class="line"><span class="keyword">import</span> android.text.style.ImageSpan;  </div><div class="line"><span class="keyword">import</span> android.widget.TextView;  </div><div class="line">  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">ActionBarActivity</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">        TextView textView=<span class="keyword">new</span> TextView(<span class="keyword">this</span>);  </div><div class="line">        setContentView(textView);  </div><div class="line">        SpannableString showString = <span class="keyword">new</span> SpannableString(<span class="string">"1234533333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333336"</span>);  </div><div class="line">        MyIm imageSpan=<span class="keyword">new</span> MyIm(<span class="keyword">this</span>, R.drawable.ic_launcher);  </div><div class="line">        MyIm imageSpan2=<span class="keyword">new</span> MyIm(<span class="keyword">this</span>, R.drawable.ic_launcher);  </div><div class="line">        MyIm imageSpan21=<span class="keyword">new</span> MyIm(<span class="keyword">this</span>, R.drawable.ic_launcher);  </div><div class="line">        showString.setSpan(imageSpan, <span class="number">2</span>, <span class="number">3</span>, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);  </div><div class="line">        showString.setSpan(imageSpan2, <span class="number">27</span>, <span class="number">30</span>, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);  </div><div class="line">        showString.setSpan(imageSpan21, <span class="number">77</span>, <span class="number">78</span>, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);  </div><div class="line">        textView.setText(showString);  </div><div class="line">    &#125;  </div><div class="line">      </div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyIm</span> <span class="keyword">extends</span> <span class="title">ImageSpan</span>  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyIm</span><span class="params">(Context arg0,<span class="keyword">int</span> arg1)</span> </span>&#123;  </div><div class="line">            <span class="keyword">super</span>(arg0, arg1);  </div><div class="line">        &#125;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">(Paint paint, CharSequence text, <span class="keyword">int</span> start, <span class="keyword">int</span> end,  </span></span></div><div class="line">                FontMetricsInt fm) &#123;  </div><div class="line">            Drawable d = getDrawable();  </div><div class="line">            Rect rect = d.getBounds();  </div><div class="line">            <span class="keyword">if</span> (fm != <span class="keyword">null</span>) &#123;  </div><div class="line">                FontMetricsInt fmPaint=paint.getFontMetricsInt();  </div><div class="line">                <span class="keyword">int</span> fontHeight = fmPaint.bottom - fmPaint.top;  </div><div class="line">                <span class="keyword">int</span> drHeight=rect.bottom-rect.top;  </div><div class="line">                  </div><div class="line">                <span class="keyword">int</span> top= drHeight/<span class="number">2</span> - fontHeight/<span class="number">4</span>;  </div><div class="line">                <span class="keyword">int</span> bottom=drHeight/<span class="number">2</span> + fontHeight/<span class="number">4</span>;  </div><div class="line">                  </div><div class="line">                fm.ascent=-bottom;  </div><div class="line">                fm.top=-bottom;  </div><div class="line">                fm.bottom=top;  </div><div class="line">                fm.descent=top;  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">return</span> rect.right;  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">        <span class="meta">@Override</span>  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">(Canvas canvas, CharSequence text, <span class="keyword">int</span> start, <span class="keyword">int</span> end,  </span></span></div><div class="line">                <span class="keyword">float</span> x, <span class="keyword">int</span> top, <span class="keyword">int</span> y, <span class="keyword">int</span> bottom, Paint paint) &#123;  </div><div class="line">            Drawable b = getDrawable();  </div><div class="line">            canvas.save();  </div><div class="line">            <span class="keyword">int</span> transY = <span class="number">0</span>;  </div><div class="line">            transY = ((bottom-top) - b.getBounds().bottom)/<span class="number">2</span>+top;  </div><div class="line">            canvas.translate(x, transY);  </div><div class="line">            b.draw(canvas);  </div><div class="line">            canvas.restore();  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/06/08/17-06-08/" title="http://dinson.win/2017/06/08/17-06-08/" target="_blank">http://dinson.win/2017/06/08/17-06-08/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整源码"><span class="toc-text">完整源码</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

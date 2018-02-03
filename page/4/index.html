@@ -118,208 +118,180 @@
       <article class="posts min-height">
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/07/17/16-07-17/" class="post-title-link">Hexo设置指南</a></h3>
+    <h3 class="post-title"><a href="/2017/05/13/17-05-12/" class="post-title-link">Android录屏与截图功能(5.0以上有效)</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>设置指南</p>
-</blockquote>
-<h2 id="设置阅读全文"><a href="#设置阅读全文" class="headerlink" title="设置阅读全文"></a>设置阅读全文</h2><blockquote>
-<p><strong>建议使用第一种方式，除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</strong></p>
-</blockquote>
-<ol>
-<li><p>在文章中使用&lt;!–more–> 手动进行截断。这种方法可以根据文章的内容，自己在合适的位置添加&lt;!–more–>标签，使用灵活，也是Hexo推荐的方法。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FiClBw76yH9X6udPyDIxtrIy55PK.png" alt=""></p>
-</li>
-<li><p>在文章中的front-matter中添加description，并提供文章摘录。这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。<br><img src="http://ondlsj2sn.bkt.clouddn.com/FvIhULsqboNVPBcqLod5KYSBXp99.PNG" alt=""></p>
-</li>
-<li><p>自动形成摘要，在主题配置_config.yml文件中添加。默认截取的长度为 150 字符，可以根据需要自行设定。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">auto_excerpt:</div><div class="line">	enable: <span class="literal">true</span></div><div class="line">length: <span class="number">150</span></div></pre></td></tr></table></figure>
-</li>
-</ol></div>
-    <a href="/2016/07/17/16-07-17/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-07</span>
-      
-      <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
-      
-      
-      <a href="/tags/Hexo/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Hexo</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/07/15/16-07-15/" class="post-title-link">GitHub+Hexo搭建个人博客辛酸史--分支控制(贰)</a></h3>
-    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>利用github的不同分支来分别保存网站静态文件与hexo源码（md原始文件及主题等），实现在不同电脑上都可以自由写博客</p>
-<p>当然，这种方式也有缺点，那就是所有的静态页面由于都需要保存在github里的自己名下的网站同名项目仓库内，所以如果项目仓库是public的，那么<strong>所有人都会看到你的网站代码</strong>， 这个其实应该也没有关系吧！！！hexo都是开源的，而且静态博客是编译后的，框架和主题都是用的别人开源出来的，但博客写了不就是让别人看的？所以应该真的无所谓。。。</p>
+<p>这篇文章，会带你学习如何使用 MediaProjection，MediaCodec 以及 MediaMuxer 来实现简单的截屏和录屏功能。</p>
+<p>因为 MediaProjection 是 5.0以上 才出现的，所以今天所讲述功能实现，只在 5.0以上 的系统有效。</p>
 </blockquote></div>
-    <a href="/2016/07/15/16-07-15/" class="post-more">MORE »</a>
+    <a href="/2017/05/13/17-05-12/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07</span>
-      
-      <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
-      
-      
-      <a href="/tags/博客/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>博客</a>
-      
-      <a href="/tags/Hexo/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Hexo</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/07/11/16-07-11/" class="post-title-link">Android主题换肤 无缝切换</a></h3>
-    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>关于Android的主题换肤都是个老生常谈的问题了。网上给出的方案也是层出不穷，最近我也是很想去了解这方面的知识，所以我去搜一下就会有一大堆介绍这方面的文章，但是最后的结果都是不尽人意的，有的确实是给出了一些比较好的解决方案，但是没有一个实质性的Demo可以参考，所以也只能是纸上谈兵罢了，有的呢，确实是给出了一个参考的Demo但是最后的结果不是我想要的。<a href="http://dinson.win/2016/07/08/16-07-08/">关于Android的换肤方案技术的总结</a>，这篇文章还是挺有参考价值的Android换肤技术总结。感兴趣的同学可以去了解下，就当做是一个知识的普及。</p>
-</blockquote>
-<p>今天我要实现的一个换肤方案是基于github上的这个开源框架<a href="https://github.com/fengjundev/Android-Skin-Loader" target="_blank" rel="external">Android-Skin-Loader</a>。</p>
-<p><strong>这个框架的换肤机制是使用动态加载的机制去加载皮肤包里面的内容，无需Acitvity重启即可实现皮肤的实时更换，皮肤包是可以与原安装包相分离的，需要自己定做（这个皮肤包其实也就是一个普通的Android项目，只是只有资源文件没有类文件而已），这样做的好处就是可以在线提供皮肤包供用户去下载，也可以大大的减少安装包的体积，同时也很好的实现了插件化。</strong></p>
-<p>其实这个框架是可以拿来直接来用的，直接几行代码基本上就可以解决Android的主题换肤，但是作为一个程序员怎么可以只是简单的知道怎么用就行了吗？如果真是这样就真的太low了。遇到一个好的开源项目我们至少需要把他的源码大致看一下，走一下基本的流程，了解一下他的基本原理，这样我们在技术上才会有所提升。</p></div>
-    <a href="/2016/07/11/16-07-11/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-07</span>
+	  <span class="post-time">2017-05</span>
       
       <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
-      <a href="/tags/主题换肤/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>主题换肤</a>
+      <a href="/tags/录屏/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>录屏</a>
+      
+      <a href="/tags/截图/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>截图</a>
       
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/07/08/16-07-08/" class="post-title-link">Android换肤技术总结</a></h3>
+    <h3 class="post-title"><a href="/2017/05/11/17-05-11/" class="post-title-link">Android ConstraintLayout 使用指南</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>纵观现在各种Android app，其换肤需求可以归为<br></p>
-<ul>
-<li>白天/黑夜主题切换（或者别的名字，通常2套），如同花顺/自选股/天天动听等，UI表现为一个switcher。</li>
-<li>多种主题切换，通常为会员特权，如QQ/QQ空间。</li>
-</ul>
-<p>对于第一种来说，目测应该是直接通过本地theme来做的，即所有图片/颜色的资源都在apk里面打包了。</p>
-<p>而对于第二种，则相对复杂一些，由于作为一种线上服务，可能上架新皮肤，且那么多皮肤包放在apk里面实在太占体积了，所以皮肤资源会在选择后再进行下载，也就不能直接使用android的那套theme。</p>
+<p>升级Android Studio 2.3之后，IDE默认生成的Activity布局都是以ConstraintLayout做为根布局，体验了一把这个Google去年就开始力推的ConstraintLayout后，觉得非常不错，本文用于记录ConstraintLayout各个方面的使用知识。</p>
 </blockquote></div>
-    <a href="/2016/07/08/16-07-08/" class="post-more">MORE »</a>
+    <a href="/2017/05/11/17-05-11/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-07</span>
+	  <span class="post-time">2017-05</span>
       
       <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
-      <a href="/tags/主题换肤/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>主题换肤</a>
+      <a href="/tags/ConstraintLayout/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ConstraintLayout</a>
       
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/15/16-06-15/" class="post-title-link">Fragment实现懒加载，让应用更优化</a></h3>
+    <h3 class="post-title"><a href="/2017/05/10/17-05-10/" class="post-title-link">Android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>玩过微信的都知道，微信用的是懒加载的模式，之所以使用懒加载是因为：当使用viewpager+adapter作为应用大的布局时，viewpager会通过setOffscreenPageLimit来设置预加载的项目，不设置setOffscreenPageLimit，则默认为1（设置0无效，可以查看该方法源码知道），也就是当我们打开应用看到的时候fragmentOne时，实际上其他fragment（例如fragmentSecond）也进行了加载，只不过没有显示出来罢了，但是这样就造成了不必要的资源浪费（例如，fragmentSecond没有显示，但是却进行了大量的网络加载操作）。</p>
-</blockquote>
-<p><img src="http://ondlsj2sn.bkt.clouddn.com/Fs5tcZ4YtAWiiQSTd3C-Sd2GtEei.png" alt=""> </p>
-<p>基于上述情况，就有了懒加载方式的诞生（即只加载当前显示页面且只加载一次，滑动到其他页面时才加载其他页面数据，当再滑动到已加载过数据的页面时不再进行数据加载操作，若想要刷新数据，再调用相应的加载数据方法就好了）</p></div>
-    <a href="/2016/06/15/16-06-15/" class="post-more">MORE »</a>
+<p>在开发中，经常会遇到键盘挡住输入框的情况，比如登录界面或注册界面，弹出的软键盘把登录或注册按钮挡住了，用户必须把软键盘收起，才能点击相应按钮，这样的用户体验非常不好。像微信则直接把登录按钮做在输入框的上面，但有很多情况下，这经常满足不了需求。同时如果输入框特别多的情况下，点击输入时，当前输入框没被挡住，但是当前输入框下面的输入框却无法获取焦点，必须先把键盘收起，再去获取下面输入框焦点，这样用户体验也非常不好，那有什么办法呢？ </p>
+</blockquote></div>
+    <a href="/2017/05/10/17-05-10/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-06</span>
+	  <span class="post-time">2017-05</span>
       
       <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
-      <a href="/tags/Fragment/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Fragment</a>
+      <a href="/tags/Android软键盘/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Android软键盘</a>
       
-      <a href="/tags/懒加载/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>懒加载</a>
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2017/05/09/17-05-09/" class="post-title-link">Android双缓冲绘图技术分析</a></h3>
+    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>双缓冲、多缓冲技术在计算机科学中其实是一个广义的概念，不过其本质上的意思都是差不多的。今天我们就来讲一讲双缓冲技术在android绘图中的应用。所谓的双缓冲技术其实就是当程序需要在指定的View上进行绘制时，程序并不需要直接绘制到该View组件，而是先绘制到一个内存中的Bitmap图片上（就是缓冲），等内存中的Bitmap绘制好之后，再一次性将Bitmap绘制到View组件上。当进行复杂的绘制操作时会导致呈现的图像闪烁或具有 其他不可接受的外观。双缓冲的使用解决这些问题。双缓冲使用内存缓冲区来解决由多重 绘制操作造成的闪烁问题。当使用双缓冲时，首先在内存缓冲区里完成所有绘制操作，而 不是在屏幕上直接进行绘图。当所有绘制操作完成后，把内存缓冲区完成的图像直接复制 到屏幕。因为在屏幕上只执行一个图形操作，所以消除了由复杂绘制操作造成的图像闪烁 问题。</p>
+</blockquote></div>
+    <a href="/2017/05/09/17-05-09/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2017-05</span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
       
       <a href="/tags/优化/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>优化</a>
       
+      <a href="/tags/自定义控件/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>自定义控件</a>
+      
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/14/16-06-14/" class="post-title-link">MarkdownPad2在Win10下HTML渲染错误解决办法及注册码</a></h3>
-    <div class="post-excerpt"><h3 id="HTML渲染错误解决办法"><a href="#HTML渲染错误解决办法" class="headerlink" title="HTML渲染错误解决办法"></a>HTML渲染错误解决办法</h3><p>在win10上安装MarkdownPad2 时，出现如下的错误信息：HTML渲染组出错，这个问题可以通过安装某个缺失组件来解决，是否想要了解详细信息？</p>
-<p><img src="http://ondlsj2sn.bkt.clouddn.com/9703407c1a94f6b0c1c73b162e25782d-thumb.png" alt=""></p></div>
-    <a href="/2016/06/14/16-06-14/" class="post-more">MORE »</a>
+    <h3 class="post-title"><a href="/2017/05/08/17-05-08/" class="post-title-link">你真的了解SharedPreferences吗？</a></h3>
+    <div class="post-excerpt"><h2 id="SharedPreferences踩坑"><a href="#SharedPreferences踩坑" class="headerlink" title="SharedPreferences踩坑"></a>SharedPreferences踩坑</h2><blockquote>
+<p>在日常开发中SharedPreferences想必肯定是经常被我们使用的了，通常情况下使用它并不会发生什么问题，但是假如遇到了在不同进程中使用SharedPreferences（例如指定了process的activity/service），那坑就来了。</p>
+</blockquote></div>
+    <a href="/2017/05/08/17-05-08/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-06</span>
+	  <span class="post-time">2017-05</span>
       
-      <a href="/categories/软件破解/" class="post-categories">软件破解</a>
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
-      <a href="/tags/破解/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>破解</a>
+      <a href="/tags/SharedPreferences/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>SharedPreferences</a>
       
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/10/16-06-10/" class="post-title-link">Android Studio插件整理</a></h3>
+    <h3 class="post-title"><a href="/2017/05/05/17-05-05/" class="post-title-link">全世界最著名的 icons 网站都在这了</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>在现如今这个极度推崇敏捷开发的年代，开发时间的节省将会直接压缩开发成本，在这其中，一些开发工具的合理利用讲会极大简化开发工作并增强开发效率。本文将介绍笔者自己在平时开发中经常用到的一些插件，我只能说它们都很实用，当然都是适用于Android Studio的啦。<br></div>
-    <a href="/2016/06/10/16-06-10/" class="post-more">MORE »</a>
+<p>分享几个高逼格，免费的icons网站</p>
+</blockquote></div>
+    <a href="/2017/05/05/17-05-05/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-06</span>
+	  <span class="post-time">2017-05</span>
+      
+      <a href="/categories/UI设计/" class="post-categories">UI设计</a>
+      
+      
+      <a href="/tags/UI/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>UI</a>
+      
+      <a href="/tags/设计师/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>设计师</a>
+      
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2017/04/18/17-04-18/" class="post-title-link">Android Studio 打包时Signature Version V1 V2</a></h3>
+    <div class="post-excerpt"><p>前几天更新了一下Android Studio ,今天在打正式包的时候发现多了个签名版本选择：<br><img src="http://ondlsj2sn.bkt.clouddn.com/FnDLFoLyOmCbSA460u26Q0cvUlnl.png" alt=""></p>
+<p>从图中可以看到多了签名版本的选择，因为刚开始默认勾选的v2(Full APK Signature)，没多想一路下一步下去，<br>结果在测试机上（5.0.1）一直都安装失败，想着和那个选择签名版本有关系，那就查查吧。<br></div>
+    <a href="/2017/04/18/17-04-18/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2017-04</span>
       
       <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
       
-      
-      <a href="/tags/插件/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>插件</a>
       
       <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
       
+      <a href="/tags/签名/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>签名</a>
+      
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/08/16-06-08/" class="post-title-link">安卓反编译</a></h3>
-    <div class="post-excerpt"><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>apktool:资源文件获取，可以提取出图片文件和布局文件进行使用查看 </li>
-<li>dex2jar:将apk反编译成Java源码（classes.dex转化成jar文件）</li>
-<li>jd-gui:查看APK中classes.dex转化成出的jar文件，即源码文件</li>
-</ul>
-<blockquote>
-<p>网盘： <a href="http://pan.baidu.com/s/1eSkSctc" target="_blank" rel="external">http://pan.baidu.com/s/1eSkSctc</a> &emsp; 密码：low6<br></div>
-    <a href="/2016/06/08/16-06-08/" class="post-more">MORE »</a>
+    <h3 class="post-title"><a href="/2017/04/17/17-04-17/" class="post-title-link">Minimum supported Gradle version is 3.3. Current version is 2.14.1</a></h3>
+    <div class="post-excerpt"><blockquote>
+<p>最近gradle更新到了3.3，studio 每次重新进入项目都会提醒更新，于是手贱便点击了update。点击更新后发现我的项目就瘫痪了，但是打开其他的项目发现并没有出现什么问题。结果就是自己挖的坑把自己埋了一天半，在这记录一下</p>
+</blockquote>
+<p>首先要搞懂两个概念，<strong>gradle版本</strong>和<strong>gradle插件版本</strong>，比如我现在as升级到了2.3，那么2.3就是gradle版本，2.14.1就是gradle插件版本，这两个概念的一一对应的，而之所以出现这个报错信息，就是因为当前项目的gradle插件版本是2.14.1，而gradle2.3对应的插件版本就是3.3，所以导致了报错。（gradle2.2.3对应的插件版本是2.14.1）<br>那应该怎么解决呢？</p></div>
+    <a href="/2017/04/17/17-04-17/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-06</span>
+	  <span class="post-time">2017-04</span>
       
       <a href="/categories/Android庶系/" class="post-categories">Android庶系</a>
       
       
-      <a href="/tags/反编译/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>反编译</a>
+      <a href="/tags/AS/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>AS</a>
+      
+      <a href="/tags/Gradle/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Gradle</a>
+      
+      <a href="/tags/异常/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>异常</a>
       
     </p>
   </section>
   
 	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/07/16-06-07/" class="post-title-link">常用配置</a></h3>
-    <div class="post-excerpt"><h2 id="Java环境变量"><a href="#Java环境变量" class="headerlink" title="Java环境变量"></a>Java环境变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">新建：值为JDK安装目录</div><div class="line">JAVA_Home</div><div class="line"></div><div class="line">Path中添加</div><div class="line">%JAVA_HOME%\bin</div><div class="line">%JAVA_HOME%\jre\bin</div></pre></td></tr></table></figure>
-<h2 id="Android环境变量"><a href="#Android环境变量" class="headerlink" title="Android环境变量"></a>Android环境变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">新建：值为SDK安装目录	</div><div class="line">Android_Home</div><div class="line"></div><div class="line">Path中添加</div><div class="line">%Android_Home%\tools</div><div class="line">%Android_Home%\platform-tools</div></pre></td></tr></table></figure></div>
-    <a href="/2016/06/07/16-06-07/" class="post-more">MORE »</a>
-    <p class="post-meta">
-	  <span class="post-time">2016-06</span>
-      
-      <a href="/categories/系统配置/" class="post-categories">系统配置</a>
-      
-      
-      <a href="/tags/系统配置/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>系统配置</a>
-      
-    </p>
-  </section>
-  
-	<section class="post">
-    <h3 class="post-title"><a href="/2016/06/06/16-06-06/" class="post-title-link">GitHub+Hexo搭建个人博客辛酸史--基础搭建(壹)</a></h3>
+    <h3 class="post-title"><a href="/2017/04/16/17-04-16/" class="post-title-link">Android共享元素场景切换动画的实现</a></h3>
     <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>hexo是一款基于Node.js的静态博客框架, <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo github 链接</a> 链接 ,这篇教程是针对与Mac的，参考链接，由于原文讲到的hexo是以前的老版本，所以现在的版本配置的时候会有些改动。</p>
+<p>我们知道安卓5.0系统引入了共享元素，能做出非常炫酷的场景切换效果，这让人非常兴奋同时非常蛋疼，因为低版本没法使用啊，所以今天就跟大家分享一下自己写的一个库，其实只有2个文件而已，还是叫它工具比较合适吧……非常轻量级，简直是人畜无害，兼容安卓5.0以下的版本。</p>
 </blockquote></div>
-    <a href="/2016/06/06/16-06-06/" class="post-more">MORE »</a>
+    <a href="/2017/04/16/17-04-16/" class="post-more">MORE »</a>
     <p class="post-meta">
-	  <span class="post-time">2016-06</span>
+	  <span class="post-time">2017-04</span>
       
-      <a href="/categories/个人博客辛酸系列/" class="post-categories">个人博客辛酸系列</a>
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
       
-      <a href="/tags/博客/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>博客</a>
+    </p>
+  </section>
+  
+	<section class="post">
+    <h3 class="post-title"><a href="/2016/07/28/16-07-28/" class="post-title-link">android 最全缓存目录获取方式和函数解析</a></h3>
+    <div class="post-excerpt"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Android 开发中基本都要使用到文件的保存和读取操作，我们一般遇见的文件读写问题有几个：文件保存在哪？以及如何使用相关函数，目录权限的问题？以及删除应用之后目录是否会随之删除的问题？接下来就来解析一下这几个相关目录的操作函数。 </p>
+</blockquote></div>
+    <a href="/2016/07/28/16-07-28/" class="post-more">MORE »</a>
+    <p class="post-meta">
+	  <span class="post-time">2016-07</span>
       
-      <a href="/tags/Hexo/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>Hexo</a>
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
       
-      <a href="/tags/GitHub/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>GitHub</a>
       
     </p>
   </section>
@@ -328,7 +300,7 @@
 
 
 <nav class="paging">
-  <a class="extend prev" rel="prev" href="/page/3/">« 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  <a class="extend prev" rel="prev" href="/page/3/">« 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">下一页 »</a>
 </nav>
 
 

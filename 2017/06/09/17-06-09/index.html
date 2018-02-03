@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="ImageSpan,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android ImageSpan与TextView中的text居中对齐问题解决</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/06/09/17-06-09/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android ImageSpan与TextView中的text居中对齐问题解决</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+      <a href="/tags/ImageSpan/"" class="post-tags"><i class="post-tags-icon iconfont icon-waixingren"></i>ImageSpan</a>
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>先解释一个类：Paint.FontMetrics，它表示绘制字体时的度量标准。google的官方api文档对它的字段说明如下：</p>
+</blockquote>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FmOSFSft1d6GF-jBifSop_HJ9AK5.png" alt=""><br><a id="more"></a><br><!-- 这是　　缩进--><br>ascent: 字体最上端到基线的距离，为负值。<br>descent：字体最下端到基线的距离，为正值。<br><img src="http://ondlsj2sn.bkt.clouddn.com/Frd9IRmhf317jlVEciITR76cJ7di.png" alt=""><br>中间那条线就是基线，基线到上面那条线的距离就是ascent，基线到下面那条线的距离就是descent。</p>
+<p>回到主题，我们要让imagespan与text对齐，只需把imagespan放到descent线和ascent线之间的中间位置就可以了。实现方式为重写ImageSpan类的draw方法。最终实现方法如下：<br><figure class="highlight mel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void draw(@NonNull Canvas <span class="keyword">canvas</span>, CharSequence <span class="keyword">text</span>,</div><div class="line">                 <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">float</span> x,</div><div class="line">                 <span class="keyword">int</span> top, <span class="keyword">int</span> y, <span class="keyword">int</span> bottom, @NonNull Paint paint) &#123;</div><div class="line">     <span class="comment">// image to draw</span></div><div class="line">    Drawable b = getDrawable();</div><div class="line">    <span class="comment">// font metrics of text to be replaced</span></div><div class="line">    Paint.FontMetricsInt fm = paint.getFontMetricsInt();</div><div class="line">    <span class="keyword">int</span> transY = (y + fm.descent + y + fm.ascent) / <span class="number">2</span> </div><div class="line">            - b.getBounds().bottom / <span class="number">2</span>;</div><div class="line">    </div><div class="line">    <span class="keyword">canvas</span>.save();</div><div class="line">    <span class="keyword">canvas</span>.translate(x, transY);</div><div class="line">    b.draw(<span class="keyword">canvas</span>);</div><div class="line">    <span class="keyword">canvas</span>.restore();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>解释下形参：</p>
+<ul>
+<li>x，要绘制的image的左边框到textview左边框的距离。</li>
+<li>y，要替换的文字的基线坐标，即基线到textview上边框的距离。</li>
+<li>top，替换行的最顶部位置。</li>
+<li>bottom，替换行的最底部位置。注意，textview中两行之间的行间距是属于上一行的，所以这里bottom是指行间隔的底部位置。</li>
+<li>paint，画笔，包含了要绘制字体的度量信息。</li>
+</ul>
+<p>这几个参数含义在代码中找不到说明，写了个demo测出来的。top和bottom参数只是解释下，函数里面用不上。<br>然后解释下代码逻辑：</p>
+<ul>
+<li>getDrawable获取要绘制的image，getBounds是获取包裹image的矩形框尺寸；</li>
+<li>y + fm.descent得到字体的descent线坐标；</li>
+<li>y + fm.ascent得到字体的ascent线坐标；</li>
+<li>两者相加除以2就是两条线中线的坐标；</li>
+<li>b.getBounds().bottom是image的高度（试想把image放到原点），除以2即高度一半；</li>
+<li>前面得到的中线坐标减image高度的一半就是image顶部要绘制的目标位置；</li>
+<li>最后把目标坐标传递给canvas.translate函数就可以了，至于这个函数的理解先不管了。</li>
+</ul>
+<p>原理上大致就这样了，最后提供本文提出问题的最终解决方案，使用自定义的ImageSpan类，只需重写它的draw函数，代码如下：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CenteredImageSpan</span> <span class="keyword">extends</span> <span class="title">ImageSpan</span> &#123;</span></div><div class="line">    </div><div class="line">    <span class="keyword">public</span> CenteredImageSpan(Context context, <span class="keyword">final</span> <span class="keyword">int</span> drawableRes) &#123;</div><div class="line">        <span class="keyword">super</span>(context, drawableRes);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> draw(<span class="meta">@NonNull</span> Canvas canvas, CharSequence text,</div><div class="line">                     <span class="keyword">int</span> start, <span class="keyword">int</span> end, <span class="keyword">float</span> x,</div><div class="line">                     <span class="keyword">int</span> top, <span class="keyword">int</span> y, <span class="keyword">int</span> bottom, <span class="meta">@NonNull</span> Paint paint) &#123;</div><div class="line">        <span class="comment">// image to draw</span></div><div class="line">        Drawable b = getDrawable();</div><div class="line">        <span class="comment">// font metrics of text to be replaced</span></div><div class="line">        Paint.FontMetricsInt fm = paint.getFontMetricsInt();</div><div class="line">        <span class="keyword">int</span> transY = (y + fm.descent + y + fm.ascent) / <span class="number">2</span></div><div class="line">                - b.getBounds().bottom / <span class="number">2</span>;</div><div class="line"></div><div class="line">        canvas.save();</div><div class="line">        canvas.translate(x, transY);</div><div class="line">        b.draw(canvas);</div><div class="line">        canvas.restore();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后看一下效果图：<br><img src="http://ondlsj2sn.bkt.clouddn.com/Fsat39vjbr9rrVeNeaj0vU-zXiiu.png" alt=""></p>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/06/09/17-06-09/" title="http://dinson.win/2017/06/09/17-06-09/" target="_blank">http://dinson.win/2017/06/09/17-06-09/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

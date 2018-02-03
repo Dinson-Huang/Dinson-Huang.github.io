@@ -4,12 +4,275 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/05/28/17-05-28/</loc>
-    <lastmod>2017-06-15T11:55:57.434Z</lastmod>
+    <loc>http://dinson.win/2018/02/03/18-02-03/</loc>
+    <lastmod>2018-02-03T15:05:15.531Z</lastmod>
     <data>
         <display>
-        <title>Python从入门到放弃（8）-- Socket</title>
-        <pubTime>2017-05-28T06:29:37.000Z</pubTime>
+        <title>Android分屏功能,适配及相关问题</title>
+        <pubTime>2018-02-03T14:38:20.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/07/11/17-07-11/</loc>
+    <lastmod>2017-07-12T15:14:12.836Z</lastmod>
+    <data>
+        <display>
+        <title>Android进程保活</title>
+        <pubTime>2017-07-11T01:08:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/28/17-06-28/</loc>
+    <lastmod>2017-07-12T15:14:12.835Z</lastmod>
+    <data>
+        <display>
+        <title>2017年Android百大框架排行榜</title>
+        <pubTime>2017-06-28T00:57:07.000Z</pubTime>
+        
+        <tag>排行榜</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/07/01/17-07-01/</loc>
+    <lastmod>2017-07-12T15:14:12.835Z</lastmod>
+    <data>
+        <display>
+        <title>Lambda 表达式在 Android 开发中的使用</title>
+        <pubTime>2017-07-01T00:44:44.000Z</pubTime>
+        
+        <tag>Lambda</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/07/10/17-07-03/</loc>
+    <lastmod>2017-07-12T15:14:12.835Z</lastmod>
+    <data>
+        <display>
+        <title>在百度地图上绘制运动轨迹图及相关事件处理</title>
+        <pubTime>2017-07-10T02:44:08.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/20/17-06-20/</loc>
+    <lastmod>2017-07-12T15:14:12.834Z</lastmod>
+    <data>
+        <display>
+        <title>模仿手机QQ底部导航栏Icon拖拽效果</title>
+        <pubTime>2017-06-20T01:54:00.000Z</pubTime>
+        
+        <tag>自定义VIEW</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/14/17-06-14/</loc>
+    <lastmod>2017-07-12T15:14:12.833Z</lastmod>
+    <data>
+        <display>
+        <title>Android中高德地图与百度地图坐标转换</title>
+        <pubTime>2017-06-14T06:36:03.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/10/17-06-10/</loc>
+    <lastmod>2017-07-12T15:14:12.833Z</lastmod>
+    <data>
+        <display>
+        <title>FontMetrics以及自定义ImageSpan实现TextView图文混排时文图的居中对齐</title>
+        <pubTime>2017-06-10T01:52:56.000Z</pubTime>
+        
+        <tag>ImageSpan</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/18/17-06-18/</loc>
+    <lastmod>2017-07-12T15:14:12.833Z</lastmod>
+    <data>
+        <display>
+        <title>Splash 页面三秒跳转和动态下载最新背景图</title>
+        <pubTime>2017-06-18T01:16:45.000Z</pubTime>
+        
+        <tag>Splash</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/09/17-06-09/</loc>
+    <lastmod>2017-07-12T15:14:12.831Z</lastmod>
+    <data>
+        <display>
+        <title>Android ImageSpan与TextView中的text居中对齐问题解决</title>
+        <pubTime>2017-06-09T06:23:22.000Z</pubTime>
+        
+        <tag>ImageSpan</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/05/17-06-05/</loc>
+    <lastmod>2017-07-12T15:14:12.830Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager系列--仿掌上英雄联盟皮肤浏览效果</title>
+        <pubTime>2017-06-05T02:52:22.000Z</pubTime>
+        
+        <tag>ViewPager系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/08/17-06-08/</loc>
+    <lastmod>2017-07-12T15:14:12.830Z</lastmod>
+    <data>
+        <display>
+        <title>Android ImageSpan的图文居中对齐</title>
+        <pubTime>2017-06-08T04:52:56.000Z</pubTime>
+        
+        <tag>ImageSpan</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/02/17-06-02/</loc>
+    <lastmod>2017-07-12T15:14:12.829Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager系列--实现一个多功能的IndicatorView</title>
+        <pubTime>2017-06-02T01:04:12.000Z</pubTime>
+        
+        <tag>ViewPager系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/06/03/17-06-03/</loc>
+    <lastmod>2017-07-12T15:14:12.829Z</lastmod>
+    <data>
+        <display>
+        <title>ViewPager系列--打造一个通用的ViewPager</title>
+        <pubTime>2017-06-03T01:21:22.000Z</pubTime>
+        
+        <tag>ViewPager系列</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/05/31/17-05-31/</loc>
+    <lastmod>2017-07-12T15:14:12.828Z</lastmod>
+    <data>
+        <display>
+        <title>关于python中如何导入pygame模块</title>
+        <pubTime>2017-05-31T07:58:33.000Z</pubTime>
         
          
            
@@ -22,15 +285,13 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/06/04/17-06-04/</loc>
-    <lastmod>2017-06-15T11:55:57.434Z</lastmod>
+    <loc>http://dinson.win/2016/07/28/16-07-28/</loc>
+    <lastmod>2017-07-12T15:14:12.828Z</lastmod>
     <data>
         <display>
-        <title>ViewPager系列--仿魅族应用的广告BannerView</title>
-        <pubTime>2017-06-04T01:52:22.000Z</pubTime>
+        <title>android 最全缓存目录获取方式和函数解析</title>
+        <pubTime>2016-07-28T02:18:06.000Z</pubTime>
         
-        <tag>ViewPager系列</tag>
-         
          
            
              
@@ -62,12 +323,12 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/06/03/17-06-03/</loc>
+    <loc>http://dinson.win/2017/06/04/17-06-04/</loc>
     <lastmod>2017-06-15T11:55:57.434Z</lastmod>
     <data>
         <display>
-        <title>ViewPager系列--打造一个通用的ViewPager</title>
-        <pubTime>2017-06-03T01:21:22.000Z</pubTime>
+        <title>ViewPager系列--仿魅族应用的广告BannerView</title>
+        <pubTime>2017-06-04T01:52:22.000Z</pubTime>
         
         <tag>ViewPager系列</tag>
          
@@ -82,39 +343,17 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/06/02/17-06-02/</loc>
+    <loc>http://dinson.win/2017/05/28/17-05-28/</loc>
     <lastmod>2017-06-15T11:55:57.434Z</lastmod>
     <data>
         <display>
-        <title>ViewPager系列--实现一个多功能的IndicatorView（待补图）</title>
-        <pubTime>2017-06-02T01:04:12.000Z</pubTime>
+        <title>Python从入门到放弃（8）-- Socket</title>
+        <pubTime>2017-05-28T06:29:37.000Z</pubTime>
         
-        <tag>ViewPager系列</tag>
-         
          
            
              
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2017/06/05/17-06-05/</loc>
-    <lastmod>2017-06-15T11:55:57.434Z</lastmod>
-    <data>
-        <display>
-        <title>ViewPager系列--仿掌上英雄联盟皮肤浏览效果</title>
-        <pubTime>2017-06-05T02:52:22.000Z</pubTime>
-        
-        <tag>ViewPager系列</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+              <breadCrumb title="Python从入门到放弃" url="http://dinson.win/categories/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
           
         </display>
     </data>
@@ -135,6 +374,62 @@
            
              
               <breadCrumb title="Kotlin从放弃到入门" url="http://dinson.win/categories/Kotlin%E4%BB%8E%E6%94%BE%E5%BC%83%E5%88%B0%E5%85%A5%E9%97%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/05/22/17-05-22/</loc>
+    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
+    <data>
+        <display>
+        <title>Python从入门到放弃（3）-- Python基础3</title>
+        <pubTime>2017-05-22T01:04:43.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Python从入门到放弃" url="http://dinson.win/categories/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/06/07/16-06-07/</loc>
+    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
+    <data>
+        <display>
+        <title>常用配置</title>
+        <pubTime>2016-06-07T10:11:53.000Z</pubTime>
+        
+        <tag>系统配置</tag>
+         
+         
+           
+             
+              <breadCrumb title="系统配置" url="http://dinson.win/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/04/16/17-04-16/</loc>
+    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
+    <data>
+        <display>
+        <title>Android共享元素场景切换动画的实现</title>
+        <pubTime>2017-04-16T01:41:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
           
         </display>
     </data>
@@ -178,86 +473,12 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/04/16/17-04-16/</loc>
-    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
-    <data>
-        <display>
-        <title>Android共享元素场景切换动画的实现</title>
-        <pubTime>2017-04-16T01:41:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2016/06/07/16-06-07/</loc>
-    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
-    <data>
-        <display>
-        <title>常用配置</title>
-        <pubTime>2016-06-07T10:11:53.000Z</pubTime>
-        
-        <tag>系统配置</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统配置" url="http://dinson.win/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2017/05/26/17-05-26/</loc>
-    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
-    <data>
-        <display>
-        <title>Python从入门到放弃（6）-- 常用模块学习</title>
-        <pubTime>2017-05-26T06:09:51.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Python从入门到放弃" url="http://dinson.win/categories/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://dinson.win/2017/05/27/17-05-27/</loc>
     <lastmod>2017-05-31T11:44:12.404Z</lastmod>
     <data>
         <display>
         <title>Python从入门到放弃（7）-- 面向对象编程进阶</title>
         <pubTime>2017-05-27T03:38:12.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Python从入门到放弃" url="http://dinson.win/categories/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2017/05/20/17-05-20/</loc>
-    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
-    <data>
-        <display>
-        <title>Python从入门到放弃（1）-- Python基础1</title>
-        <pubTime>2017-05-20T09:40:27.000Z</pubTime>
         
          
            
@@ -288,12 +509,30 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/05/22/17-05-22/</loc>
+    <loc>http://dinson.win/2017/05/20/17-05-20/</loc>
     <lastmod>2017-05-31T11:44:12.404Z</lastmod>
     <data>
         <display>
-        <title>Python从入门到放弃（3）-- Python基础3</title>
-        <pubTime>2017-05-22T01:04:43.000Z</pubTime>
+        <title>Python从入门到放弃（1）-- Python基础1</title>
+        <pubTime>2017-05-20T09:40:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Python从入门到放弃" url="http://dinson.win/categories/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/05/26/17-05-26/</loc>
+    <lastmod>2017-05-31T11:44:12.404Z</lastmod>
+    <data>
+        <display>
+        <title>Python从入门到放弃（6）-- 常用模块学习</title>
+        <pubTime>2017-05-26T06:09:51.000Z</pubTime>
         
          
            
@@ -340,6 +579,23 @@
 
     
   <url>
+    <loc>http://dinson.win/2017/05/17/17-05-17/</loc>
+    <lastmod>2017-05-22T13:26:07.841Z</lastmod>
+    <data>
+        <display>
+        <title>Google I/O 2017</title>
+        <pubTime>2017-05-17T09:38:37.000Z</pubTime>
+        
+        <tag>I/O大会</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://dinson.win/2016/07/20/16-07-20/</loc>
     <lastmod>2017-05-22T13:26:07.841Z</lastmod>
     <data>
@@ -356,24 +612,6 @@
              
               <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://dinson.win/2017/05/17/17-05-17/</loc>
-    <lastmod>2017-05-22T13:26:07.841Z</lastmod>
-    <data>
-        <display>
-        <title>Google I/O 2017</title>
-        <pubTime>2017-05-17T09:38:37.000Z</pubTime>
-        
-        <tag>I/O大会</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -403,25 +641,6 @@
     </url>
 
     
-  <url>
-    <loc>http://dinson.win/2017/05/10/17-05-10/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>Android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法</title>
-        <pubTime>2017-05-10T01:24:17.000Z</pubTime>
-        
-        <tag>Android软键盘</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://dinson.win/2017/05/14/17-05-14/</loc>
@@ -444,14 +663,16 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/07/11/16-07-11/</loc>
+    <loc>http://dinson.win/2017/05/13/17-05-12/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>Android主题换肤 无缝切换</title>
-        <pubTime>2016-07-11T15:29:23.000Z</pubTime>
+        <title>Android录屏与截图功能(5.0以上有效)</title>
+        <pubTime>2017-05-13T06:20:59.000Z</pubTime>
         
-        <tag>主题换肤</tag>
+        <tag>录屏</tag>
+         
+        <tag>截图</tag>
          
          
            
@@ -464,23 +685,21 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/06/15/16-06-15/</loc>
+    <loc>http://dinson.win/2017/05/05/17-05-05/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>Fragment实现懒加载，让应用更优化</title>
-        <pubTime>2016-06-15T15:06:28.000Z</pubTime>
+        <title>全世界最著名的 icons 网站都在这了</title>
+        <pubTime>2017-05-05T02:45:52.000Z</pubTime>
         
-        <tag>Fragment</tag>
+        <tag>UI</tag>
          
-        <tag>懒加载</tag>
-         
-        <tag>优化</tag>
+        <tag>设计师</tag>
          
          
            
              
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+              <breadCrumb title="UI设计" url="http://dinson.win/categories/UI%E8%AE%BE%E8%AE%A1/"/>
           
         </display>
     </data>
@@ -488,78 +707,14 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/07/15/16-07-15/</loc>
+    <loc>http://dinson.win/2017/05/08/17-05-08/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>GitHub+Hexo搭建个人博客辛酸史--分支控制(贰)</title>
-        <pubTime>2016-07-15T02:05:54.000Z</pubTime>
+        <title>你真的了解SharedPreferences吗？</title>
+        <pubTime>2017-05-08T14:50:54.000Z</pubTime>
         
-        <tag>博客</tag>
-         
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="个人博客辛酸系列" url="http://dinson.win/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BE%9B%E9%85%B8%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2016/07/25/16-07-25/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>查看Android应用包名、Activity的几个方法</title>
-        <pubTime>2016-07-25T12:49:20.000Z</pubTime>
-        
-        <tag>应用包名</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2016/06/10/16-06-10/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>Android Studio插件整理</title>
-        <pubTime>2016-06-10T15:33:10.000Z</pubTime>
-        
-        <tag>插件</tag>
-         
-        <tag>AS</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2016/07/08/16-07-08/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>Android换肤技术总结</title>
-        <pubTime>2016-07-08T15:42:21.000Z</pubTime>
-        
-        <tag>主题换肤</tag>
+        <tag>SharedPreferences</tag>
          
          
            
@@ -596,26 +751,6 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/07/21/16-07-21/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>Android keycode</title>
-        <pubTime>2016-07-21T10:44:33.000Z</pubTime>
-        
-        <tag>安卓按键</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://dinson.win/2017/04/18/17-04-18/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
@@ -637,69 +772,6 @@
     </url>
 
     
-  <url>
-    <loc>http://dinson.win/2017/05/08/17-05-08/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>你真的了解SharedPreferences吗？</title>
-        <pubTime>2017-05-08T14:50:54.000Z</pubTime>
-        
-        <tag>SharedPreferences</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2017/05/05/17-05-05/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>全世界最著名的 icons 网站都在这了</title>
-        <pubTime>2017-05-05T02:45:52.000Z</pubTime>
-        
-        <tag>UI</tag>
-         
-        <tag>设计师</tag>
-         
-         
-           
-             
-              <breadCrumb title="UI设计" url="http://dinson.win/categories/UI%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://dinson.win/2017/05/09/17-05-09/</loc>
-    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
-    <data>
-        <display>
-        <title>Android双缓冲绘图技术分析</title>
-        <pubTime>2017-05-09T15:12:42.000Z</pubTime>
-        
-        <tag>优化</tag>
-         
-        <tag>自定义控件</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://dinson.win/2017/05/11/17-05-11/</loc>
@@ -722,14 +794,142 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/06/08/16-06-08/</loc>
+    <loc>http://dinson.win/2016/07/21/16-07-21/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>安卓反编译</title>
-        <pubTime>2016-06-08T06:45:46.000Z</pubTime>
+        <title>Android keycode</title>
+        <pubTime>2016-07-21T10:44:33.000Z</pubTime>
         
-        <tag>反编译</tag>
+        <tag>安卓按键</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/07/08/16-07-08/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Android换肤技术总结</title>
+        <pubTime>2016-07-08T15:42:21.000Z</pubTime>
+        
+        <tag>主题换肤</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/07/15/16-07-15/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>GitHub+Hexo搭建个人博客辛酸史--分支控制(贰)</title>
+        <pubTime>2016-07-15T02:05:54.000Z</pubTime>
+        
+        <tag>博客</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="个人博客辛酸系列" url="http://dinson.win/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BE%9B%E9%85%B8%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/07/11/16-07-11/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Android主题换肤 无缝切换</title>
+        <pubTime>2016-07-11T15:29:23.000Z</pubTime>
+        
+        <tag>主题换肤</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/07/17/16-07-17/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo设置指南</title>
+        <pubTime>2016-07-17T05:56:19.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="个人博客辛酸系列" url="http://dinson.win/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BE%9B%E9%85%B8%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/06/15/16-06-15/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Fragment实现懒加载，让应用更优化</title>
+        <pubTime>2016-06-15T15:06:28.000Z</pubTime>
+        
+        <tag>Fragment</tag>
+         
+        <tag>懒加载</tag>
+         
+        <tag>优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2016/06/10/16-06-10/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Android Studio插件整理</title>
+        <pubTime>2016-06-10T15:33:10.000Z</pubTime>
+        
+        <tag>插件</tag>
+         
+        <tag>AS</tag>
          
          
            
@@ -762,19 +962,19 @@
 
     
   <url>
-    <loc>http://dinson.win/2016/07/17/16-07-17/</loc>
+    <loc>http://dinson.win/2016/06/08/16-06-08/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>Hexo设置指南</title>
-        <pubTime>2016-07-17T05:56:19.000Z</pubTime>
+        <title>安卓反编译</title>
+        <pubTime>2016-06-08T06:45:46.000Z</pubTime>
         
-        <tag>Hexo</tag>
+        <tag>反编译</tag>
          
          
            
              
-              <breadCrumb title="个人博客辛酸系列" url="http://dinson.win/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BE%9B%E9%85%B8%E7%B3%BB%E5%88%97/"/>
+              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
           
         </display>
     </data>
@@ -782,16 +982,36 @@
 
     
   <url>
-    <loc>http://dinson.win/2017/05/13/17-05-12/</loc>
+    <loc>http://dinson.win/2017/05/09/17-05-09/</loc>
     <lastmod>2017-05-18T13:22:43.764Z</lastmod>
     <data>
         <display>
-        <title>Android录屏与截图功能(5.0以上有效)</title>
-        <pubTime>2017-05-13T06:20:59.000Z</pubTime>
+        <title>Android双缓冲绘图技术分析</title>
+        <pubTime>2017-05-09T15:12:42.000Z</pubTime>
         
-        <tag>录屏</tag>
+        <tag>优化</tag>
          
-        <tag>截图</tag>
+        <tag>自定义控件</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android嫡系" url="http://dinson.win/categories/Android%E5%AB%A1%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://dinson.win/2017/05/10/17-05-10/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>Android全屏／沉浸式状态栏下，各种键盘挡住输入框解决办法</title>
+        <pubTime>2017-05-10T01:24:17.000Z</pubTime>
+        
+        <tag>Android软键盘</tag>
          
          
            
@@ -804,4 +1024,23 @@
 
     
     
+  <url>
+    <loc>http://dinson.win/2016/07/25/16-07-25/</loc>
+    <lastmod>2017-05-18T13:22:43.764Z</lastmod>
+    <data>
+        <display>
+        <title>查看Android应用包名、Activity的几个方法</title>
+        <pubTime>2016-07-25T12:49:20.000Z</pubTime>
+        
+        <tag>应用包名</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android庶系" url="http://dinson.win/categories/Android%E5%BA%B6%E7%B3%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>

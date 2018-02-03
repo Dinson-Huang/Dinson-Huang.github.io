@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,分屏,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android分屏功能,适配及相关问题</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2018/02/03/18-02-03/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android分屏功能,适配及相关问题</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>所谓分屏多任务，就是同时开两个应用时，将手机屏幕一分为二，一个应用占据屏幕上方，一个应用占据屏幕下方，两个应用分别独立工作，并且相互之间不受影响。</p>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="如何分屏"><a href="#如何分屏" class="headerlink" title="如何分屏"></a>如何分屏</h2><p>如果您的应用是使用 N Preview SDK 构建的，且未禁用多窗口支持，则应用默认支持分屏操作。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">compileSdkVersion</span> <span class="string">'android-N'</span></div><div class="line">buildToolsVersion <span class="string">"24.0.0 rc4"</span></div><div class="line"></div><div class="line">defaultConfig &#123;</div><div class="line">    <span class="attribute">applicationId</span> <span class="string">"com.yll520wcf.myapplication"</span></div><div class="line">    minSdkVersion <span class="number">14</span></div><div class="line">    targetSdkVersion <span class="string">'N'</span></div><div class="line">    versionCode <span class="number">1</span></div><div class="line">    versionName <span class="string">"1.0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="多窗口生命周期"><a href="#多窗口生命周期" class="headerlink" title="多窗口生命周期"></a>多窗口生命周期</h2><p><strong>还需要注意的是多窗口不会影响Activity的生命周期。</strong></p>
+<p>在多窗口模式中，在指定时间只有最近与用户交互过的 Activity 为活动状态。 该 Activity 将被视为顶级 Activity。 所有其他 Activity 虽然可见，但均处于暂停状态。 但是，这些已暂停但可见的 Activity 在系统中享有比不可见 Activity 更高的优先级。 如果用户与其中一个暂停的 Activity 交互，该 Activity 将恢复，而之前的顶级 Activity 将暂停。 </p>
+<p><strong>在多窗口模式中，用户仍可以看到处于暂停状态的应用。 应用在暂停状态下可能仍需要继续其操作。</strong></p>
+<p>例如，处于暂停模式但可见的视频播放应用应继续显示视频。因此，我们建议播放视频的 Activity 不要在 onPause()方法中暂停视频，应在onStop()暂停视频播放，并在 onStart()中恢复视频播放。</p>
+<p>用户使用多窗口模式显示应用时，系统将通知 Activity 发生配置变更。 该变更与系统通知应用设备从纵向模式切换到横向模式时的 Activity 生命周期影响基本相同，但设备不仅仅是交换尺寸，而是会变更尺寸。您的 Activity 可以自行处理配置变更，或允许系统销毁 Activity，并以新的尺寸重新创建该 Activity。</p>
+<p>给Activity加上如下配置可以保证切换成多屏模式或者画中画模式时Activity不会销毁重建。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">android:</span>configChanges=<span class="string">"screenSize|smallestScreenSize|screenLayout|orientation"</span>&gt;</div></pre></td></tr></table></figure>
+<h2 id="针对多窗口进行配置"><a href="#针对多窗口进行配置" class="headerlink" title="针对多窗口进行配置"></a>针对多窗口进行配置</h2><p>在清单文件的 <activity>或 <application>节点中设置该属性，启用或禁用多窗口显示：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:resizeableActivity=[<span class="string">"true"</span> <span class="string">| "</span>false<span class="string">"]</span></div></pre></td></tr></table></figure></application></activity></p>
+<p>如果该属性设置为 true，Activity 将能以分屏和自由形状模式启动。 如果此属性设置为 false，Activity 将不支持多窗口模式。 如果该值为 false，且用户尝试在多窗口模式下启动 Activity，该 Activity 将全屏显示。</p>
+<p>如果您的应用面向 Android N，但未对该属性指定值，则该属性的值默认设为 true。<br>如果做电视开发或其它特殊需求，还有一个属性需要注意：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:supportsPictureInPicture=[<span class="string">"true"</span> <span class="string">| "</span>false<span class="string">"]</span></div></pre></td></tr></table></figure></p>
+<p>在清单文件的 <activity>节点中设置该属性，指明 Activity 是否支持画中画显示。如果 android:resizeableActivity为 false，将忽略该属性。</activity></p>
+<p>当然你还可以指定在自由形状模式时 Activity 的默认大小、位置和最小尺寸：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=<span class="string">".MainActivity"</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">layout</span> <span class="attr">android:defaultHeight</span>=<span class="string">"500dp"</span></span></span></div><div class="line">          <span class="attr">android:defaultWidth</span>=<span class="string">"600dp"</span></div><div class="line">          <span class="attr">android:gravity</span>=<span class="string">"top|end"</span></div><div class="line">          <span class="attr">android:minimalSize</span>=<span class="string">"450dp"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>对于 Android N，<layout>清单文件元素支持以下几种属性，这些属性影响 Activity 在多窗口模式中的行为：</layout></p>
+<ol>
+<li>android:defaultWidth 以自由形状模式启动时 Activity 的默认宽度。</li>
+<li>android:defaultHeight 以自由形状模式启动时 Activity 的默认高度。</li>
+<li>android:gravity 以自由形状模式启动时 Activity 的初始位置。</li>
+<li>android:minimalSize 分屏和自由形状模式中 Activity 的最小高度和最小宽度。 如果用户在分屏模式中移动分界线，使 Activity 尺寸低于指定的最小值，系统会将 Activity 裁剪为用户请求的尺寸。 </li>
+</ol>
+<h2 id="多窗口模式中运行应用注意事项"><a href="#多窗口模式中运行应用注意事项" class="headerlink" title="多窗口模式中运行应用注意事项"></a>多窗口模式中运行应用注意事项</h2><p>在设备处于多窗口模式中时，某些功能会被禁用或忽略，因为这些功能对与其他 Activity 或应用共享设备屏幕的 Activity 而言没有意义。 此类功能包括：</p>
+<ol>
+<li>某些自定义选项将被禁用；例如，在非全屏模式中，应用无法隐藏状态栏。</li>
+<li>系统将忽略对 android:screenOrientation属性所作的更改</li>
+</ol>
+<p><strong>Activity类中添加了以下新方法，以支持多窗口显示。</strong></p>
+<ol>
+<li><strong>Activity.inMultiWindow()</strong>调用该方法以确认 Activity 是否处于多窗口模式。</li>
+<li><strong>Activity.inPictureInPicture()</strong> 调用该方法以确认 Activity 是否处于画中画模式。注：画中画模式是多窗口模式的特例。 如果myActivity.inPictureInPicture()返回 true，则 myActivity.inMultiWindow()也返回 true。</li>
+<li><strong>Activity.onMultiWindowChanged()</strong> Activity 进入或退出多窗口模式时系统将调用此方法。 在 Activity 进入多窗口模式时，系统向该方法传递 true 值，在退出多窗口模式时，则传递 false 值。</li>
+<li><strong>Activity.onPictureInPictureChanged()</strong> Activity 进入或退出画中画模式时系统将调用此方法。 在 Activity 进入画中画模式时，系统向该方法传递 true 值，在退出画中画模式时，则传递 false 值。</li>
+</ol>
+<p>每个方法还有 Fragment版本，例如 Fragment.inMultiWindow()。</p>
+<h2 id="在多窗口模式中启动新Activity"><a href="#在多窗口模式中启动新Activity" class="headerlink" title="在多窗口模式中启动新Activity"></a>在多窗口模式中启动新Activity</h2><p>在启动新 Activity 时，用户可以提示系统如果可能，应将新 Activity 显示在当前 Activity 旁边。 要执行此操作，可使用标志<strong>Intent.FLAG_ACTIVITY_LAUNCH_TO_ADJACENT</strong>。传递此标志将请求以下行为：</p>
+<ol>
+<li>如果设备处于分屏模式，系统会尝试在启动系统的 Activity 旁创建新 Activity，这样两个 Activity 将共享屏幕。 系统并不一定能实现此操作，但如果可以，系统将使两个 Activity 处于相邻的位置。<br>如果设备不处于分屏模式，则该标志无效。<figure class="highlight fortran"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> void click(View v)&#123;</div><div class="line">    <span class="keyword">Intent</span> <span class="keyword">intent</span>=new <span class="keyword">Intent</span>();</div><div class="line">    <span class="keyword">intent</span>.setAction(<span class="keyword">Intent</span>.ACTION_VIEW);</div><div class="line">    <span class="keyword">intent</span>.setFlags(<span class="keyword">Intent</span>.FLAG_ACTIVITY_LAUNCH_ADJACENT);</div><div class="line">    <span class="keyword">intent</span>.setData(Uri.parse(<span class="string">"http://www.baidu.com"</span>));</div><div class="line">    startActivity(<span class="keyword">intent</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://ondlsj2sn.bkt.clouddn.com/FpPoyAEBpq8-_nf8aJPHDLfhdZkS.png" alt=""></p>
+<h2 id="支持拖放"><a href="#支持拖放" class="headerlink" title="支持拖放"></a>支持拖放</h2><p>用户可以在两个 Activity 共享屏幕的同时在这两个 Activity 之间拖放。因此，如果您的应用目前不支持拖放功能，您可以在其中添加此功能。</p>
+<ol>
+<li><strong>android.view.DropPermissions</strong>令牌对象，负责指定对接收拖放数据的应用授予的权限。</li>
+<li><strong>View.startDragAndDrop()</strong> View.startDrag()的新别名。要启用跨 Activity 拖放，请传递新标志 View.DRAG_FLAG_GLOBAL。如需对接收拖放数据的 Activity 授予 URI 权限，可根据情况传递新标志 View.DRAG_FLAG_GLOBAL_URI_READ或 View.DRAG_FLAG_GLOBAL_URI_WRITE。</li>
+<li><strong>View.cancelDragAndDrop()</strong> 取消当前正在进行的拖动操作。只能由发起拖动操作的应用调用。</li>
+<li><strong>View.updateDragShadow()</strong> 替换当前正在进行的拖动操作的拖动阴影。只能由发起拖动操作的应用调用。</li>
+<li><strong>Activity.requestDropPermissions()</strong> 请求使用 DragEvent中包含的 ClipData传递的内容 URI 的权限。 </li>
+</ol>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2018/02/03/18-02-03/" title="http://dinson.win/2018/02/03/18-02-03/" target="_blank">http://dinson.win/2018/02/03/18-02-03/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何分屏"><span class="toc-text">如何分屏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多窗口生命周期"><span class="toc-text">多窗口生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#针对多窗口进行配置"><span class="toc-text">针对多窗口进行配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多窗口模式中运行应用注意事项"><span class="toc-text">多窗口模式中运行应用注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在多窗口模式中启动新Activity"><span class="toc-text">在多窗口模式中启动新Activity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持拖放"><span class="toc-text">支持拖放</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

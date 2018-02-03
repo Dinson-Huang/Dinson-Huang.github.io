@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>Android中高德地图与百度地图坐标转换</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2017/06/14/17-06-14/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">Android中高德地图与百度地图坐标转换</h1>
+    <p class="post-meta">
+      </span>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>项目中实验数据点取自高德地图，它是火星坐标系统（下面会有解释），而现在希望用百度地图的SDK进行开发，两套不同的规范自然需要进行转换。如何解决这个问题呢？参考了网上很多人的博客和资料。<br>最终解决此问题用到的仍然是百度的<a href="http://lbsyun.baidu.com/index.php?title=androidsdk/guide/tool#.E5.9D.90.E6.A0.87.E8.BD.AC.E6.8D.A2" target="_blank" rel="external">官方文档</a>有关于坐标转换的部分：</p>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="坐标转换"><a href="#坐标转换" class="headerlink" title="坐标转换"></a>坐标转换</h2><blockquote>
+<p>百度地图SDK采用的是百度自有的地理坐标系（bdll09），因此开发者在做位置标注的时候，需要将其他类型的坐标转换为百度坐标。相应的接口和转换方式如下：</p>
+</blockquote>
+<figure class="highlight pony"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将google地图、soso地图、aliyun地图、mapabc地图和amap地图// 所用坐标转换成百度坐标  </span></div><div class="line"><span class="type">CoordinateConverter</span> converter  = <span class="function"><span class="keyword">new</span> <span class="title">CoordinateConverter</span>();  </span></div><div class="line"><span class="title">converter</span>.<span class="title">from</span>(<span class="type">CoordType</span>.<span class="type">COMMON</span>);  </div><div class="line"><span class="comment">// sourceLatLng待转换坐标  </span></div><div class="line"><span class="title">converter</span>.<span class="title">coord</span>(sourceLatLng);  </div><div class="line"><span class="title">LatLng</span> <span class="title">desLatLng</span> = <span class="title">converter</span>.<span class="title">convert</span>();  </div><div class="line"> </div><div class="line"><span class="comment">// 将GPS设备采集的原始GPS坐标转换成百度坐标  </span></div><div class="line"><span class="title">CoordinateConverter</span> <span class="title">converter</span>  = <span class="title">new</span> <span class="title">CoordinateConverter</span>();  </div><div class="line"><span class="title">converter</span>.<span class="title">from</span>(<span class="type">CoordType</span>.<span class="type">GPS</span>);  </div><div class="line"><span class="comment">// sourceLatLng待转换坐标  </span></div><div class="line"><span class="title">converter</span>.<span class="title">coord</span>(sourceLatLng);  </div><div class="line"><span class="title">LatLng</span> <span class="title">desLatLng</span> = <span class="title">converter</span>.<span class="title">convert</span>();</div></pre></td></tr></table></figure>
+<p>使用上面的代码就能很好地进行坐标的转化。</p>
+<p>下面列举其他牛人的一些内容：</p>
+<blockquote>
+<p>大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于<a href="http://baike.baidu.com/item/%E7%81%AB%E6%98%9F%E5%9D%90%E6%A0%87%E7%B3%BB%E7%BB%9F" target="_blank" rel="external">火星坐标系统的解释</a>。</p>
+</blockquote>
+<h2 id="国内各地图API坐标系统比较"><a href="#国内各地图API坐标系统比较" class="headerlink" title="国内各地图API坐标系统比较"></a>国内各地图API坐标系统比较</h2><table>
+<thead>
+<tr>
+<th>API</th>
+<th>坐标系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>百度地图API</td>
+<td>百度坐标</td>
+</tr>
+<tr>
+<td>腾讯搜搜地图API</td>
+<td>火星坐标</td>
+</tr>
+<tr>
+<td>搜狐搜狗地图API</td>
+<td>搜狗坐标</td>
+</tr>
+<tr>
+<td>阿里云地图API</td>
+<td>火星坐标</td>
+</tr>
+<tr>
+<td>图吧MapBar地图API</td>
+<td>图吧坐标</td>
+</tr>
+<tr>
+<td>高德MapABC地图API</td>
+<td>火星坐标</td>
+</tr>
+<tr>
+<td>灵图51ditu地图API</td>
+<td>火星坐标</td>
+</tr>
+</tbody>
+</table>
+<h2 id="下面是百度官方对百度坐标为何有偏移的解释"><a href="#下面是百度官方对百度坐标为何有偏移的解释" class="headerlink" title="下面是百度官方对百度坐标为何有偏移的解释"></a>下面是百度官方对百度坐标为何有偏移的解释</h2><blockquote>
+<p>国际经纬度坐标标准为WGS-84,国内必须至少使用国测局制定的GCJ-02,对地理位置进行首次加密。百度坐标在此基础上，进行了BD-09二次加密措施,更加保护了个人隐私。百度对外接口的坐标系并不是GPS采集的真实经纬度，需要通过坐标转换接口进行转换。</p>
+</blockquote>
+<h2 id="火星坐标系-GCJ-02-与百度坐标系-BD-09-的转换算法"><a href="#火星坐标系-GCJ-02-与百度坐标系-BD-09-的转换算法" class="headerlink" title="火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法"></a>火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法</h2><p>GCJ-02(火星坐标)和BD-09（百度坐标）<br>算法代码如下，其中bd_encrypt将 GCJ-02坐标转换成 BD-09坐标， bd_decrypt反之。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bd_encrypt</span><span class="params">(<span class="keyword">double</span> gg_lat, <span class="keyword">double</span> gg_lon, <span class="keyword">double</span> &amp;bd_lat, <span class="keyword">double</span> &amp;bd_lon)</span> </span>&#123;  </div><div class="line">    <span class="keyword">double</span> x = gg_lon, y = gg_lat;  </div><div class="line">    <span class="keyword">double</span> z = <span class="built_in">sqrt</span>(x * x + y * y) + <span class="number">0.00002</span> * <span class="built_in">sin</span>(y * x_pi);  </div><div class="line">    <span class="keyword">double</span> theta = <span class="built_in">atan2</span>(y, x) + <span class="number">0.000003</span> * <span class="built_in">cos</span>(x * x_pi);  </div><div class="line">    bd_lon = z * <span class="built_in">cos</span>(theta) + <span class="number">0.0065</span>;  </div><div class="line">    bd_lat = z * <span class="built_in">sin</span>(theta) + <span class="number">0.006</span>;  </div><div class="line">&#125;  </div><div class="line">       </div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">bd_decrypt</span><span class="params">(<span class="keyword">double</span> bd_lat, <span class="keyword">double</span> bd_lon, <span class="keyword">double</span> &amp;gg_lat, <span class="keyword">double</span> &amp;gg_lon)</span> </span>&#123;  </div><div class="line">    <span class="keyword">double</span> x = bd_lon - <span class="number">0.0065</span>, y = bd_lat - <span class="number">0.006</span>;  </div><div class="line">    <span class="keyword">double</span> z = <span class="built_in">sqrt</span>(x * x + y * y) - <span class="number">0.00002</span> * <span class="built_in">sin</span>(y * x_pi);  </div><div class="line">    <span class="keyword">double</span> theta = <span class="built_in">atan2</span>(y, x) - <span class="number">0.000003</span> * <span class="built_in">cos</span>(x * x_pi);  </div><div class="line">    gg_lon = z * <span class="built_in">cos</span>(theta);  </div><div class="line">    gg_lat = z * <span class="built_in">sin</span>(theta);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="地球坐标系-WGS-84-到火星坐标系-GCJ-02-的转换算法"><a href="#地球坐标系-WGS-84-到火星坐标系-GCJ-02-的转换算法" class="headerlink" title="地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法"></a>地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法</h2><p>  WGS-84到GCJ-02的转换（即GPS加偏算法是一个普通青年轻易无法接触到的“公开”的秘密。这个算法的代码在互联网上是公开的，详情请使用Google搜索”<code>wgtochina_lb</code>“ 。<br>  整理后的算法代码请参考<a href="https://on4wp7.codeplex.com/SourceControl/changeset/view/21483#353936" target="_blank" rel="external"> https://on4wp7.codeplex.com/SourceControl/changeset/view/21483#353936 </a>。知道了这个算法之后，就可以离线进行Google地图偏移校正，不必像之前那么麻烦。<br>至于GCJ-02到WGS-84的转换（即GPS纠偏），可以使用二分法。</p>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2017/06/14/17-06-14/" title="http://dinson.win/2017/06/14/17-06-14/" target="_blank">http://dinson.win/2017/06/14/17-06-14/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#坐标转换"><span class="toc-text">坐标转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#国内各地图API坐标系统比较"><span class="toc-text">国内各地图API坐标系统比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面是百度官方对百度坐标为何有偏移的解释"><span class="toc-text">下面是百度官方对百度坐标为何有偏移的解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#火星坐标系-GCJ-02-与百度坐标系-BD-09-的转换算法"><span class="toc-text">火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地球坐标系-WGS-84-到火星坐标系-GCJ-02-的转换算法"><span class="toc-text">地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

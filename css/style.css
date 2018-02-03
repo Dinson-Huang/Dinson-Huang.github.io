@@ -1100,7 +1100,8 @@ body {
     margin: 0 0 0 1em; }
   .post-excerpt > .highlight,
   .post-content > .highlight {
-    margin-left: 0 !important; }
+    margin-left: 0 !important;
+    border-radius: 5px; }
   .post-excerpt blockquote,
   .post-content blockquote {
     margin-left: 0;
@@ -1189,7 +1190,9 @@ body {
     .post-excerpt .highlight .line,
     .post-content .highlight .line {
       font-size: 1em;
-      line-height: 1.5; }
+      line-height: 1.5;
+      font-family: lucida grande;
+      text-shadow: 0 1px #444; }
     .post-excerpt .highlight .line::after,
     .post-content .highlight .line::after {
       content: ""; }
@@ -1197,6 +1200,7 @@ body {
     .post-content .highlight .gutter {
       width: 1.5em;
       text-align: center;
+      display: none;
       color: #999;
       border-right: 2px solid #fff; }
     .post-excerpt .highlight .code,

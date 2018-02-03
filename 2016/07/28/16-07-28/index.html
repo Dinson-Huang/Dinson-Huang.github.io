@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta name="keywords" content="Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+  <meta name="description" content="null">
+  <meta name="author" content="DINSON">
+ 
+ 
+<meta name="keywords" content="android,缓存目录,Android,设计模式,安卓入门,安卓高级,前端,JavaScript,h5,css3,Jquery">
+
+
+  
+  <title>android 最全缓存目录获取方式和函数解析</title>
+  
+
+  <link rel="alternate" href="/atom.xml" title="Android - Dinson - 酸奶布丁 - 国家一级码农" type="application/atom+xml">
+  <link rel="canonical" href="http://dinson.win/2016/07/28/16-07-28/index.html">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_8ce77jkwodt5ipb9.css">
+</head>
+
+
+  <body>
+    <aside class="aside">
+  <nav class="aside-menu">
+    <ul class="aside-list">
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-home"></i><a href="/index.html" class="aside-menu-link" title="酸奶布丁">酸奶布丁</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-all"></i><a href="/archives/index.html" class="aside-menu-link" title="时间印记">时间印记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-tag"></i><a href="/tags/index.html" class="aside-menu-link" title="分类标记">分类标记</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-python"></i><a href="http://dinson.win/Python/index.html" class="aside-menu-link" title="Python">Python</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-jinglingqiu"></i><a href="http://dinson.win/Pokemon/" class="aside-menu-link" title="口袋妖怪">口袋妖怪</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-me"></i><a href="/about/index.html" class="aside-menu-link" title="关于">关于</a></li>
+        
+      
+        
+        <li class="aside-item"><i class="aside-menu-icon iconfont icon-rss"></i><a href="/atom.xml" class="aside-menu-link" title="RSS">RSS</a></li>
+        
+      
+    </ul>
+  </nav>
+
+  <article class="aside-show">
+    
+      <form class="search-from" id="search-from">
+  <input class="search-text" id="search-text" type="text" name="searchText" value="" autocomplete="off">
+  <button class="search-btn" id="search-btn" type="button"><i class="search-btn-icon iconfont icon-sousuo-sousuo"></i></button>
+</form>
+
+      <article class="search-data" id="search-data">
+  <button class="search-close" id="search-close"><i class="search-close-icon iconfont icon-quxiao"></i></button>
+
+  <div class="search-wrapper" id="search-wrapper"></div>
+</article>
+
+    
+    <div class="aside-show-wrapper">
+      <figure class="aside-avatar">
+        <img src="/img/avatar.jpg" alt="avatar" class="aside-avatar-img">
+        <figcaption class="aside-avatar-caption">
+          Dinson
+          
+          <strong class="aside-avatar-STRONG">Android喵</strong>
+          
+        </figcaption>
+      </figure>
+      <p class="aside-show-description">面朝电脑--栀子花开</p>
+      <ul class="aside-show-info" >
+	  <li class="aside-show-item"><a href="https://github.com/DinsonCat" class="aside-show-link" target="_blank"><i class="aside-show-icon iconfont icon-github"></i></a></li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-wechat"></i></a>
+          <div class="aside-show-outside aside-show-outside_1">
+            <img class="aside-show-IMG aside-show-IMG_1" src="/img/weixin.png" alt="微信"  >
+          </div>
+        </li>
+        <li class="aside-show-item">
+          <a href="javascript: void(0);" class="aside-show-link"   target="_blank"><i class="aside-show-icon iconfont icon-qq"></i></a>
+          <div class="aside-show-outside">
+            <img class="aside-show-IMG  " src="/img/qq.jpg"   alt="QQ">
+          </div>
+        </li>
+		 
+      </ul>
+	
+	 
+    </div>
+	
+  </article>
+</aside>
+
+
+    <article class="main" id="main">
+      <article class="post min-height">
+  
+  <header class="post-header">
+    
+    <h1 class="post-title">android 最全缓存目录获取方式和函数解析</h1>
+    <p class="post-meta">
+      </span>
+      
+      <a href="/categories/Android嫡系/" class="post-categories">Android嫡系</a>
+      
+      
+	  
+	  
+		<span id="busuanzi_container_page_pv"  class="post-time"><i class="post-tags-icon iconfont icon-yuedu"></i>Views <span id="busuanzi_value_page_pv"></span> Times</span>
+	  
+	  
+    </p>
+    
+  </header>
+  <div class="post-content"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>Android 开发中基本都要使用到文件的保存和读取操作，我们一般遇见的文件读写问题有几个：文件保存在哪？以及如何使用相关函数，目录权限的问题？以及删除应用之后目录是否会随之删除的问题？接下来就来解析一下这几个相关目录的操作函数。 </p>
+</blockquote>
+<a id="more"></a>
+<!-- 这是　　缩进-->
+<h2 id="data-data-package-name-…"><a href="#data-data-package-name-…" class="headerlink" title="/data/data/package_name/…"></a>/data/data/package_name/…</h2><blockquote>
+<p>该目录是只对应用可见的，而且如果手机没有 root，用普通权限的 adb 也看不了这个目录，该目录用来存储和应用周期相关的文件，会随着应用的卸载一起删除，相关的子目录如下所示：</p>
+</blockquote>
+<ul>
+<li><p>/data/data/package_name/shared_prefs/<br>用来存储 SharedPreference，对应函数为：getSharedPreferences(String fileName, int mode)；</p>
+</li>
+<li><p>/data/data/package_name/databases/<br>用来存储数据库 DB，相关函数还有 getDatabasePath()；</p>
+</li>
+<li><p>/data/data/package_name/app_webview 和 /data/data/package_name/xxxwebviewcachexxx<br>来存储应用内置 webview 所产生的 cache 和 cookies 等，该目录由于 android 版本不同名字和位置也可能不同；</p>
+</li>
+<li><p>/data/data/package_name/lib<br>用来存储该应用的 .so 静态库文件；</p>
+</li>
+<li><p>/data/data/package_name/cache<br>该目录可以使用函数 getCacheDir() 获取；</p>
+</li>
+<li><p>/data/data/package_name/files<br>该目录可以使用函数 getFilesDir() 获取，openFileInput() 和 openFileOutput() 函数也是在该目录下操作文件， fileList() 函数是用来列出该 files 目录下的所有文件，deleteFile(String name) 用来删除该 files 目录下的文件；</p>
+</li>
+<li><p>/data/data/package_name/XXXX<br>这个目录下面当然也能够创建子集的目录，使用的方法就是 getDir(String name, int mode)，参数中的 name 就是需要在该目录下创建的子目录名字。</p>
+</li>
+</ul>
+<p>如果能够打开应用的该目录，一般会在该目录下看到很多子目录。 </p>
+<blockquote>
+<p>还有一个特别奇怪的函数，无意中看见的 getCodeCacheDir() 函数，该函数的解释为 This location is optimal for storing compiled or optimized code generated by your application at runtime，该目录适合在运行时存放应用产生的编译或者优化的代码，但是我调用就报了 NoSuchMethodError，不知道为什么，知道的可以告诉我。 </p>
+</blockquote>
+<p>另外还有其他两个相关函数：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">getPackageCodePath</span><span class="params">()</span></span> = /data/app/com<span class="selector-class">.android</span><span class="selector-class">.framework-1</span><span class="selector-class">.apk</span> </div><div class="line"><span class="function"><span class="title">getPackageResourcePath</span><span class="params">()</span></span> = /data/app/com<span class="selector-class">.android</span><span class="selector-class">.framework-1</span><span class="selector-class">.apk</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>以上函数没有明确指定的都是使用 Context 调用。</p>
+</blockquote>
+<h2 id="SD卡下的目录"><a href="#SD卡下的目录" class="headerlink" title="SD卡下的目录"></a>SD卡下的目录</h2><blockquote>
+<p>SD 卡下的目录，顾名思义就是需要插入 SD 卡，当 SD 卡不可用时这两个目录都是无效的，SD 卡下面也分为应用的私有目录和共有目录，私有目录的生命周期也是和应用挂钩的，卸载之后就会被删除，共有目录不会随着应用的卸载而删除。 </p>
+</blockquote>
+<p>可以通过 <code>Environment.getExternalStorageState()</code> 函数来获取 SD 卡的挂载状态，当该函数返回 <code>mounted</code> 的时候，代表 SD 卡可用。 </p>
+<p>注意 SD 卡使用时需要注册相关权限：<uses-permission android:name="”android.permission.WRITE_EXTERNAL_STORAGE”/">。</uses-permission></p>
+<h2 id="SD卡私有目录"><a href="#SD卡私有目录" class="headerlink" title="SD卡私有目录"></a>SD卡私有目录</h2><blockquote>
+<p>该目录下的文件卸载应用之后会自动删除。</p>
+</blockquote>
+<h2 id="sdcard-Android-data-package-name"><a href="#sdcard-Android-data-package-name" class="headerlink" title="/sdcard/Android/data/package_name/"></a>/sdcard/Android/data/package_name/</h2><ul>
+<li><p>/sdcard/Android/data/com.android.framework/files/<br>该目录可用 getExternalFilesDir(String type) 和 getExternalFilesDirs(String type) 获取，参数 type 为子目录名字，null 则为根目录，后者调用之后会自动生成该目录，并且后者返回的是一个数组，如果插入外置存储卡，外置存储卡目录也会一并返回，具体区别可以查看后面的源码和结果；</p>
+</li>
+<li><p>/sdcard/Android/data/com.android.framework/cache/<br>该目录可用 getExternalCacheDir() 和 getExternalCacheDirs() 获取，后者调用之后自动生成该目录，和上面一样，后者返回的是一个数组，如果插入外置存储卡，外置存储卡目录也会一并返回，具体区别可以查看后面的源码和结果。</p>
+</li>
+</ul>
+<h2 id="sdcard-Android-obb-package-name"><a href="#sdcard-Android-obb-package-name" class="headerlink" title="/sdcard/Android/obb/package_name/"></a>/sdcard/Android/obb/package_name/</h2><blockquote>
+<p>需要注意的是，obb 目录也可能不存在，原文：Note if the application does not have any OBB files, this directory may not exist，一般游戏 APP 会将游戏相关的数据包放到这个目录下。 </p>
+</blockquote>
+<p>该目录的的相关函数简单只有两个：<code>getObbDirs()</code> 和 <code>getObbDir()</code>，前者调用之后会自动生成该目录，后者在插入外置存储卡之后会在前者的基础上另外返回外置存储卡的 obb 目录，具体的结果可以查看后面的源码和结果。</p>
+<h2 id="SD卡共有目录"><a href="#SD卡共有目录" class="headerlink" title="SD卡共有目录"></a>SD卡共有目录</h2><blockquote>
+<p>该目录下的文件卸载应用之后还会留存，所以为了 SD 卡的整洁度，不要随便在 SD 卡的根目录下面创建文件，最好以应用名字创建一个目录，所有的需要卸载之后留存或者需要给其他应用共享的文件都放到该目录下，不要在根目录下创建文件，还有一个公司的多个应用最好共享一个目录，特别讨厌 360 ，恨不得把 360XXX 式的目录全部创建完才行，极其讨厌和反对。</p>
+</blockquote>
+<h2 id="sdcard-any-folder-name"><a href="#sdcard-any-folder-name" class="headerlink" title="/sdcard/(any_folder_name)"></a>/sdcard/(any_folder_name)</h2><ul>
+<li><p>Environment.getExternalStorageState()<br>这个函数用来获取 SD 卡的挂载状态，如果传入参数 path 则是获取该路径的的挂载状态，比如这个目录被用户的 PC 挂载，或者从设备中移除，或者其他问题发生，状态的返回是不一样的；</p>
+</li>
+<li><p>Environment.getExternalStorageDirectory()<br>该函数用来返回 SD 卡的根目录，即 /storage/emulated/0，注意不要在根目录下创建文件，强烈建立创建一个子目录去操作，要不然会污染 SD 卡的主目录，该目录所有应用都可操作，为共享目录；</p>
+</li>
+<li><p>Environment.getDownloadCacheDirectory()<br>该函数用来返回 SD 卡下面的下载缓存目录；</p>
+</li>
+<li><p>Environment.getDataDirectory()<br>该函数用来获取用户的数据目录；</p>
+</li>
+<li><p>Environment.getExternalStoragePublicDirectory(String type)<br>该函数用来根据类型返回相关目录，类型为 Environment 的一些变量，传入的类型参数不能是 null，返回的目录路径有可能不存在，所以必须在使用之前确认一下，没有就创建该目录；</p>
+</li>
+<li><p>Environment.getRootDirectory()<br>该函数用来返回根 System 目录，只挂载为只读;</p>
+</li>
+</ul>
+<h2 id="源码及结果"><a href="#源码及结果" class="headerlink" title="源码及结果"></a>源码及结果</h2><blockquote>
+<p>手机如果还能够SD卡扩展，就相当于能挂载两张SD卡，下面的测试结果也是两张SD卡的结果：</p>
+</blockquote>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getDatabasePath():"</span>+getDatabasePath(<span class="string">"student.db"</span>));</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getCacheDir():"</span> + getCacheDir());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getFilesDir():"</span> + getFilesDir());</div><div class="line">String[] strings = fileList();</div><div class="line"><span class="keyword">for</span> (String path : strings)&#123;<span class="comment">//为空</span></div><div class="line">   <span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"fileList():---"</span> + path);</div><div class="line">&#125;</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getDir(\"</span>zhao\<span class="string">"):"</span> + getDir(<span class="string">"zhao"</span>, MODE_PRIVATE));</div><div class="line"><span class="comment">//        L.e("getCodeCacheDir():" + getCodeCacheDir()); //java.lang.NoSuchMethodError</span></div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getPackageCodePath():"</span> + getPackageCodePath());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getPackageResourcePath():"</span> + getPackageResourcePath());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getExternalFilesDir():"</span> + getExternalFilesDir(null));</div><div class="line"><span class="keyword">File</span>[] paths = getExternalFilesDirs(null);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">File</span> path : paths)&#123;</div><div class="line">    <span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getExternalFilesDirs():---"</span> + path.getPath());</div><div class="line">&#125;</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getExternalCacheDir():"</span> + getExternalCacheDir());</div><div class="line">paths = getExternalCacheDirs();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">File</span> path : paths)&#123;</div><div class="line">   <span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getExternalCacheDirs():---"</span> + path.getPath());</div><div class="line">&#125;</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getObbDir():"</span> + getObbDir());</div><div class="line">paths = getObbDirs();</div><div class="line"><span class="keyword">for</span> (<span class="keyword">File</span> path : paths)&#123;</div><div class="line">   <span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"getObbDirs():---"</span> + path.getPath());</div><div class="line">&#125;</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"Environment.getExternalStorageState():"</span>+ Environment.getExternalStorageState());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"Environment.getExternalStorageDirectory():"</span>+Environment.getExternalStorageDirectory());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"Environment.getDownloadCacheDirectory():"</span>+Environment.getDownloadCacheDirectory());</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC):"</span>+Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC));</div><div class="line"><span class="keyword">L</span>.<span class="built_in">e</span>(<span class="string">"Environment.getRootDirectory():"</span>+Environment.getRootDirectory());</div></pre></td></tr></table></figure>
+<p>对应的结果为，注意看外部存储卡的路径：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">getDatabasePath()<span class="symbol">:/data/data/com</span>.dinson.framework/databases/student.db</div><div class="line">getCacheDir()<span class="symbol">:/data/data/com</span>.dinson.framework/cache</div><div class="line">getFilesDir()<span class="symbol">:/data/data/com</span>.dinson.framework/files</div><div class="line">getDir(<span class="string">"zhao"</span>)<span class="symbol">:/data/data/com</span>.dinson.framework/app_zhao</div><div class="line">getPackageCodePath()<span class="symbol">:/data/app/com</span>.dinson.framework-<span class="number">1</span>.apk</div><div class="line">getPackageResourcePath()<span class="symbol">:/data/app/com</span>.dinson.framework-<span class="number">1</span>.apk</div><div class="line">getExternalFilesDir()<span class="symbol">:/storage/emulated/</span><span class="number">0</span>/Android/data/com.dinson.framework/files</div><div class="line">getExternalFilesDirs()<span class="symbol">:---/storage/emulated/</span><span class="number">0</span>/Android/data/com.dinson.framework/files</div><div class="line">getExternalFilesDirs()<span class="symbol">:---/storage/ext_sd/Android/data/com</span>.dinson.framework/files*******</div><div class="line">getExternalCacheDir()<span class="symbol">:/storage/emulated/</span><span class="number">0</span>/Android/data/com.dinson.framework/cache</div><div class="line">getExternalCacheDirs()<span class="symbol">:---/storage/emulated/</span><span class="number">0</span>/Android/data/com.dinson.framework/cache</div><div class="line">getExternalCacheDirs()<span class="symbol">:---/storage/ext_sd/Android/data/com</span>.dinson.framework/cache*******</div><div class="line">getObbDir()<span class="symbol">:/storage/emulated/</span><span class="number">0</span>/Android/obb/com.dinson.framework</div><div class="line">getObbDirs()<span class="symbol">:---/storage/emulated/</span><span class="number">0</span>/Android/obb/com.dinson.framework</div><div class="line">getObbDirs()<span class="symbol">:---/storage/ext_sd/Android/obb/com</span>.dinson.framework*******</div><div class="line">Environment.getExternalStorageState()<span class="symbol">:mounted</span></div><div class="line">Environment.getExternalStorageDirectory()<span class="symbol">:/storage/emulated/</span><span class="number">0</span></div><div class="line">Environment.getDownloadCacheDirectory()<span class="symbol">:/cache</span></div><div class="line">Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)<span class="symbol">:/storage/emulated/</span><span class="number">0</span>/Music</div><div class="line">Environment.getRootDirectory()<span class="symbol">:/system</span></div></pre></td></tr></table></figure></p>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=songid&auto=1&height=66"></iframe> --></div>
+    
+      <p class="post-copyright">转载文章请链接上原文地址：<a class="post-copyright-link" href="http://dinson.win/2016/07/28/16-07-28/" title="http://dinson.win/2016/07/28/16-07-28/" target="_blank">http://dinson.win/2016/07/28/16-07-28/</a></p>
+
+      
+      <div class="toc-wrapper">
+        <div class="toc-scroll">
+          <div class="toc-middle">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#data-data-package-name-…"><span class="toc-text">/data/data/package_name/…</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SD卡下的目录"><span class="toc-text">SD卡下的目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SD卡私有目录"><span class="toc-text">SD卡私有目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sdcard-Android-data-package-name"><span class="toc-text">/sdcard/Android/data/package_name/</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sdcard-Android-obb-package-name"><span class="toc-text">/sdcard/Android/obb/package_name/</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SD卡共有目录"><span class="toc-text">SD卡共有目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sdcard-any-folder-name"><span class="toc-text">/sdcard/(any_folder_name)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码及结果"><span class="toc-text">源码及结果</span></a></li></ol>
+          </div>
+        </div>
+      </div>
+    
+  
+  
+ 
+</article>
+
+      <footer class="footer">
+  <p class="footer-text">© 2016 - 2017 ❤ Powered by - DINSON</p>
+   
+  <span id="busuanzi_container_site_pv"><i class="iconfont icon-dianji"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>Times</span>
+  <span style="margin: 0.5em 0.5em">|</span>
+  <span id="busuanzi_container_site_uv"><i class="iconfont icon-fangke"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>Times</span>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <p class="footer-text">一只穿着空气鞋碎花沙滩裤挂着大金链子叼着烟戴着墨镜翘着二郎腿边弹吉他边敲代码的程序猿</p>
+
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer> 
+    </article>
+
+    <script src="/js/to-top.js"></script>
+    <script src="/js/search.js"></script>
+  </body>
+</html>
